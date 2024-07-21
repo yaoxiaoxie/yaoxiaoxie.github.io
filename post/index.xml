@@ -267,44 +267,24 @@
         <description>&lt;img src="https://yaoxiaoxie.github.io/img/face1.jpg" alt="Featured image of post 博客插入图片" /&gt;&lt;h1 id=&#34;前言&#34;&gt;前言
 &lt;/h1&gt;&lt;p&gt;&lt;strong&gt;在Hugo上写文章的时候，肯定会遇到要插入图片的情况。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;在&lt;mark&gt;content/post&lt;/mark&gt;目录下的markdown文件里引用图片，让网站能正常显示图片。&lt;/p&gt;
-&lt;table&gt;&lt;tr&gt;&lt;td bgcolor=DarkSeaGreen&gt;这里的背景色是：DarkSeaGreen，此处输入任意想输入的内容&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;table&gt;&lt;tr&gt;&lt;td bgcolor=Beige&gt;这里的背景色是：DarkSeaGreen，此处输入任意想输入的内容&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;table&gt;&lt;tr&gt;&lt;td bgcolor=MistyRose&gt;这里的背景色是：DarkSeaGreen，此处输入任意想输入的内容&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;p&gt;这里我们其实有2种选择：&lt;/p&gt;
 &lt;p&gt;使用图床：图床其实就是图片存储空间，我们可以把要插入在markdown的图片先上传到图床里，生成图片的永久链接，然后在markdown里引用这个图片链接即可。
 优点：文章可以不用修改，直接复制到多个平台，而不用担心图片加载会出问题，因为图片链接是固定永久的。
-缺点：免费的图床有上传数量和容量限制，还可能停用。付费的图床嘛，有钱就可以任性。。。
-使用本地图片：直接在markdown里引用本地的图片
+缺点：免费的图床有上传数量和容量限制，还可能停用。付费的图床嘛，有钱就可以任性。。。&lt;/p&gt;
+&lt;p&gt;使用本地图片：直接在markdown里引用本地的图片
 优点：免费，图片和文章在一起，不用担心图片丢失
 缺点：文章复制到其它平台的时候，对于图片的引用要手工修改，比较繁琐
 这篇文章主要讲下如何基于Hugo，在文章对应的markdown文件里引用本地图片。&lt;/p&gt;
 &lt;h1 id=&#34;操作&#34;&gt;操作
 &lt;/h1&gt;&lt;p&gt;我们先讲下Hugo的一个实现逻辑：&lt;/p&gt;
-&lt;p&gt;Hugo博客的根目录有一个static目录，这个static目录就是用来存放一些静态文件，比如图片、css、js文件等。
-执行hugo命令的时候，会把static目录下的子目录或文件复制到public目录下。比如我在static下添加了一个img子目录，并且在img子目录放了图片，那执行hugo命令后，就会把static\img文件的内容拷贝到public\img里面。
-大家都知道Hugo博客网站展示的其实是public下的内容，因此markdown文章里引用图片的时候，得引用pubic下的图片才可以。
-具体操作非常简单，分2步：&lt;/p&gt;
+&lt;p&gt;Hugo博客的根目录有一个static目录，这个static目录就是用来存放一些静态文件，比如图片、css、js文件等。&lt;/p&gt;
+&lt;p&gt;执行hugo命令的时候，会把static目录下的子目录或文件复制到public目录下。比如我在static下添加了一个img子目录，并且在img子目录放了图片，那执行hugo命令后，就会把static\img文件的内容拷贝到public\img里面。&lt;/p&gt;
+&lt;p&gt;大家都知道Hugo博客网站展示的其实是public下的内容，因此markdown文章里引用图片的时候，得引用pubic下的图片才可以。&lt;/p&gt;
+&lt;p&gt;具体操作非常简单，分2步：&lt;/p&gt;
 &lt;p&gt;在static目录下创建img子目录，把markdown要使用的图片放在static\img目录里。&lt;/p&gt;
 &lt;p&gt;在markdown文件里，按照如下格式引用图片(这里假设图片名称叫wechat.png)。这样最终public目录下生成的静态页面就可以引用到public\img下的图片了。&lt;/p&gt;
-
-
-
-
-
-
-    
-
-
-&lt;div class=&#34;video-wrapper&#34;&gt;
-    &lt;iframe src=&#34;https://player.bilibili.com/player.html?as_wide=1&amp;amp;high_quality=1&amp;amp;page=PART_NUMBER&amp;aid=12345678&#34;
-            scrolling=&#34;no&#34;
-            frameborder=&#34;no&#34;
-            framespacing=&#34;0&#34;
-            allowfullscreen=&#34;true&#34;
-    &gt;
-    &lt;/iframe&gt;
-&lt;/div&gt;
-
+&lt;table&gt;&lt;tr&gt;&lt;td bgcolor=MistyRose&gt;markdown
+&lt;p&gt;&lt;code&gt;![](/img/wechat.png&lt;/code&gt;)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/p&gt;
 </description>
         </item>
         <item>

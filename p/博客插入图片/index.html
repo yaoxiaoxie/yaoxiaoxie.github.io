@@ -153,7 +153,7 @@
 
 
                 
-                <span>Search</span>
+                <span>搜索</span>
             </a>
         </li>
         
@@ -279,44 +279,24 @@
     <h1 id="前言">前言
 </h1><p><strong>在Hugo上写文章的时候，肯定会遇到要插入图片的情况。</strong></p>
 <p>在<mark>content/post</mark>目录下的markdown文件里引用图片，让网站能正常显示图片。</p>
-<div class="table-wrapper"><table><tr><td bgcolor=DarkSeaGreen>这里的背景色是：DarkSeaGreen，此处输入任意想输入的内容</td></tr></table></div>
-<div class="table-wrapper"><table><tr><td bgcolor=Beige>这里的背景色是：DarkSeaGreen，此处输入任意想输入的内容</td></tr></table></div>
-<div class="table-wrapper"><table><tr><td bgcolor=MistyRose>这里的背景色是：DarkSeaGreen，此处输入任意想输入的内容</td></tr></table></div>
 <p>这里我们其实有2种选择：</p>
 <p>使用图床：图床其实就是图片存储空间，我们可以把要插入在markdown的图片先上传到图床里，生成图片的永久链接，然后在markdown里引用这个图片链接即可。
 优点：文章可以不用修改，直接复制到多个平台，而不用担心图片加载会出问题，因为图片链接是固定永久的。
-缺点：免费的图床有上传数量和容量限制，还可能停用。付费的图床嘛，有钱就可以任性。。。
-使用本地图片：直接在markdown里引用本地的图片
+缺点：免费的图床有上传数量和容量限制，还可能停用。付费的图床嘛，有钱就可以任性。。。</p>
+<p>使用本地图片：直接在markdown里引用本地的图片
 优点：免费，图片和文章在一起，不用担心图片丢失
 缺点：文章复制到其它平台的时候，对于图片的引用要手工修改，比较繁琐
 这篇文章主要讲下如何基于Hugo，在文章对应的markdown文件里引用本地图片。</p>
 <h1 id="操作">操作
 </h1><p>我们先讲下Hugo的一个实现逻辑：</p>
-<p>Hugo博客的根目录有一个static目录，这个static目录就是用来存放一些静态文件，比如图片、css、js文件等。
-执行hugo命令的时候，会把static目录下的子目录或文件复制到public目录下。比如我在static下添加了一个img子目录，并且在img子目录放了图片，那执行hugo命令后，就会把static\img文件的内容拷贝到public\img里面。
-大家都知道Hugo博客网站展示的其实是public下的内容，因此markdown文章里引用图片的时候，得引用pubic下的图片才可以。
-具体操作非常简单，分2步：</p>
+<p>Hugo博客的根目录有一个static目录，这个static目录就是用来存放一些静态文件，比如图片、css、js文件等。</p>
+<p>执行hugo命令的时候，会把static目录下的子目录或文件复制到public目录下。比如我在static下添加了一个img子目录，并且在img子目录放了图片，那执行hugo命令后，就会把static\img文件的内容拷贝到public\img里面。</p>
+<p>大家都知道Hugo博客网站展示的其实是public下的内容，因此markdown文章里引用图片的时候，得引用pubic下的图片才可以。</p>
+<p>具体操作非常简单，分2步：</p>
 <p>在static目录下创建img子目录，把markdown要使用的图片放在static\img目录里。</p>
 <p>在markdown文件里，按照如下格式引用图片(这里假设图片名称叫wechat.png)。这样最终public目录下生成的静态页面就可以引用到public\img下的图片了。</p>
-
-
-
-
-
-
-    
-
-
-<div class="video-wrapper">
-    <iframe src="https://player.bilibili.com/player.html?as_wide=1&amp;high_quality=1&amp;page=PART_NUMBER&aid=12345678"
-            scrolling="no"
-            frameborder="no"
-            framespacing="0"
-            allowfullscreen="true"
-    >
-    </iframe>
-</div>
-
+<div class="table-wrapper"><table><tr><td bgcolor=MistyRose>markdown
+<p><code>![](/img/wechat.png</code>)</td></tr></table></div></p>
 
 </section>
 
