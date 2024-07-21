@@ -1,21 +1,79 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  <sitemap>
-    <loc>http://localhost:1313/zh-cn/sitemap.xml</loc>
-    
-      <lastmod>2024-07-20T16:19:57+08:00</lastmod>
-    
-  </sitemap>
-  
-  <sitemap>
-    <loc>http://localhost:1313/en/sitemap.xml</loc>
-    
-  </sitemap>
-  
-  <sitemap>
-    <loc>http://localhost:1313/ar/sitemap.xml</loc>
-    
-  </sitemap>
-  
-</sitemapindex>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://yaoxiaoxie.github.io/categories/</loc>
+    <lastmod>2024-07-21T09:30:16+08:00</lastmod>
+  </url><url>
+    <loc>https://yaoxiaoxie.github.io/tags/css/</loc>
+    <lastmod>2024-07-21T09:30:16+08:00</lastmod>
+  </url><url>
+    <loc>https://yaoxiaoxie.github.io/tags/html/</loc>
+    <lastmod>2024-07-21T09:30:16+08:00</lastmod>
+  </url><url>
+    <loc>https://yaoxiaoxie.github.io/tags/markdown/</loc>
+    <lastmod>2024-07-21T09:30:16+08:00</lastmod>
+  </url><url>
+    <loc>https://yaoxiaoxie.github.io/p/markdown%E8%AF%AD%E6%B3%95/</loc>
+    <lastmod>2024-07-21T09:30:16+08:00</lastmod>
+  </url><url>
+    <loc>https://yaoxiaoxie.github.io/post/</loc>
+    <lastmod>2024-07-21T09:30:16+08:00</lastmod>
+  </url><url>
+    <loc>https://yaoxiaoxie.github.io/categories/syntax/</loc>
+    <lastmod>2024-07-21T09:30:16+08:00</lastmod>
+  </url><url>
+    <loc>https://yaoxiaoxie.github.io/tags/</loc>
+    <lastmod>2024-07-21T09:30:16+08:00</lastmod>
+  </url><url>
+    <loc>https://yaoxiaoxie.github.io/tags/themes/</loc>
+    <lastmod>2024-07-21T09:30:16+08:00</lastmod>
+  </url><url>
+    <loc>https://yaoxiaoxie.github.io/categories/themes/</loc>
+    <lastmod>2024-07-21T09:30:16+08:00</lastmod>
+  </url><url>
+    <loc>https://yaoxiaoxie.github.io/</loc>
+    <lastmod>2024-07-21T09:30:16+08:00</lastmod>
+  </url><url>
+    <loc>https://yaoxiaoxie.github.io/categories/blog/</loc>
+    <lastmod>2024-07-21T09:01:59+08:00</lastmod>
+  </url><url>
+    <loc>https://yaoxiaoxie.github.io/categories/hugo/</loc>
+    <lastmod>2024-07-21T09:01:59+08:00</lastmod>
+  </url><url>
+    <loc>https://yaoxiaoxie.github.io/p/%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</loc>
+    <lastmod>2024-07-21T09:01:59+08:00</lastmod>
+  </url><url>
+    <loc>https://yaoxiaoxie.github.io/categories/%E5%9B%BE%E7%89%87/</loc>
+    <lastmod>2024-07-21T09:01:59+08:00</lastmod>
+  </url><url>
+    <loc>https://yaoxiaoxie.github.io/p/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/</loc>
+    <lastmod>2024-07-20T22:57:40+08:00</lastmod>
+  </url><url>
+    <loc>https://yaoxiaoxie.github.io/categories/%E6%90%AD%E5%BB%BA/</loc>
+    <lastmod>2024-07-20T22:57:40+08:00</lastmod>
+  </url><url>
+    <loc>https://yaoxiaoxie.github.io/categories/test/</loc>
+    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yaoxiaoxie.github.io/categories/%E6%B5%8B%E8%AF%95/</loc>
+    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yaoxiaoxie.github.io/p/test-chinese/</loc>
+    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yaoxiaoxie.github.io/page/</loc>
+    <lastmod>2020-10-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yaoxiaoxie.github.io/archives/</loc>
+    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yaoxiaoxie.github.io/about/</loc>
+    <lastmod>2020-10-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yaoxiaoxie.github.io/%E9%93%BE%E6%8E%A5/</loc>
+    <lastmod>2020-10-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yaoxiaoxie.github.io/search/</loc>
+  </url>
+</urlset>
