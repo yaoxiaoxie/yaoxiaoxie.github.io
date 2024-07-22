@@ -2,78 +2,77 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://yaoxiaoxie.github.io/</loc>
     <lastmod>2024-07-22T10:00:18+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/post/</loc>
+    <loc>https://yaoxiaoxie.github.io/post/</loc>
     <lastmod>2024-07-22T10:00:18+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://yaoxiaoxie.github.io/categories/</loc>
     <lastmod>2024-07-21T09:30:16+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/css/</loc>
+    <loc>https://yaoxiaoxie.github.io/tags/css/</loc>
     <lastmod>2024-07-21T09:30:16+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/html/</loc>
+    <loc>https://yaoxiaoxie.github.io/tags/html/</loc>
     <lastmod>2024-07-21T09:30:16+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/markdown/</loc>
+    <loc>https://yaoxiaoxie.github.io/tags/markdown/</loc>
     <lastmod>2024-07-21T09:30:16+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/p/markdown%E8%AF%AD%E6%B3%95/</loc>
+    <loc>https://yaoxiaoxie.github.io/p/markdown%E8%AF%AD%E6%B3%95/</loc>
     <lastmod>2024-07-21T09:30:16+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/syntax/</loc>
+    <loc>https://yaoxiaoxie.github.io/categories/syntax/</loc>
     <lastmod>2024-07-21T09:30:16+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://yaoxiaoxie.github.io/tags/</loc>
     <lastmod>2024-07-21T09:30:16+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/themes/</loc>
+    <loc>https://yaoxiaoxie.github.io/tags/themes/</loc>
     <lastmod>2024-07-21T09:30:16+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/themes/</loc>
+    <loc>https://yaoxiaoxie.github.io/categories/themes/</loc>
     <lastmod>2024-07-21T09:30:16+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/blog/</loc>
+    <loc>https://yaoxiaoxie.github.io/categories/blog/</loc>
     <lastmod>2024-07-21T09:01:59+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/hugo/</loc>
+    <loc>https://yaoxiaoxie.github.io/categories/hugo/</loc>
     <lastmod>2024-07-21T09:01:59+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/p/%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</loc>
+    <loc>https://yaoxiaoxie.github.io/p/%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</loc>
     <lastmod>2024-07-21T09:01:59+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/%E5%9B%BE%E7%89%87/</loc>
+    <loc>https://yaoxiaoxie.github.io/categories/%E5%9B%BE%E7%89%87/</loc>
     <lastmod>2024-07-21T09:01:59+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/p/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/</loc>
+    <loc>https://yaoxiaoxie.github.io/p/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/</loc>
     <lastmod>2024-07-20T22:57:40+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/%E6%90%AD%E5%BB%BA/</loc>
+    <loc>https://yaoxiaoxie.github.io/categories/%E6%90%AD%E5%BB%BA/</loc>
     <lastmod>2024-07-20T22:57:40+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/test/</loc>
+    <loc>https://yaoxiaoxie.github.io/categories/%E6%B5%8B%E8%AF%95/</loc>
     <lastmod>2020-09-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/%E6%B5%8B%E8%AF%95/</loc>
+    <loc>https://yaoxiaoxie.github.io/p/test-chinese/</loc>
     <lastmod>2020-09-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/p/test-chinese/</loc>
-    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/page/</loc>
+    <loc>https://yaoxiaoxie.github.io/page/</loc>
     <lastmod>2020-10-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/archives/</loc>
+    <loc>https://yaoxiaoxie.github.io/archives/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>https://yaoxiaoxie.github.io/about/</loc>
     <lastmod>2020-10-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/%E9%93%BE%E6%8E%A5/</loc>
+    <loc>https://yaoxiaoxie.github.io/%E9%93%BE%E6%8E%A5/</loc>
     <lastmod>2020-10-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/search/</loc>
+    <loc>https://yaoxiaoxie.github.io/categories/test/</loc>
+  </url><url>
+    <loc>https://yaoxiaoxie.github.io/search/</loc>
   </url>
 </urlset>
