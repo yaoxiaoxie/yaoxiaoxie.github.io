@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>yaoxieの孤岛</copyright>
-        <lastBuildDate>Mon, 22 Jul 2024 10:00:18 +0800</lastBuildDate><atom:link href="https://yaoxiaoxie.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 23 Jul 2024 09:13:13 +0800</lastBuildDate><atom:link href="https://yaoxiaoxie.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Markdown语法</title>
         <link>https://yaoxiaoxie.github.io/p/markdown%E8%AF%AD%E6%B3%95/</link>
         <pubDate>Sun, 21 Jul 2024 09:30:16 +0800</pubDate>
@@ -392,7 +392,7 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;hugo --theme&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;meme --baseUrl&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;https://ztygcs.github.io/&amp;#34;&lt;/span&gt; --buildDrafts
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;hugo --theme&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;meme --baseUrl&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;https://username.github.io/&amp;#34;&lt;/span&gt; --buildDrafts
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;code&gt;在当前myblog文件夹下会生成 public 文件夹&lt;/code&gt;&lt;/p&gt;
@@ -411,7 +411,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git init
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git add .
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git commit -m &lt;span class=&#34;s1&#34;&gt;&amp;#39;model：博客第一次提交&amp;#39;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git remote add origin https://github.com/ztygcs/ztygcs.github.io.git
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git remote add origin https://github.com/username/username.github.io.git
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git push -u origin master
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
@@ -491,7 +491,8 @@
 我的草籽&lt;br /&gt;
 只需一点山风的沐浴&lt;br /&gt;
 就能所向披靡
-&lt;/center&gt;</description>
+&lt;/center&gt;
+</description>
         </item>
         <item>
         <title>链接</title>
