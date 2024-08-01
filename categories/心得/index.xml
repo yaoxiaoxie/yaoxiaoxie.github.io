@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>心得 on yaoxieの自留地</title>
+        <link>https://yaoxiaoxie.github.io/categories/%E5%BF%83%E5%BE%97/</link>
+        <description>Recent content in 心得 on yaoxieの自留地</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>yaoxieの孤岛</copyright>
+        <lastBuildDate>Thu, 31 Aug 2023 06:00:00 +0800</lastBuildDate><atom:link href="https://yaoxiaoxie.github.io/categories/%E5%BF%83%E5%BE%97/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>这一路の经过~</title>
+        <link>https://yaoxiaoxie.github.io/p/%E5%BF%83%E5%BE%97/</link>
+        <pubDate>Thu, 31 Aug 2023 06:00:00 +0800</pubDate>
+        
+        <guid>https://yaoxiaoxie.github.io/p/%E5%BF%83%E5%BE%97/</guid>
+        <description>&lt;img src="https://yaoxiaoxie.github.io/img/face1.jpg" alt="Featured image of post 这一路の经过~" /&gt;&lt;h1 id=&#34;1辗转反侧&#34;&gt;1.辗转反侧
+&lt;/h1&gt;&lt;h2 id=&#34;11-相见&#34;&gt;1.1 相见
+&lt;/h2&gt;&lt;p&gt;最开始了解到一个个人博客，大概是看到了某个人的作品，当时惊叹于这种对当时的我来说是一种巨大打击的作品，我接触互联网还是10年左右，当时各种各样的东西在网络上方兴未已。要我说，当时的互联网，还是一个人人都可以得到他人近乎无私帮助的时代。&lt;/p&gt;
+&lt;h2 id=&#34;12-历程&#34;&gt;1.2 历程
+&lt;/h2&gt;&lt;p&gt;好了，既然了解了，那就开干吧，但是当时还没有这种意识，当我真正有一个成熟的想法时，这已经是十年之后了。&lt;/p&gt;
+&lt;h2 id=&#34;13-准备&#34;&gt;1.3 准备
+&lt;/h2&gt;&lt;p&gt;最开始，我还相信互联网依旧是可以随便找到自己所需要的东西的时代，当我再次满怀期待的开始着手进行，我这才发现，这互联网，已经不再是记忆中那般摸样了。&lt;/p&gt;
+&lt;h1 id=&#34;2开始&#34;&gt;2.开始
+&lt;/h1&gt;&lt;h2 id=&#34;21-类型之分&#34;&gt;2.1 类型之分
+&lt;/h2&gt;&lt;p&gt;市面上常规的博客大致分为静态与动态两个大类，其中动态依托于云服务器运行，这样再搭配宝塔面板等生成工具可以非常方便的完成个人博客的搭建，这可以说是近乎完美的，但是这种方法每年都需要向运营商支付高昂的费用。因此，这段然不在我的考虑范围之内，我选择了搭建静态博客，这可以为我省下大量的费用，近乎可以说是零成本的，但缺点就是，这个环节中出现某些问题，往往是致命的。&lt;/p&gt;
+&lt;h2 id=&#34;22-做&#34;&gt;2.2 做
+&lt;/h2&gt;&lt;p&gt;既然是自己的梦想，那就不要耽搁了，于是我开始在网上查阅各种资料来进行准备，最终选择了hexo框架来进行搭建，但我在最开始就遇到了困难，bash、node.js这两个工具让我焦头烂耳，是的，在最初安装时工具的各方面调试就让我难以招架，甚至工作一度因为此种原因而搁置***
+如今，当我已经完成之后，回首望去，自己对当时的问题感到十分不解，细细想来，当时应该是环境变量配置出现问题，当时各种教程给的方法众说纷纭，自己对未知的恐惧一度让种子死亡在泥土里。&lt;/p&gt;&lt;/p&gt;
+&lt;h2 id=&#34;23-末&#34;&gt;2.3 末
+&lt;/h2&gt;&lt;p&gt;当然，现在看来，自己是走了很多捷径才能够完成，其中许多机理，我在书写这篇文章时依旧不是太明白，不过，这些问题还是被克服了，总之结果是美好的。&lt;/p&gt;
+&lt;h1 id=&#34;3&#34;&gt;3.😊❤️
+&lt;/h1&gt;&lt;p&gt;在这个过程中，我虽然遇到了一些错误的指引，不过最终还是可以找到正确的方案，在此期间，相当量的教程给予了我很大的帮助，或许，那种乐于分享的火焰依然有人传承下去。我很感谢互联网的存在，这让我看到了广阔的天地（虽然我大多数时间都没干正事），我想大多数如我般的穷人，他们可以一生都会处于一种跟着短视频之类废料行舟的状态，我认为人如果能把自己的空闲时间挪用一小部分在学习上，虽不可谈会有多大的建树，但这一定是对自己及家庭乃至整个社会都有益的事。&lt;br /&gt;
+在最后，我要再次感谢那些留些路标的人，他们为我的沙漠行舟提供了巨大的助力，我将会在接下来的日子里将我遇到的困难和解决方法一一书写以供后来者参考，在此，再次感谢那些为我提供帮助的人，因为有你们，这火焰才能越燃越旺。&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
