@@ -205,7 +205,46 @@
     </ol>
 </aside>
 
-    
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#脚本">脚本</a></li>
+    <li><a href="#声明">声明</a></li>
+    <li><a href="#表达式">表达式</a></li>
+    <li><a href="#注释">注释</a></li>
+    <li><a href="#指令">指令</a></li>
+    <li><a href="#模板">模板</a></li>
+    <li><a href="#示例计算-n-的阶乘">示例：计算 N 的阶乘</a></li>
+    <li><a href="#示例数据库查询系统">示例：数据库查询系统</a></li>
+    <li><a href="#一个额外的问题">一个额外的问题</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
 
             <main class="main full-width">
     <article class="has-image main-article">
@@ -269,7 +308,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 3 分钟
+                    阅读时长: 5 分钟
                 </time>
             </div>
         
@@ -455,7 +494,7 @@
 </ul>
 <p>运行之后修改了代码，怎么才能重新看到修改后的网页呢？</p>
 <p>无需终止 Tomcat 重新运行，只需在左下这个位置点击 Deploy，然后刷新网页就可以啦</p>
-<p><img src="/JSP1.png"
+<p><img src="/img/JSP%e7%ae%80%e5%8d%95%e5%85%a5%e9%97%a8%e4%b8%8eIDEA%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83%e9%85%8d%e7%bd%ae/20210917213934.png"
 	
 	
 	
@@ -466,190 +505,477 @@
 	
 ></p>
 <p>如果没有问题此时应该可以正确运行啦，开始在 IDE 中愉快的写 JSP 吧（雾</p>
-<p>基本语法
-因为了解不深，详细的就不多说了。</p>
+<h1 id="基本语法">基本语法
+</h1><p>因为了解不深，详细的就不多说了。</p>
 <p>除了特别的这几个，其他的都和 HTML 与 Java 语法规则差不多。</p>
-<p>脚本
-&lt;%
-//在这里编写你的Java代码
-%&gt;
-任何文本、HTML 标签、JSP 元素必须写在脚本程序的外面</p>
-<p>声明
-&lt;%!
-//Java
-%&gt;
-用于声明变量、方法，要写函数只能在这里面</p>
+<h2 id="脚本">脚本
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;%
+</span></span><span class="line"><span class="cl">	//在这里编写你的Java代码
+</span></span><span class="line"><span class="cl">%&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>任何文本、HTML 标签、JSP 元素必须写在脚本程序的外面</p>
+<h2 id="声明">声明
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;%!
+</span></span><span class="line"><span class="cl">    //Java
+</span></span><span class="line"><span class="cl">%&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>用于声明变量、方法，要写函数只能在这里面</p>
 <p>必须先声明才可以使用</p>
-<p>表达式
-&lt;%= //Java %&gt;
-表达式里面的代码可以不写分号</p>
-<p>注释
-&lt;%&ndash; 该部分注释在网页中不会被显示 &ndash;%&gt;</p>
-<!-- 该部分注释在网页源代码中会被显示 --> 
-<p>指令
-&lt;%@ page 页面属性 %&gt;
-&lt;%@ include 包含文件 %&gt;
-&lt;%@ taglib 标签 %&gt;
-模板
-&lt;%@ page language=&ldquo;java&rdquo; contentType=&ldquo;text/html; charset=UTF-8&rdquo; pageEncoding=&ldquo;UTF-8&rdquo; %&gt;</p>
-<!--导入的Java包-->
-<html>
-<head>
-    <title>网页标题</title>
-</head>
-<body>
-<p>&lt;%!
-//定义变量
-%&gt;</p>
-<p>&lt;%!
-//定义函数
-%&gt;</p>
-<p>&lt;%
-//脚本
-%&gt;</p>
-<!-- 在这里定义其他网页上展示的组件 -->
-</body>
-</html>
-示例：计算 N 的阶乘
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Calc</title>
-</head>
-<body>
-<div style="text-align: center;"/>
-<h1>
-  Calculate N!
-</h1>
-<!--*.jsp-->
-<form action="index.jsp"/>
-<input type="number" name="num"/><br/><br/>
-<input type="submit"/><br/><br/>
-<form/>
-<p>&lt;%!
-private int n = -1;
-%&gt;
-&lt;%!
-public int fac(int n) {
-if (n &lt; 0) {
-return n;
-} else if (n == 0) {
-return 1;
-} else {
-int product = 1;
-for (int i = 1; i &lt;= n; i++) {
-product *= i;
-if (product &lt; 0) {
-break;
-}
-}
-return product;
-}
-}
-%&gt;
-&lt;%
-try {
-int n = fac(Integer.parseInt(request.getParameter(&ldquo;num&rdquo;)));
-if (n &lt; 0) {
-out.print(&quot;<h2>invalid</h2>&quot;);
-} else {
-out.print(&quot;<h2>&quot;+n+&quot;</h2>&quot;);
-}
-} catch (Exception e) {
-//ignore java.lang.NumberFormatException: null
-}
-%&gt;</p>
-</body>
-</html>
-示例：数据库查询系统
-依赖包：mysql-connector-java-5.1.*.jar
-可能需要将 jar 包拷贝到项目路径下的 WEB-INF/lib 中（不存在就新建）
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="java.sql.*" %>
-<%@ page import="java.io.*" %>
-<html>
-<head>
-    <title>Database Query System</title>
-</head>
-<body>
-<div style="text-align: center;">
-    <h1>Database Query System</h1>
-    <h2>powered by bipy</h2><br/>
-    <form method="post">
-        <textarea name="SQL_statement" rows=10 cols=100></textarea><br/>
-        <input type="submit" name="Submit"/>
-        <input type="reset" name="Clear"/>
-    </form>
+<h2 id="表达式">表达式
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;%= //Java %&gt;
+</span></span></code></pre></td></tr></table>
 </div>
-<br/>
-</body>
-<%!
-    private Statement statement;
-    private String sql_input;
-    private Connection connection;
-    private boolean status = false;
-%>
-<%!
-    //判断SQL语句类型，并返回结果（影响个数/报错/结果集）
-    public Object process(String sql) {
-        try {
-            if (sql.toLowerCase().matches("^(update|create|use|drop|delete|insert).*$")) {
-                return statement.executeUpdate(sql);
-            } else if (sql.toLowerCase().matches("^(show|select).*$")) {
-                return statement.executeQuery(sql);
-            } else {
-                return "Not Supported";
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return "SQL syntax error";
-        }
-    }
-%>
-<%
-    try {
-        //避免重新建立连接而丢弃前面步骤
-        if (!status) {
-            Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost", "root", "123");
-            statement = connection.createStatement();
-            status = true;
-        }
-    } catch (Exception e) {
-        e.printStackTrace();
-    }
-%>
-<div style="text-align: center">
-    <%
-    	//结果输出
-        sql_input = request.getParameter("SQL_statement");
-        if (sql_input != null) {
-            Object rt = process(sql_input);
-            if (rt instanceof String) {
-                out.print("<h2>" + rt.toString() + "</h2>");
-            } else if (rt instanceof Integer) {
-                out.print("<h2>" + "Query OK. " + rt + " effected." + "</h2>");
-            } else {
-                ResultSet rs = (ResultSet) rt;
-                ResultSetMetaData rsmd = rs.getMetaData();
-                out.println("<table align=\"center\" border=\"1\">");
-                out.println("<tr>");
-                for (int i = 1; i <= rsmd.getColumnCount(); ++i)
-                    out.println("<th>" + rsmd.getColumnName(i) + "</th>");
-                out.println("<tr>");
-                while (rs.next()) {
-                    out.println("<tr>");
-                    for (int i = 1; i <= rsmd.getColumnCount(); ++i)
-                        out.println("<td>" + rs.getString(i) + "</td>");
-                    out.println("</tr>");
-                }
-                out.println("</table>");
-            }
-        }
-    %>
+</div><p>表达式里面的代码可以不写分号</p>
+<h2 id="注释">注释
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;%-- 该部分注释在网页中不会被显示 --%&gt; 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;!-- 该部分注释在网页源代码中会被显示 --&gt; 
+</span></span></code></pre></td></tr></table>
 </div>
-</html>
-posted @ 2021-09-17 21:41  RioTian  阅读(2184)  评论(0)  编辑  收藏  举报
+</div><h2 id="指令">指令
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;%@ page 页面属性 %&gt;
+</span></span><span class="line"><span class="cl">&lt;%@ include 包含文件 %&gt;
+</span></span><span class="line"><span class="cl">&lt;%@ taglib 标签 %&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="模板">模板
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;%@ page language=&#34;java&#34; contentType=&#34;text/html; charset=UTF-8&#34; pageEncoding=&#34;UTF-8&#34; %&gt;
+</span></span><span class="line"><span class="cl">&lt;!--导入的Java包--&gt;
+</span></span><span class="line"><span class="cl">&lt;html&gt;
+</span></span><span class="line"><span class="cl">&lt;head&gt;
+</span></span><span class="line"><span class="cl">    &lt;title&gt;网页标题&lt;/title&gt;
+</span></span><span class="line"><span class="cl">&lt;/head&gt;
+</span></span><span class="line"><span class="cl">&lt;body&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;%!
+</span></span><span class="line"><span class="cl">    //定义变量
+</span></span><span class="line"><span class="cl">%&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;%!
+</span></span><span class="line"><span class="cl">    //定义函数
+</span></span><span class="line"><span class="cl">%&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;%
+</span></span><span class="line"><span class="cl">    //脚本
+</span></span><span class="line"><span class="cl">%&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;!-- 在这里定义其他网页上展示的组件 --&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;/body&gt;
+</span></span><span class="line"><span class="cl">&lt;/html&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="示例计算-n-的阶乘">示例：计算 N 的阶乘
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;%@ page contentType=&#34;text/html;charset=UTF-8&#34; language=&#34;java&#34; %&gt;
+</span></span><span class="line"><span class="cl">&lt;html&gt;
+</span></span><span class="line"><span class="cl">&lt;head&gt;
+</span></span><span class="line"><span class="cl">    &lt;title&gt;Calc&lt;/title&gt;
+</span></span><span class="line"><span class="cl">&lt;/head&gt;
+</span></span><span class="line"><span class="cl">&lt;body&gt;
+</span></span><span class="line"><span class="cl">&lt;div style=&#34;text-align: center;&#34;/&gt;
+</span></span><span class="line"><span class="cl">&lt;h1&gt;
+</span></span><span class="line"><span class="cl">  Calculate N!
+</span></span><span class="line"><span class="cl">&lt;/h1&gt;
+</span></span><span class="line"><span class="cl">&lt;!--*.jsp--&gt;
+</span></span><span class="line"><span class="cl">&lt;form action=&#34;index.jsp&#34;/&gt;
+</span></span><span class="line"><span class="cl">&lt;input type=&#34;number&#34; name=&#34;num&#34;/&gt;&lt;br/&gt;&lt;br/&gt;
+</span></span><span class="line"><span class="cl">&lt;input type=&#34;submit&#34;/&gt;&lt;br/&gt;&lt;br/&gt;
+</span></span><span class="line"><span class="cl">&lt;form/&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;%!
+</span></span><span class="line"><span class="cl">    private int n = -1;
+</span></span><span class="line"><span class="cl">%&gt;
+</span></span><span class="line"><span class="cl">&lt;%!
+</span></span><span class="line"><span class="cl">    public int fac(int n) {
+</span></span><span class="line"><span class="cl">        if (n &lt; 0) {
+</span></span><span class="line"><span class="cl">            return n;
+</span></span><span class="line"><span class="cl">        } else if (n == 0) {
+</span></span><span class="line"><span class="cl">            return 1;
+</span></span><span class="line"><span class="cl">        } else {
+</span></span><span class="line"><span class="cl">            int product = 1;
+</span></span><span class="line"><span class="cl">            for (int i = 1; i &lt;= n; i++) {
+</span></span><span class="line"><span class="cl">                product *= i;
+</span></span><span class="line"><span class="cl">                if (product &lt; 0) {
+</span></span><span class="line"><span class="cl">                    break;
+</span></span><span class="line"><span class="cl">                }
+</span></span><span class="line"><span class="cl">            }
+</span></span><span class="line"><span class="cl">            return product;
+</span></span><span class="line"><span class="cl">        }
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">%&gt;
+</span></span><span class="line"><span class="cl">&lt;%
+</span></span><span class="line"><span class="cl">    try {
+</span></span><span class="line"><span class="cl">        int n = fac(Integer.parseInt(request.getParameter(&#34;num&#34;)));
+</span></span><span class="line"><span class="cl">        if (n &lt; 0) {
+</span></span><span class="line"><span class="cl">            out.print(&#34;&lt;h2&gt;invalid&lt;/h2&gt;&#34;);
+</span></span><span class="line"><span class="cl">        } else {
+</span></span><span class="line"><span class="cl">            out.print(&#34;&lt;h2&gt;&#34;+n+&#34;&lt;/h2&gt;&#34;);
+</span></span><span class="line"><span class="cl">        }
+</span></span><span class="line"><span class="cl">    } catch (Exception e) {
+</span></span><span class="line"><span class="cl">        //ignore java.lang.NumberFormatException: null
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">%&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;/body&gt;
+</span></span><span class="line"><span class="cl">&lt;/html&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="示例数据库查询系统">示例：数据库查询系统
+</h2><ul>
+<li>依赖包：mysql-connector-java-5.1.*.jar</li>
+<li>可能需要将 jar 包拷贝到项目路径下的 WEB-INF/lib 中（不存在就新建）</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;%@ page contentType=&#34;text/html;charset=UTF-8&#34; language=&#34;java&#34; %&gt;
+</span></span><span class="line"><span class="cl">&lt;%@ page import=&#34;java.sql.*&#34; %&gt;
+</span></span><span class="line"><span class="cl">&lt;%@ page import=&#34;java.io.*&#34; %&gt;
+</span></span><span class="line"><span class="cl">&lt;html&gt;
+</span></span><span class="line"><span class="cl">&lt;head&gt;
+</span></span><span class="line"><span class="cl">    &lt;title&gt;Database Query System&lt;/title&gt;
+</span></span><span class="line"><span class="cl">&lt;/head&gt;
+</span></span><span class="line"><span class="cl">&lt;body&gt;
+</span></span><span class="line"><span class="cl">&lt;div style=&#34;text-align: center;&#34;&gt;
+</span></span><span class="line"><span class="cl">    &lt;h1&gt;Database Query System&lt;/h1&gt;
+</span></span><span class="line"><span class="cl">    &lt;h2&gt;powered by bipy&lt;/h2&gt;&lt;br/&gt;
+</span></span><span class="line"><span class="cl">    &lt;form method=&#34;post&#34;&gt;
+</span></span><span class="line"><span class="cl">        &lt;textarea name=&#34;SQL_statement&#34; rows=10 cols=100&gt;&lt;/textarea&gt;&lt;br/&gt;
+</span></span><span class="line"><span class="cl">        &lt;input type=&#34;submit&#34; name=&#34;Submit&#34;/&gt;
+</span></span><span class="line"><span class="cl">        &lt;input type=&#34;reset&#34; name=&#34;Clear&#34;/&gt;
+</span></span><span class="line"><span class="cl">    &lt;/form&gt;
+</span></span><span class="line"><span class="cl">&lt;/div&gt;
+</span></span><span class="line"><span class="cl">&lt;br/&gt;
+</span></span><span class="line"><span class="cl">&lt;/body&gt;
+</span></span><span class="line"><span class="cl">&lt;%!
+</span></span><span class="line"><span class="cl">    private Statement statement;
+</span></span><span class="line"><span class="cl">    private String sql_input;
+</span></span><span class="line"><span class="cl">    private Connection connection;
+</span></span><span class="line"><span class="cl">    private boolean status = false;
+</span></span><span class="line"><span class="cl">%&gt;
+</span></span><span class="line"><span class="cl">&lt;%!
+</span></span><span class="line"><span class="cl">    //判断SQL语句类型，并返回结果（影响个数/报错/结果集）
+</span></span><span class="line"><span class="cl">    public Object process(String sql) {
+</span></span><span class="line"><span class="cl">        try {
+</span></span><span class="line"><span class="cl">            if (sql.toLowerCase().matches(&#34;^(update|create|use|drop|delete|insert).*$&#34;)) {
+</span></span><span class="line"><span class="cl">                return statement.executeUpdate(sql);
+</span></span><span class="line"><span class="cl">            } else if (sql.toLowerCase().matches(&#34;^(show|select).*$&#34;)) {
+</span></span><span class="line"><span class="cl">                return statement.executeQuery(sql);
+</span></span><span class="line"><span class="cl">            } else {
+</span></span><span class="line"><span class="cl">                return &#34;Not Supported&#34;;
+</span></span><span class="line"><span class="cl">            }
+</span></span><span class="line"><span class="cl">        } catch (SQLException e) {
+</span></span><span class="line"><span class="cl">            e.printStackTrace();
+</span></span><span class="line"><span class="cl">            return &#34;SQL syntax error&#34;;
+</span></span><span class="line"><span class="cl">        }
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">%&gt;
+</span></span><span class="line"><span class="cl">&lt;%
+</span></span><span class="line"><span class="cl">    try {
+</span></span><span class="line"><span class="cl">        //避免重新建立连接而丢弃前面步骤
+</span></span><span class="line"><span class="cl">        if (!status) {
+</span></span><span class="line"><span class="cl">            Class.forName(&#34;com.mysql.jdbc.Driver&#34;);
+</span></span><span class="line"><span class="cl">            connection = DriverManager.getConnection(&#34;jdbc:mysql://localhost&#34;, &#34;root&#34;, &#34;123&#34;);
+</span></span><span class="line"><span class="cl">            statement = connection.createStatement();
+</span></span><span class="line"><span class="cl">            status = true;
+</span></span><span class="line"><span class="cl">        }
+</span></span><span class="line"><span class="cl">    } catch (Exception e) {
+</span></span><span class="line"><span class="cl">        e.printStackTrace();
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">%&gt;
+</span></span><span class="line"><span class="cl">&lt;div style=&#34;text-align: center&#34;&gt;
+</span></span><span class="line"><span class="cl">    &lt;%
+</span></span><span class="line"><span class="cl">    	//结果输出
+</span></span><span class="line"><span class="cl">        sql_input = request.getParameter(&#34;SQL_statement&#34;);
+</span></span><span class="line"><span class="cl">        if (sql_input != null) {
+</span></span><span class="line"><span class="cl">            Object rt = process(sql_input);
+</span></span><span class="line"><span class="cl">            if (rt instanceof String) {
+</span></span><span class="line"><span class="cl">                out.print(&#34;&lt;h2&gt;&#34; + rt.toString() + &#34;&lt;/h2&gt;&#34;);
+</span></span><span class="line"><span class="cl">            } else if (rt instanceof Integer) {
+</span></span><span class="line"><span class="cl">                out.print(&#34;&lt;h2&gt;&#34; + &#34;Query OK. &#34; + rt + &#34; effected.&#34; + &#34;&lt;/h2&gt;&#34;);
+</span></span><span class="line"><span class="cl">            } else {
+</span></span><span class="line"><span class="cl">                ResultSet rs = (ResultSet) rt;
+</span></span><span class="line"><span class="cl">                ResultSetMetaData rsmd = rs.getMetaData();
+</span></span><span class="line"><span class="cl">                out.println(&#34;&lt;table align=\&#34;center\&#34; border=\&#34;1\&#34;&gt;&#34;);
+</span></span><span class="line"><span class="cl">                out.println(&#34;&lt;tr&gt;&#34;);
+</span></span><span class="line"><span class="cl">                for (int i = 1; i &lt;= rsmd.getColumnCount(); ++i)
+</span></span><span class="line"><span class="cl">                    out.println(&#34;&lt;th&gt;&#34; + rsmd.getColumnName(i) + &#34;&lt;/th&gt;&#34;);
+</span></span><span class="line"><span class="cl">                out.println(&#34;&lt;tr&gt;&#34;);
+</span></span><span class="line"><span class="cl">                while (rs.next()) {
+</span></span><span class="line"><span class="cl">                    out.println(&#34;&lt;tr&gt;&#34;);
+</span></span><span class="line"><span class="cl">                    for (int i = 1; i &lt;= rsmd.getColumnCount(); ++i)
+</span></span><span class="line"><span class="cl">                        out.println(&#34;&lt;td&gt;&#34; + rs.getString(i) + &#34;&lt;/td&gt;&#34;);
+</span></span><span class="line"><span class="cl">                    out.println(&#34;&lt;/tr&gt;&#34;);
+</span></span><span class="line"><span class="cl">                }
+</span></span><span class="line"><span class="cl">                out.println(&#34;&lt;/table&gt;&#34;);
+</span></span><span class="line"><span class="cl">            }
+</span></span><span class="line"><span class="cl">        }
+</span></span><span class="line"><span class="cl">    %&gt;
+</span></span><span class="line"><span class="cl">&lt;/div&gt;
+</span></span><span class="line"><span class="cl">&lt;/html&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="一个额外的问题">一个额外的问题
+</h2><p>如果不能对jsp文件进行test，三角形标符不能使用，</p>
+<p>使用要配置<code>Tomcat</code>服务器，如图点击进去
+<img src="/img/JSP%e7%ae%80%e5%8d%95%e5%85%a5%e9%97%a8%e4%b8%8eIDEA%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83%e9%85%8d%e7%bd%ae/2.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="2"
+	
+	
+></p>
+<p>点加号 +，找到Tomcat Server目录下的local 点击
+<img src="/img/JSP%e7%ae%80%e5%8d%95%e5%85%a5%e9%97%a8%e4%b8%8eIDEA%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83%e9%85%8d%e7%bd%ae/3.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="3"
+	
+	
+></p>
+<p>在 Desployment 中点加号+ ，就可以添加选择项目了</p>
+<p><img src="/img/JSP%e7%ae%80%e5%8d%95%e5%85%a5%e9%97%a8%e4%b8%8eIDEA%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83%e9%85%8d%e7%bd%ae/4.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="4"
+	
+	
+></p>
+<p><img src="/img/JSP%e7%ae%80%e5%8d%95%e5%85%a5%e9%97%a8%e4%b8%8eIDEA%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83%e9%85%8d%e7%bd%ae/5.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="5"
+	
+	
+></p>
+<p>点击ok就配置成功了，这样就可以test了</p>
+<p><img src="/img/JSP%e7%ae%80%e5%8d%95%e5%85%a5%e9%97%a8%e4%b8%8eIDEA%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83%e9%85%8d%e7%bd%ae/6.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="6"
+	
+	
+></p>
 
 </section>
 
