@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="JSP 简单入门与 IDEA 开发环境配置 在学 Java 连接数据库时老师提到过 JSP，刚好这个学期有 JSP 的课程，现做一些基础以及环境配置的介绍。 什么是 JSP？\r动态网页技术标准 能把 Java 代码嵌入静态的页面中 JSP 编译器把 JSP 文件编译成 Java 写的 Servlet(服务器端程序)，再交由 Java 编译器 1 2 3 4 5 6 &lt;html&gt; &lt;title&gt;Hello world!&lt;/title&gt; &lt;body&gt; &lt;%=out.println(&#34;Hello world!&#34;)%&gt; &lt;/body&gt; &lt;/html&gt; 环境配置\r语言环境：JDK 网页服务器：Tomcat，安装教程 IDE：IntelliJ IDEA / Eclipse 前两点非常简单不再赘述。 老师竟然说 JSP 没什么好用的编辑器只能在 Eclipse 中写（黑人问号 明明 IDEA 就很好&hellip;. 这里记录一下 IDEA 如何配置 JSP 的开发环境 IntelliJ IDEA Configuration\r新建一个 Java Enterprise 项目，下面 Application Server 选择新建，">
+<title>JSP 简单入门与 IDEA 开发环境配置</title>
+
+<link rel='canonical' href='https://yaoxiaoxie.github.io/p/jsp/'>
+
+<link rel="stylesheet" href="/scss/style.min.e8c7fca7d1c9294aa7a4f3426c225ee26540f7d94e39be0b5a4a5c8a49ca5a25.css"><meta property='og:title' content="JSP 简单入门与 IDEA 开发环境配置">
+<meta property='og:description' content="JSP 简单入门与 IDEA 开发环境配置 在学 Java 连接数据库时老师提到过 JSP，刚好这个学期有 JSP 的课程，现做一些基础以及环境配置的介绍。 什么是 JSP？\r动态网页技术标准 能把 Java 代码嵌入静态的页面中 JSP 编译器把 JSP 文件编译成 Java 写的 Servlet(服务器端程序)，再交由 Java 编译器 1 2 3 4 5 6 &lt;html&gt; &lt;title&gt;Hello world!&lt;/title&gt; &lt;body&gt; &lt;%=out.println(&#34;Hello world!&#34;)%&gt; &lt;/body&gt; &lt;/html&gt; 环境配置\r语言环境：JDK 网页服务器：Tomcat，安装教程 IDE：IntelliJ IDEA / Eclipse 前两点非常简单不再赘述。 老师竟然说 JSP 没什么好用的编辑器只能在 Eclipse 中写（黑人问号 明明 IDEA 就很好&hellip;. 这里记录一下 IDEA 如何配置 JSP 的开发环境 IntelliJ IDEA Configuration\r新建一个 Java Enterprise 项目，下面 Application Server 选择新建，">
+<meta property='og:url' content='https://yaoxiaoxie.github.io/p/jsp/'>
+<meta property='og:site_name' content='yaoxieの自留地'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-09-01T23:37:54&#43;08:00'/><meta property='article:modified_time' content='2024-09-01T23:37:54&#43;08:00'/><meta property='og:image' content='https://yaoxiaoxie.github.io/img/face1.jpg' />
+<meta name="twitter:title" content="JSP 简单入门与 IDEA 开发环境配置">
+<meta name="twitter:description" content="JSP 简单入门与 IDEA 开发环境配置 在学 Java 连接数据库时老师提到过 JSP，刚好这个学期有 JSP 的课程，现做一些基础以及环境配置的介绍。 什么是 JSP？\r动态网页技术标准 能把 Java 代码嵌入静态的页面中 JSP 编译器把 JSP 文件编译成 Java 写的 Servlet(服务器端程序)，再交由 Java 编译器 1 2 3 4 5 6 &lt;html&gt; &lt;title&gt;Hello world!&lt;/title&gt; &lt;body&gt; &lt;%=out.println(&#34;Hello world!&#34;)%&gt; &lt;/body&gt; &lt;/html&gt; 环境配置\r语言环境：JDK 网页服务器：Tomcat，安装教程 IDE：IntelliJ IDEA / Eclipse 前两点非常简单不再赘述。 老师竟然说 JSP 没什么好用的编辑器只能在 Eclipse 中写（黑人问号 明明 IDEA 就很好&hellip;. 这里记录一下 IDEA 如何配置 JSP 的开发环境 IntelliJ IDEA Configuration\r新建一个 Java Enterprise 项目，下面 Application Server 选择新建，"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://yaoxiaoxie.github.io/img/face1.jpg' />
+  
+
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            localStorage.setItem(colorSchemeKey, "light");
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hucd20dfa91e6ad431c0e1f4d781618f9d_72105_300x0_resize_box_1.gif" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🥝</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">yaoxieの自留地</a></h1>
+            <h2 class="site-description">浮生茫茫.</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/yaoxiaoxie'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/jsp/">
+                
+                    <img src="/img/face1.jpg" loading="lazy" alt="Featured image of post JSP 简单入门与 IDEA 开发环境配置" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/jsp/" >
+                JSP
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/jsp/">JSP 简单入门与 IDEA 开发环境配置</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Sep 01, 2024</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 3 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p><code>JSP 简单入门与 IDEA 开发环境配置</code></p>
+<p>在学 Java 连接数据库时老师提到过 JSP，刚好这个学期有 JSP 的课程，现做一些基础以及环境配置的介绍。</p>
+<h1 id="什么是-jsp">什么是 JSP？
+</h1><ul>
+<li>动态网页技术标准</li>
+<li>能把 Java 代码嵌入静态的页面中</li>
+<li>JSP 编译器把 JSP 文件编译成 Java 写的 <code>Servlet(服务器端程序)</code>，再交由 Java 编译器</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;html&gt;
+</span></span><span class="line"><span class="cl">    &lt;title&gt;Hello world!&lt;/title&gt;
+</span></span><span class="line"><span class="cl">    &lt;body&gt;
+</span></span><span class="line"><span class="cl">        &lt;%=out.println(&#34;Hello world!&#34;)%&gt;
+</span></span><span class="line"><span class="cl">    &lt;/body&gt;
+</span></span><span class="line"><span class="cl">&lt;/html&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="环境配置">环境配置
+</h1><ul>
+<li>语言环境：JDK</li>
+<li>网页服务器：Tomcat，安装教程</li>
+<li>IDE：IntelliJ IDEA / Eclipse</li>
+</ul>
+<p>前两点非常简单不再赘述。</p>
+<p>老师竟然说 JSP 没什么好用的编辑器只能在 Eclipse 中写（黑人问号</p>
+<p>明明 IDEA 就很好&hellip;.</p>
+<p>这里记录一下 IDEA 如何配置 JSP 的开发环境</p>
+<h1 id="intellij-idea-configuration">IntelliJ IDEA Configuration
+</h1><ul>
+<li>
+<p>新建一个 Java Enterprise 项目，下面 Application Server 选择新建，</p>
+<p>选择 Tomcat Server，设置 Tomcat Home (安装目录)</p>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">这里需要注意 IDEA 可能会没有权限访问 Tomcat 的目录，导致无法读取 Tomcat，需要手动访问一次该目录提权：
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">* Windows：资源管理器直接访问，会提示需要管理员权限，点继续就 OK 了
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">* Linux：chmod 777
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>下面 Additional Libraries and Frameworks 选择 Web Application，</p>
+<p>点 Next，改名创建，得到如下图所示结构的项目</p>
+</li>
+<li>
+<p>打开 index.jsp</p>
+<p>打开右上角 Edit Configuration</p>
+<p>选择 Application server</p>
+<p>URL 一般是：http://localhost:8080/demo_war_exploded/</p>
+<p>其中 demo 为项目名字，_war_exploded 为自动生成的后缀，需要保留</p>
+</li>
+<li>
+<p>打开 Deployment，界面应如下图</p>
+<p>如果这个 war_exploded 没有出现在里面的话点击右边加号自己加进去</p>
+</li>
+<li>
+<p>简单写一下 index.jsp</p>
+<p>比如下面实现了一个简单的 Hello world 的页面</p>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;html&gt;
+</span></span><span class="line"><span class="cl">    &lt;title&gt;Hello world!&lt;/title&gt;
+</span></span><span class="line"><span class="cl">    &lt;body&gt;
+</span></span><span class="line"><span class="cl">        &lt;%=out.println(&#34;Hello world!&#34;)%&gt;
+</span></span><span class="line"><span class="cl">    &lt;/body&gt;
+</span></span><span class="line"><span class="cl">&lt;/html&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>点击右上角 Run，开始运行
+<code>update：21.9.22</code></li>
+</ul>
+<p>切回至“Server”，在“Open Browser”设置里，</p>
+<p>建议勾选上“After Launch”，意思为当启动TomCat后，自动打开浏览器并运行项目，此时同样可以在别的浏览器手动输入地址进行访问。</p>
+<p>建议将<code>“On 'Update' action”</code>和<code>“On frame deactivation”</code>设置为<code>“Update classes and resources”</code>，这样当修改项目内容时会自动更新字节码文件和资源文件，避免反复重启TomCat服务器：</p>
+<h1 id="question--solution">Question &amp; Solution
+</h1><p>运行之后会大概率出现以下问题，不要问我怎么知道的…</p>
+<ul>
+<li>端口超界，不能为 - 1</li>
+</ul>
+<p>原因：Tomcat 安装的默认 Shutdown 端口为 - 1，需要修改一下</p>
+<p>解决：打开 Tomcat 安装目录下的 server.xml，类似如下路径</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">C:\Program Files\apache-tomcat-8.5.71-windows-x64\apache-tomcat-8.5.71\conf\server.xml
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>修改<code>shutdown port</code>为任一未被占用的端口 (1024 - 65535)，如<code>8005</code>位置</p>
+<ul>
+<li>端口 8080 已被占用</li>
+</ul>
+<p>原因：Tomcat 运行中并占用了 8080 端口</p>
+<p>解决：打开刚才的 Edit Configuration，修改 Tomcat Server Settings 中的 HTTP port 为任一未被占用的端口 (1024 - 65535)，如”8088”，同时别忘修改上面的 URL 的端口</p>
+<ul>
+<li>output 输出乱码</li>
+</ul>
+<p>原因：Tomcat 根据你的操作系统默认语言使用了 GBK 编码</p>
+<p>解决：打开 Tomcat 安装目录下的 <code>logging.properties</code>，类似如下路径</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">C:\Program Files\apache-tomcat-8.5.71-windows-x64\apache-tomcat-8.5.71\conf\logging.properties
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>修改大约第 47 行的</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">java.util.logging.ConsoleHandler.encoding = UTF-8
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>为</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">java.util.logging.ConsoleHandler.encoding = GBK
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>打开网页 404</li>
+</ul>
+<p>原因：URL 写错了，定位不到文件</p>
+<p>解决：Edit Configuration 中检查一下 URL 是否与端口设置一致，是否正确定位了文件路径</p>
+<ul>
+<li>输出一堆红色字</li>
+</ul>
+<p>正常现象，开发者选色鬼才</p>
+<ul>
+<li>网页调试的方法</li>
+</ul>
+<p>运行之后修改了代码，怎么才能重新看到修改后的网页呢？</p>
+<p>无需终止 Tomcat 重新运行，只需在左下这个位置点击 Deploy，然后刷新网页就可以啦</p>
+<p><img src="/JSP1.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="20210917213934"
+	
+	
+></p>
+<p>如果没有问题此时应该可以正确运行啦，开始在 IDE 中愉快的写 JSP 吧（雾</p>
+<p>基本语法
+因为了解不深，详细的就不多说了。</p>
+<p>除了特别的这几个，其他的都和 HTML 与 Java 语法规则差不多。</p>
+<p>脚本
+&lt;%
+//在这里编写你的Java代码
+%&gt;
+任何文本、HTML 标签、JSP 元素必须写在脚本程序的外面</p>
+<p>声明
+&lt;%!
+//Java
+%&gt;
+用于声明变量、方法，要写函数只能在这里面</p>
+<p>必须先声明才可以使用</p>
+<p>表达式
+&lt;%= //Java %&gt;
+表达式里面的代码可以不写分号</p>
+<p>注释
+&lt;%&ndash; 该部分注释在网页中不会被显示 &ndash;%&gt;</p>
+<!-- 该部分注释在网页源代码中会被显示 --> 
+<p>指令
+&lt;%@ page 页面属性 %&gt;
+&lt;%@ include 包含文件 %&gt;
+&lt;%@ taglib 标签 %&gt;
+模板
+&lt;%@ page language=&ldquo;java&rdquo; contentType=&ldquo;text/html; charset=UTF-8&rdquo; pageEncoding=&ldquo;UTF-8&rdquo; %&gt;</p>
+<!--导入的Java包-->
+<html>
+<head>
+    <title>网页标题</title>
+</head>
+<body>
+<p>&lt;%!
+//定义变量
+%&gt;</p>
+<p>&lt;%!
+//定义函数
+%&gt;</p>
+<p>&lt;%
+//脚本
+%&gt;</p>
+<!-- 在这里定义其他网页上展示的组件 -->
+</body>
+</html>
+示例：计算 N 的阶乘
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Calc</title>
+</head>
+<body>
+<div style="text-align: center;"/>
+<h1>
+  Calculate N!
+</h1>
+<!--*.jsp-->
+<form action="index.jsp"/>
+<input type="number" name="num"/><br/><br/>
+<input type="submit"/><br/><br/>
+<form/>
+<p>&lt;%!
+private int n = -1;
+%&gt;
+&lt;%!
+public int fac(int n) {
+if (n &lt; 0) {
+return n;
+} else if (n == 0) {
+return 1;
+} else {
+int product = 1;
+for (int i = 1; i &lt;= n; i++) {
+product *= i;
+if (product &lt; 0) {
+break;
+}
+}
+return product;
+}
+}
+%&gt;
+&lt;%
+try {
+int n = fac(Integer.parseInt(request.getParameter(&ldquo;num&rdquo;)));
+if (n &lt; 0) {
+out.print(&quot;<h2>invalid</h2>&quot;);
+} else {
+out.print(&quot;<h2>&quot;+n+&quot;</h2>&quot;);
+}
+} catch (Exception e) {
+//ignore java.lang.NumberFormatException: null
+}
+%&gt;</p>
+</body>
+</html>
+示例：数据库查询系统
+依赖包：mysql-connector-java-5.1.*.jar
+可能需要将 jar 包拷贝到项目路径下的 WEB-INF/lib 中（不存在就新建）
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.sql.*" %>
+<%@ page import="java.io.*" %>
+<html>
+<head>
+    <title>Database Query System</title>
+</head>
+<body>
+<div style="text-align: center;">
+    <h1>Database Query System</h1>
+    <h2>powered by bipy</h2><br/>
+    <form method="post">
+        <textarea name="SQL_statement" rows=10 cols=100></textarea><br/>
+        <input type="submit" name="Submit"/>
+        <input type="reset" name="Clear"/>
+    </form>
+</div>
+<br/>
+</body>
+<%!
+    private Statement statement;
+    private String sql_input;
+    private Connection connection;
+    private boolean status = false;
+%>
+<%!
+    //判断SQL语句类型，并返回结果（影响个数/报错/结果集）
+    public Object process(String sql) {
+        try {
+            if (sql.toLowerCase().matches("^(update|create|use|drop|delete|insert).*$")) {
+                return statement.executeUpdate(sql);
+            } else if (sql.toLowerCase().matches("^(show|select).*$")) {
+                return statement.executeQuery(sql);
+            } else {
+                return "Not Supported";
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return "SQL syntax error";
+        }
+    }
+%>
+<%
+    try {
+        //避免重新建立连接而丢弃前面步骤
+        if (!status) {
+            Class.forName("com.mysql.jdbc.Driver");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost", "root", "123");
+            statement = connection.createStatement();
+            status = true;
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+%>
+<div style="text-align: center">
+    <%
+    	//结果输出
+        sql_input = request.getParameter("SQL_statement");
+        if (sql_input != null) {
+            Object rt = process(sql_input);
+            if (rt instanceof String) {
+                out.print("<h2>" + rt.toString() + "</h2>");
+            } else if (rt instanceof Integer) {
+                out.print("<h2>" + "Query OK. " + rt + " effected." + "</h2>");
+            } else {
+                ResultSet rs = (ResultSet) rt;
+                ResultSetMetaData rsmd = rs.getMetaData();
+                out.println("<table align=\"center\" border=\"1\">");
+                out.println("<tr>");
+                for (int i = 1; i <= rsmd.getColumnCount(); ++i)
+                    out.println("<th>" + rsmd.getColumnName(i) + "</th>");
+                out.println("<tr>");
+                while (rs.next()) {
+                    out.println("<tr>");
+                    for (int i = 1; i <= rsmd.getColumnCount(); ++i)
+                        out.println("<td>" + rs.getString(i) + "</td>");
+                    out.println("</tr>");
+                }
+                out.println("</table>");
+            }
+        }
+    %>
+</div>
+</html>
+posted @ 2021-09-17 21:41  RioTian  阅读(2184)  评论(0)  编辑  收藏  举报
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2024 yaoxieの孤岛
+    </section>
+    
+    <section class="powerby">
+        
+            Good Morning, and in case I don't see you, good afternoon, good evening, and good night! <br/>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a  target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> 由 <a  target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

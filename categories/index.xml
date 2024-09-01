@@ -7,7 +7,15 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>yaoxieの孤岛</copyright>
-        <lastBuildDate>Sun, 01 Sep 2024 18:21:40 +0800</lastBuildDate><atom:link href="https://yaoxiaoxie.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 01 Sep 2024 23:37:54 +0800</lastBuildDate><atom:link href="https://yaoxiaoxie.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>JSP</title>
+        <link>https://yaoxiaoxie.github.io/categories/jsp/</link>
+        <pubDate>Sun, 01 Sep 2024 23:37:54 +0800</pubDate>
+        
+        <guid>https://yaoxiaoxie.github.io/categories/jsp/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Tomcat</title>
         <link>https://yaoxiaoxie.github.io/categories/tomcat/</link>
         <pubDate>Sun, 01 Sep 2024 18:21:40 +0800</pubDate>
@@ -85,6 +93,14 @@
         <pubDate>Thu, 31 Aug 2023 06:00:00 +0800</pubDate>
         
         <guid>https://yaoxiaoxie.github.io/categories/%E5%BF%83%E5%BE%97/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>测试</title>
+        <link>https://yaoxiaoxie.github.io/categories/%E6%B5%8B%E8%AF%95/</link>
+        <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://yaoxiaoxie.github.io/categories/%E6%B5%8B%E8%AF%95/</guid>
         <description></description>
         </item>
         <item>
