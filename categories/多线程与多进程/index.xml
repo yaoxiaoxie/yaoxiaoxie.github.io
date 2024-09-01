@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>多线程与多进程 on yaoxieの自留地</title>
-        <link>http://localhost:1313/categories/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B/</link>
+        <link>https://yaoxiaoxie.github.io/categories/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B/</link>
         <description>Recent content in 多线程与多进程 on yaoxieの自留地</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>yaoxieの孤岛</copyright>
-        <lastBuildDate>Wed, 28 Aug 2024 14:22:47 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 28 Aug 2024 14:22:47 +0800</lastBuildDate><atom:link href="https://yaoxiaoxie.github.io/categories/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>多线程与多进程</title>
-        <link>http://localhost:1313/p/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B/</link>
+        <link>https://yaoxiaoxie.github.io/p/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B/</link>
         <pubDate>Wed, 28 Aug 2024 14:22:47 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B/</guid>
-        <description>&lt;img src="http://localhost:1313/img/face1.jpg" alt="Featured image of post 多线程与多进程" /&gt;&lt;h1 id=&#34;多线程与多进程&#34;&gt;多线程与多进程
+        <guid>https://yaoxiaoxie.github.io/p/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B/</guid>
+        <description>&lt;img src="https://yaoxiaoxie.github.io/img/face1.jpg" alt="Featured image of post 多线程与多进程" /&gt;&lt;h1 id=&#34;多线程与多进程&#34;&gt;多线程与多进程
 &lt;/h1&gt;&lt;h2 id=&#34;一-什么是进程-什么是线程&#34;&gt;一, 什么是进程, 什么是线程?
 &lt;/h2&gt;&lt;p&gt;​		进程: 运行中的程序. 每次我们执行一个程序, 咱们的操作系统对自动的为这个程序准备一些必要的资源(例如, 分配内存, 创建一个能够执行的线程. )&lt;/p&gt;
 &lt;p&gt;​		线程: 程序内, 可以直接被CPU调度的执行过程. 是操作系统能够进行运算调度的最小单位. 它被包含在进程之中, 是进程中的实际运作单位.&lt;/p&gt;

@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Tomcat安装及配置\r安装\r网址：Tomcat官网 选择版本：点击左边Download下的which version，根据Supported Java Versions来选择合适的Tomcat版本 Tomcat官网首页 下载软件：点击左边Download下的具体版本，如：Tomcat 9。滑动至页面底部，在Core区域根据windows版本进行选择。 配置\r配置Tomcat环境变量前一定要配置好java的环境变量，尤其是JAVA_HOME 以下环境变量均在系统环境变量中设置。 新建 CATALINA_HOME 环境变量，变量：CATALINA_HOME 值：D:\\DevelopmentTool\\apache-tomcat-9.0.43 修改 Path ，在 Path 后添加(新建)：%CATALINA_HOME%\\lib、%CATALINA_HOME%\\bin、%CATALINA_HOME%\\lib\\servlet-api.jar环境变量中，环境变量名对大小写不敏感，可将CATALINA_HOME小写，但需要保持一致. 注意：在环境变量中，如果新建有两个相同仅大小写不同的的变量名，会覆盖设置。如：path和PATH Tomcat文件目录\rbin：可执行文件（启动文件startup.bat、关闭文件shutdown.bat） conf：配置文件（修改端口号：server.xml，建议将server.xml备份） lib：依赖的jar包 log：日志文件（记录出错等信息） temp：临时文件 webapps：可执行的项目。默认作为存放开发项目的目录 work：存放由jsp翻译成的.java源文件,以及编译的.class字节码文件(jsp -&gt;java -&gt;class) 启动Tomcat\r方法一：在.\\apache-tomcat-9.0.43\\bin目录下，双击startup.bat打开窗口，双击 shutdown.bat关闭窗口。 如果点startup.bat窗口的×直接关闭，可能会造成关闭异常 方法二：通过命令行窗口打开。cmd命令cd到.\\apache-tomcat-9.0.43\\bin，然后输入命令：startup，出现对话框，表明服务启动成功。 常见问题\r1.闪退\r可能原因是：环境变量配置不正确 JAVA_HOME中的路径不能用分号结尾，如C:\\Program Files\\Java\\jdk1.8.0_121 JAVA_HOME的路径是JDK路径，而不是JRE的路径。 CATALINA_HOME中的路径不能以\\结尾。 在环境变量中修改添加变量时，一定要注意分号、空格，是否有多余的字母。 2. 乱码\r问题描述：打开startup.bat后汉字乱码 解决方法：在.\\apache-tomcat-9.0.43\\conf下打开logging.properties文件 将java.util.logging.ConsoleHandler.encoding = UTF-8 替换为java.util.logging.ConsoleHandler.encoding = GBK Tomcat乱码界面\r1. 与其他服务的端口号冲突\rtomcat端口号默认8080，如果和其他服务的端口号冲突，则可对端口号进行修改 在.\\apache-tomcat-9.0.43\\conf下打开server.xml文件，在文件的69行左右，将port=&ldquo;8080&quot;修改为指定的某一端口号，重新启动。 &lt;Connector port=&quot;8080&quot; protocol=&quot;HTTP/1.1&quot; connectionTimeout=&quot;20000&quot; redirectPort=&quot;8443&quot; /&gt; 访问Tomcat\r先打开startup.bat，再打开浏览器，在地址栏中输入http://localhost:8080或localhost:8080回车，如果看到Tomcat自带的一个JSP页面，说明JDK和Tomcat已搭建成功。 http://localhost:8080是完整形式，但大多数浏览器会自动添加前面的’http://’ 浏览器中访问Tomcat，此页面在webapps文件中，默认为ROOT文件夹">
+<title>Tomcat安装与问题解决</title>
+
+<link rel='canonical' href='https://yaoxiaoxie.github.io/p/tomcat/'>
+
+<link rel="stylesheet" href="/scss/style.min.e8c7fca7d1c9294aa7a4f3426c225ee26540f7d94e39be0b5a4a5c8a49ca5a25.css"><meta property='og:title' content="Tomcat安装与问题解决">
+<meta property='og:description' content="Tomcat安装及配置\r安装\r网址：Tomcat官网 选择版本：点击左边Download下的which version，根据Supported Java Versions来选择合适的Tomcat版本 Tomcat官网首页 下载软件：点击左边Download下的具体版本，如：Tomcat 9。滑动至页面底部，在Core区域根据windows版本进行选择。 配置\r配置Tomcat环境变量前一定要配置好java的环境变量，尤其是JAVA_HOME 以下环境变量均在系统环境变量中设置。 新建 CATALINA_HOME 环境变量，变量：CATALINA_HOME 值：D:\\DevelopmentTool\\apache-tomcat-9.0.43 修改 Path ，在 Path 后添加(新建)：%CATALINA_HOME%\\lib、%CATALINA_HOME%\\bin、%CATALINA_HOME%\\lib\\servlet-api.jar环境变量中，环境变量名对大小写不敏感，可将CATALINA_HOME小写，但需要保持一致. 注意：在环境变量中，如果新建有两个相同仅大小写不同的的变量名，会覆盖设置。如：path和PATH Tomcat文件目录\rbin：可执行文件（启动文件startup.bat、关闭文件shutdown.bat） conf：配置文件（修改端口号：server.xml，建议将server.xml备份） lib：依赖的jar包 log：日志文件（记录出错等信息） temp：临时文件 webapps：可执行的项目。默认作为存放开发项目的目录 work：存放由jsp翻译成的.java源文件,以及编译的.class字节码文件(jsp -&gt;java -&gt;class) 启动Tomcat\r方法一：在.\\apache-tomcat-9.0.43\\bin目录下，双击startup.bat打开窗口，双击 shutdown.bat关闭窗口。 如果点startup.bat窗口的×直接关闭，可能会造成关闭异常 方法二：通过命令行窗口打开。cmd命令cd到.\\apache-tomcat-9.0.43\\bin，然后输入命令：startup，出现对话框，表明服务启动成功。 常见问题\r1.闪退\r可能原因是：环境变量配置不正确 JAVA_HOME中的路径不能用分号结尾，如C:\\Program Files\\Java\\jdk1.8.0_121 JAVA_HOME的路径是JDK路径，而不是JRE的路径。 CATALINA_HOME中的路径不能以\\结尾。 在环境变量中修改添加变量时，一定要注意分号、空格，是否有多余的字母。 2. 乱码\r问题描述：打开startup.bat后汉字乱码 解决方法：在.\\apache-tomcat-9.0.43\\conf下打开logging.properties文件 将java.util.logging.ConsoleHandler.encoding = UTF-8 替换为java.util.logging.ConsoleHandler.encoding = GBK Tomcat乱码界面\r1. 与其他服务的端口号冲突\rtomcat端口号默认8080，如果和其他服务的端口号冲突，则可对端口号进行修改 在.\\apache-tomcat-9.0.43\\conf下打开server.xml文件，在文件的69行左右，将port=&ldquo;8080&quot;修改为指定的某一端口号，重新启动。 &lt;Connector port=&quot;8080&quot; protocol=&quot;HTTP/1.1&quot; connectionTimeout=&quot;20000&quot; redirectPort=&quot;8443&quot; /&gt; 访问Tomcat\r先打开startup.bat，再打开浏览器，在地址栏中输入http://localhost:8080或localhost:8080回车，如果看到Tomcat自带的一个JSP页面，说明JDK和Tomcat已搭建成功。 http://localhost:8080是完整形式，但大多数浏览器会自动添加前面的’http://’ 浏览器中访问Tomcat，此页面在webapps文件中，默认为ROOT文件夹">
+<meta property='og:url' content='https://yaoxiaoxie.github.io/p/tomcat/'>
+<meta property='og:site_name' content='yaoxieの自留地'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-09-01T18:21:40&#43;08:00'/><meta property='article:modified_time' content='2024-09-01T18:21:40&#43;08:00'/><meta property='og:image' content='https://yaoxiaoxie.github.io/img/face1.jpg' />
+<meta name="twitter:title" content="Tomcat安装与问题解决">
+<meta name="twitter:description" content="Tomcat安装及配置\r安装\r网址：Tomcat官网 选择版本：点击左边Download下的which version，根据Supported Java Versions来选择合适的Tomcat版本 Tomcat官网首页 下载软件：点击左边Download下的具体版本，如：Tomcat 9。滑动至页面底部，在Core区域根据windows版本进行选择。 配置\r配置Tomcat环境变量前一定要配置好java的环境变量，尤其是JAVA_HOME 以下环境变量均在系统环境变量中设置。 新建 CATALINA_HOME 环境变量，变量：CATALINA_HOME 值：D:\\DevelopmentTool\\apache-tomcat-9.0.43 修改 Path ，在 Path 后添加(新建)：%CATALINA_HOME%\\lib、%CATALINA_HOME%\\bin、%CATALINA_HOME%\\lib\\servlet-api.jar环境变量中，环境变量名对大小写不敏感，可将CATALINA_HOME小写，但需要保持一致. 注意：在环境变量中，如果新建有两个相同仅大小写不同的的变量名，会覆盖设置。如：path和PATH Tomcat文件目录\rbin：可执行文件（启动文件startup.bat、关闭文件shutdown.bat） conf：配置文件（修改端口号：server.xml，建议将server.xml备份） lib：依赖的jar包 log：日志文件（记录出错等信息） temp：临时文件 webapps：可执行的项目。默认作为存放开发项目的目录 work：存放由jsp翻译成的.java源文件,以及编译的.class字节码文件(jsp -&gt;java -&gt;class) 启动Tomcat\r方法一：在.\\apache-tomcat-9.0.43\\bin目录下，双击startup.bat打开窗口，双击 shutdown.bat关闭窗口。 如果点startup.bat窗口的×直接关闭，可能会造成关闭异常 方法二：通过命令行窗口打开。cmd命令cd到.\\apache-tomcat-9.0.43\\bin，然后输入命令：startup，出现对话框，表明服务启动成功。 常见问题\r1.闪退\r可能原因是：环境变量配置不正确 JAVA_HOME中的路径不能用分号结尾，如C:\\Program Files\\Java\\jdk1.8.0_121 JAVA_HOME的路径是JDK路径，而不是JRE的路径。 CATALINA_HOME中的路径不能以\\结尾。 在环境变量中修改添加变量时，一定要注意分号、空格，是否有多余的字母。 2. 乱码\r问题描述：打开startup.bat后汉字乱码 解决方法：在.\\apache-tomcat-9.0.43\\conf下打开logging.properties文件 将java.util.logging.ConsoleHandler.encoding = UTF-8 替换为java.util.logging.ConsoleHandler.encoding = GBK Tomcat乱码界面\r1. 与其他服务的端口号冲突\rtomcat端口号默认8080，如果和其他服务的端口号冲突，则可对端口号进行修改 在.\\apache-tomcat-9.0.43\\conf下打开server.xml文件，在文件的69行左右，将port=&ldquo;8080&quot;修改为指定的某一端口号，重新启动。 &lt;Connector port=&quot;8080&quot; protocol=&quot;HTTP/1.1&quot; connectionTimeout=&quot;20000&quot; redirectPort=&quot;8443&quot; /&gt; 访问Tomcat\r先打开startup.bat，再打开浏览器，在地址栏中输入http://localhost:8080或localhost:8080回车，如果看到Tomcat自带的一个JSP页面，说明JDK和Tomcat已搭建成功。 http://localhost:8080是完整形式，但大多数浏览器会自动添加前面的’http://’ 浏览器中访问Tomcat，此页面在webapps文件中，默认为ROOT文件夹"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://yaoxiaoxie.github.io/img/face1.jpg' />
+  
+
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            localStorage.setItem(colorSchemeKey, "light");
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hucd20dfa91e6ad431c0e1f4d781618f9d_72105_300x0_resize_box_1.gif" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🥝</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">yaoxieの自留地</a></h1>
+            <h2 class="site-description">浮生茫茫.</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/yaoxiaoxie'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#安装">安装</a></li>
+    <li><a href="#配置">配置</a></li>
+    <li><a href="#tomcat文件目录">Tomcat文件目录</a></li>
+    <li><a href="#启动tomcat">启动Tomcat</a></li>
+    <li><a href="#常见问题">常见问题</a>
+      <ol>
+        <li><a href="#1闪退">1.闪退</a></li>
+        <li><a href="#2-乱码">2. 乱码</a></li>
+        <li><a href="#tomcat乱码界面">Tomcat乱码界面</a>
+          <ol>
+            <li><a href="#1-与其他服务的端口号冲突">1. 与其他服务的端口号冲突</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#访问tomcat">访问Tomcat</a>
+      <ol>
+        <li><a href="#无法在浏览器中访问tomcat">无法在浏览器中访问Tomcat</a></li>
+        <li><a href="#常见状态码">常见状态码</a></li>
+      </ol>
+    </li>
+    <li><a href="#卸载tomcat">卸载Tomcat</a></li>
+    <li><a href="#解决tomcat运行startupbat-闪退问题">解决Tomcat运行startup.bat 闪退问题</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/tomcat/">
+                
+                    <img src="/img/face1.jpg" loading="lazy" alt="Featured image of post Tomcat安装与问题解决" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/tomcat/" >
+                Tomcat
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/tomcat/">Tomcat安装与问题解决</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Sep 01, 2024</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 1 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="tomcat安装及配置">Tomcat安装及配置
+</h1><h2 id="安装">安装
+</h2><p>网址：Tomcat官网</p>
+<p>选择版本：点击左边Download下的which version，根据Supported Java Versions来选择合适的Tomcat版本</p>
+<p>Tomcat官网首页</p>
+<p>下载软件：点击左边Download下的具体版本，如：Tomcat 9。滑动至页面底部，在Core区域根据windows版本进行选择。</p>
+<h2 id="配置">配置
+</h2><p>配置Tomcat环境变量前一定要配置好java的环境变量，尤其是JAVA_HOME</p>
+<p>以下环境变量均在系统环境变量中设置。</p>
+<p>新建 CATALINA_HOME 环境变量，变量：CATALINA_HOME 值：<code>D:\DevelopmentTool\apache-tomcat-9.0.43</code></p>
+<p>修改 Path ，在 Path 后添加(新建)：<code>%CATALINA_HOME%\lib</code>、<code>%CATALINA_HOME%\bin</code>、<code>%CATALINA_HOME%\lib\servlet-api.jar</code>环境变量中，环境变量名对大小写不敏感，可将CATALINA_HOME小写，但需要保持一致.</p>
+<p>注意：在环境变量中，如果新建有两个相同仅大小写不同的的变量名，会覆盖设置。如：path和PATH</p>
+<h2 id="tomcat文件目录">Tomcat文件目录
+</h2><p>bin：可执行文件（启动文件startup.bat、关闭文件shutdown.bat）</p>
+<p>conf：配置文件（修改端口号：server.xml，建议将server.xml备份）</p>
+<p>lib：依赖的jar包</p>
+<p>log：日志文件（记录出错等信息）</p>
+<p>temp：临时文件</p>
+<p>webapps：可执行的项目。默认作为存放开发项目的目录</p>
+<p>work：存放由jsp翻译成的.java源文件,以及编译的.class字节码文件(jsp -&gt;java -&gt;class)</p>
+<h2 id="启动tomcat">启动Tomcat
+</h2><p>方法一：在.\apache-tomcat-9.0.43\bin目录下，双击startup.bat打开窗口，双击
+shutdown.bat关闭窗口。</p>
+<p>如果点startup.bat窗口的×直接关闭，可能会造成关闭异常</p>
+<p>方法二：通过命令行窗口打开。cmd命令cd到.\apache-tomcat-9.0.43\bin，然后输入命令：startup，出现对话框，表明服务启动成功。</p>
+<h2 id="常见问题">常见问题
+</h2><h3 id="1闪退">1.闪退
+</h3><p>可能原因是：环境变量配置不正确</p>
+<p>JAVA_HOME中的路径不能用分号结尾，如C:\Program Files\Java\jdk1.8.0_121</p>
+<p>JAVA_HOME的路径是JDK路径，而不是JRE的路径。</p>
+<p>CATALINA_HOME中的路径不能以\结尾。</p>
+<p>在环境变量中修改添加变量时，一定要注意分号、空格，是否有多余的字母。</p>
+<h3 id="2-乱码">2. 乱码
+</h3><p>问题描述：打开startup.bat后汉字乱码</p>
+<p>解决方法：在.\apache-tomcat-9.0.43\conf下打开logging.properties文件</p>
+<p>将java.util.logging.ConsoleHandler.encoding = UTF-8</p>
+<p>替换为java.util.logging.ConsoleHandler.encoding = GBK</p>
+<h3 id="tomcat乱码界面">Tomcat乱码界面
+</h3><h4 id="1-与其他服务的端口号冲突">1. 与其他服务的端口号冲突
+</h4><p>tomcat端口号默认8080，如果和其他服务的端口号冲突，则可对端口号进行修改</p>
+<p>在.\apache-tomcat-9.0.43\conf下打开server.xml文件，在文件的69行左右，将port=&ldquo;8080&quot;修改为指定的某一端口号，重新启动。</p>
+<pre><code>&lt;Connector port=&quot;8080&quot; protocol=&quot;HTTP/1.1&quot;
+           connectionTimeout=&quot;20000&quot;
+           redirectPort=&quot;8443&quot; /&gt;
+</code></pre>
+<h2 id="访问tomcat">访问Tomcat
+</h2><p>先打开startup.bat，再打开浏览器，在地址栏中输入http://localhost:8080或localhost:8080回车，如果看到Tomcat自带的一个JSP页面，说明JDK和Tomcat已搭建成功。</p>
+<p>http://localhost:8080是完整形式，但大多数浏览器会自动添加前面的’http://’
+浏览器中访问Tomcat，此页面在webapps文件中，默认为ROOT文件夹</p>
+<h3 id="无法在浏览器中访问tomcat">无法在浏览器中访问Tomcat
+</h3><p>检查./bin目录下startup.bat是否启动成功</p>
+<p>检查端口号是否正确</p>
+<p>更换浏览器重新访问</p>
+<p>检查环境变量是否正确</p>
+<h3 id="常见状态码">常见状态码
+</h3><p>200：一切正常</p>
+<p>300/301：页面重定向 （跳转）</p>
+<p>404：资源不存在</p>
+<p>403：权限不足 （如果访问a目录，但是a目录设置 不可见）</p>
+<p>500：服务器内部错误（代码有误）</p>
+<h2 id="卸载tomcat">卸载Tomcat
+</h2><p>直接删除Tomcat目录，并删除已配置的环境变量</p>
+<h2 id="解决tomcat运行startupbat-闪退问题">解决Tomcat运行startup.bat 闪退问题
+</h2><p>Tomcat 解压完成之后, 执行批处理文件startup.bat, 一直闪退, 网络上的大多数都是配置环境变量, 确定端口号是否被占用等</p>
+<p>但是实际上环境变量与端口号都没有问题却依然闪退, 此时可以在startup.bat文件的头部添加JDK安装根目录和Tomcat所在根目录:</p>
+<p><code>JAVA_HOME``TOMCAT_HOME</code></p>
+<p>根据个人的路径添加如下:
+<code>SET JAVA_HOME=E:\java\JDK</code>,
+<code>SET TOMCAT_HOME=E:\java\apache-tomcat-9.0.84</code></p>
+<p>要放在@echo off前面</p>
+<p>之后双击运行, 顺利启动:</p>
+<p>网站当然也可以正常进入:</p>
+<p>如果shutdown.bat执行也有闪退的问题, 解决方式与上面一直即可</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2024 yaoxieの孤岛
+    </section>
+    
+    <section class="powerby">
+        
+            Good Morning, and in case I don't see you, good afternoon, good evening, and good night! <br/>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a  target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> 由 <a  target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
