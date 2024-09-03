@@ -15,8 +15,8 @@
         <guid>https://yaoxiaoxie.github.io/p/jsp/</guid>
         <description>&lt;img src="https://yaoxiaoxie.github.io/img/face1.jpg" alt="Featured image of post JSP 简单入门与 IDEA 开发环境配置" /&gt;&lt;p&gt;&lt;code&gt;JSP 简单入门与 IDEA 开发环境配置&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;在学 Java 连接数据库时老师提到过 JSP，刚好这个学期有 JSP 的课程，现做一些基础以及环境配置的介绍。&lt;/p&gt;
-&lt;h1 id=&#34;什么是-jsp&#34;&gt;什么是 JSP？
-&lt;/h1&gt;&lt;ul&gt;
+&lt;h2 id=&#34;什么是-jsp&#34;&gt;什么是 JSP？
+&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;动态网页技术标准&lt;/li&gt;
 &lt;li&gt;能把 Java 代码嵌入静态的页面中&lt;/li&gt;
 &lt;li&gt;JSP 编译器把 JSP 文件编译成 Java 写的 &lt;code&gt;Servlet(服务器端程序)&lt;/code&gt;，再交由 Java 编译器&lt;/li&gt;
@@ -39,8 +39,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;/html&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h1 id=&#34;环境配置&#34;&gt;环境配置
-&lt;/h1&gt;&lt;ul&gt;
+&lt;/div&gt;&lt;h2 id=&#34;环境配置&#34;&gt;环境配置
+&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;语言环境：JDK&lt;/li&gt;
 &lt;li&gt;网页服务器：Tomcat，安装教程&lt;/li&gt;
 &lt;li&gt;IDE：IntelliJ IDEA / Eclipse&lt;/li&gt;
@@ -49,8 +49,8 @@
 &lt;p&gt;老师竟然说 JSP 没什么好用的编辑器只能在 Eclipse 中写（黑人问号&lt;/p&gt;
 &lt;p&gt;明明 IDEA 就很好&amp;hellip;.&lt;/p&gt;
 &lt;p&gt;这里记录一下 IDEA 如何配置 JSP 的开发环境&lt;/p&gt;
-&lt;h1 id=&#34;intellij-idea-configuration&#34;&gt;IntelliJ IDEA Configuration
-&lt;/h1&gt;&lt;ul&gt;
+&lt;h2 id=&#34;intellij-idea-configuration&#34;&gt;IntelliJ IDEA Configuration
+&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;新建一个 Java Enterprise 项目，下面 Application Server 选择新建，&lt;/p&gt;
 &lt;p&gt;选择 Tomcat Server，设置 Tomcat Home (安装目录)&lt;/p&gt;
@@ -118,8 +118,8 @@
 &lt;p&gt;切回至“Server”，在“Open Browser”设置里，&lt;/p&gt;
 &lt;p&gt;建议勾选上“After Launch”，意思为当启动TomCat后，自动打开浏览器并运行项目，此时同样可以在别的浏览器手动输入地址进行访问。&lt;/p&gt;
 &lt;p&gt;建议将&lt;code&gt;“On &#39;Update&#39; action”&lt;/code&gt;和&lt;code&gt;“On frame deactivation”&lt;/code&gt;设置为&lt;code&gt;“Update classes and resources”&lt;/code&gt;，这样当修改项目内容时会自动更新字节码文件和资源文件，避免反复重启TomCat服务器：&lt;/p&gt;
-&lt;h1 id=&#34;question--solution&#34;&gt;Question &amp;amp; Solution
-&lt;/h1&gt;&lt;p&gt;运行之后会大概率出现以下问题，不要问我怎么知道的…&lt;/p&gt;
+&lt;h2 id=&#34;question--solution&#34;&gt;Question &amp;amp; Solution
+&lt;/h2&gt;&lt;p&gt;运行之后会大概率出现以下问题，不要问我怎么知道的…&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;端口超界，不能为 - 1&lt;/li&gt;
 &lt;/ul&gt;
@@ -195,11 +195,11 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;如果没有问题此时应该可以正确运行啦，开始在 IDE 中愉快的写 JSP 吧（雾&lt;/p&gt;
-&lt;h1 id=&#34;基本语法&#34;&gt;基本语法
-&lt;/h1&gt;&lt;p&gt;因为了解不深，详细的就不多说了。&lt;/p&gt;
+&lt;h2 id=&#34;基本语法&#34;&gt;基本语法
+&lt;/h2&gt;&lt;p&gt;因为了解不深，详细的就不多说了。&lt;/p&gt;
 &lt;p&gt;除了特别的这几个，其他的都和 HTML 与 Java 语法规则差不多。&lt;/p&gt;
-&lt;h2 id=&#34;脚本&#34;&gt;脚本
-&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;h3 id=&#34;脚本&#34;&gt;脚本
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
@@ -212,8 +212,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;任何文本、HTML 标签、JSP 元素必须写在脚本程序的外面&lt;/p&gt;
-&lt;h2 id=&#34;声明&#34;&gt;声明
-&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;h3 id=&#34;声明&#34;&gt;声明
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
@@ -227,8 +227,8 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;用于声明变量、方法，要写函数只能在这里面&lt;/p&gt;
 &lt;p&gt;必须先声明才可以使用&lt;/p&gt;
-&lt;h2 id=&#34;表达式&#34;&gt;表达式
-&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;h3 id=&#34;表达式&#34;&gt;表达式
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
@@ -237,8 +237,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;表达式里面的代码可以不写分号&lt;/p&gt;
-&lt;h2 id=&#34;注释&#34;&gt;注释
-&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;h3 id=&#34;注释&#34;&gt;注释
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
@@ -250,8 +250,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;!-- 该部分注释在网页源代码中会被显示 --&amp;gt; 
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;指令&#34;&gt;指令
-&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;/div&gt;&lt;h3 id=&#34;指令&#34;&gt;指令
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
@@ -263,8 +263,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;%@ taglib 标签 %&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;模板&#34;&gt;模板
-&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;/div&gt;&lt;h3 id=&#34;模板&#34;&gt;模板
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
@@ -674,53 +674,55 @@
         <pubDate>Sun, 01 Sep 2024 18:21:40 +0800</pubDate>
         
         <guid>https://yaoxiaoxie.github.io/p/tomcat/</guid>
-        <description>&lt;img src="https://yaoxiaoxie.github.io/img/face1.jpg" alt="Featured image of post Tomcat安装与问题解决" /&gt;&lt;h1 id=&#34;tomcat安装及配置&#34;&gt;Tomcat安装及配置
-&lt;/h1&gt;&lt;h2 id=&#34;安装&#34;&gt;安装
-&lt;/h2&gt;&lt;p&gt;网址：Tomcat官网&lt;/p&gt;
+        <description>&lt;img src="https://yaoxiaoxie.github.io/img/face1.jpg" alt="Featured image of post Tomcat安装与问题解决" /&gt;&lt;h2 id=&#34;tomcat安装及配置&#34;&gt;Tomcat安装及配置
+&lt;/h2&gt;&lt;h3 id=&#34;安装&#34;&gt;安装
+&lt;/h3&gt;&lt;p&gt;网址：Tomcat官网&lt;/p&gt;
 &lt;p&gt;选择版本：点击左边Download下的which version，根据Supported Java Versions来选择合适的Tomcat版本&lt;/p&gt;
 &lt;p&gt;Tomcat官网首页&lt;/p&gt;
 &lt;p&gt;下载软件：点击左边Download下的具体版本，如：Tomcat 9。滑动至页面底部，在Core区域根据windows版本进行选择。&lt;/p&gt;
-&lt;h2 id=&#34;配置&#34;&gt;配置
-&lt;/h2&gt;&lt;p&gt;配置Tomcat环境变量前一定要配置好java的环境变量，尤其是JAVA_HOME&lt;/p&gt;
+&lt;h3 id=&#34;配置&#34;&gt;配置
+&lt;/h3&gt;&lt;p&gt;配置Tomcat环境变量前一定要配置好java的环境变量，尤其是JAVA_HOME&lt;/p&gt;
 &lt;p&gt;以下环境变量均在系统环境变量中设置。&lt;/p&gt;
 &lt;p&gt;新建 CATALINA_HOME 环境变量，变量：CATALINA_HOME 值：&lt;code&gt;D:\DevelopmentTool\apache-tomcat-9.0.43&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;修改 Path ，在 Path 后添加(新建)：&lt;code&gt;%CATALINA_HOME%\lib&lt;/code&gt;、&lt;code&gt;%CATALINA_HOME%\bin&lt;/code&gt;、&lt;code&gt;%CATALINA_HOME%\lib\servlet-api.jar&lt;/code&gt;环境变量中，环境变量名对大小写不敏感，可将CATALINA_HOME小写，但需要保持一致.&lt;/p&gt;
 &lt;p&gt;注意：在环境变量中，如果新建有两个相同仅大小写不同的的变量名，会覆盖设置。如：path和PATH&lt;/p&gt;
-&lt;h2 id=&#34;tomcat文件目录&#34;&gt;Tomcat文件目录
-&lt;/h2&gt;&lt;p&gt;bin：可执行文件（启动文件startup.bat、关闭文件shutdown.bat）&lt;/p&gt;
+&lt;h3 id=&#34;tomcat文件目录&#34;&gt;Tomcat文件目录
+&lt;/h3&gt;&lt;p&gt;bin：可执行文件（启动文件startup.bat、关闭文件shutdown.bat）&lt;/p&gt;
 &lt;p&gt;conf：配置文件（修改端口号：server.xml，建议将server.xml备份）&lt;/p&gt;
 &lt;p&gt;lib：依赖的jar包&lt;/p&gt;
 &lt;p&gt;log：日志文件（记录出错等信息）&lt;/p&gt;
 &lt;p&gt;temp：临时文件&lt;/p&gt;
 &lt;p&gt;webapps：可执行的项目。默认作为存放开发项目的目录&lt;/p&gt;
 &lt;p&gt;work：存放由jsp翻译成的.java源文件,以及编译的.class字节码文件(jsp -&amp;gt;java -&amp;gt;class)&lt;/p&gt;
-&lt;h2 id=&#34;启动tomcat&#34;&gt;启动Tomcat
-&lt;/h2&gt;&lt;p&gt;方法一：在.\apache-tomcat-9.0.43\bin目录下，双击startup.bat打开窗口，双击
+&lt;h3 id=&#34;启动tomcat&#34;&gt;启动Tomcat
+&lt;/h3&gt;&lt;p&gt;方法一：在.\apache-tomcat-9.0.43\bin目录下，双击startup.bat打开窗口，双击
 shutdown.bat关闭窗口。&lt;/p&gt;
 &lt;p&gt;如果点startup.bat窗口的×直接关闭，可能会造成关闭异常&lt;/p&gt;
 &lt;p&gt;方法二：通过命令行窗口打开。cmd命令cd到.\apache-tomcat-9.0.43\bin，然后输入命令：startup，出现对话框，表明服务启动成功。&lt;/p&gt;
 &lt;h2 id=&#34;常见问题&#34;&gt;常见问题
-&lt;/h2&gt;&lt;h3 id=&#34;1闪退&#34;&gt;1.闪退
+&lt;/h2&gt;&lt;h3 id=&#34;闪退&#34;&gt;闪退
 &lt;/h3&gt;&lt;p&gt;可能原因是：环境变量配置不正确&lt;/p&gt;
 &lt;p&gt;JAVA_HOME中的路径不能用分号结尾，如C:\Program Files\Java\jdk1.8.0_121&lt;/p&gt;
 &lt;p&gt;JAVA_HOME的路径是JDK路径，而不是JRE的路径。&lt;/p&gt;
 &lt;p&gt;CATALINA_HOME中的路径不能以\结尾。&lt;/p&gt;
 &lt;p&gt;在环境变量中修改添加变量时，一定要注意分号、空格，是否有多余的字母。&lt;/p&gt;
-&lt;h3 id=&#34;2-乱码&#34;&gt;2. 乱码
+&lt;h3 id=&#34;乱码&#34;&gt;乱码
 &lt;/h3&gt;&lt;p&gt;问题描述：打开startup.bat后汉字乱码&lt;/p&gt;
 &lt;p&gt;解决方法：在.\apache-tomcat-9.0.43\conf下打开logging.properties文件&lt;/p&gt;
 &lt;p&gt;将java.util.logging.ConsoleHandler.encoding = UTF-8&lt;/p&gt;
 &lt;p&gt;替换为java.util.logging.ConsoleHandler.encoding = GBK&lt;/p&gt;
-&lt;h3 id=&#34;tomcat乱码界面&#34;&gt;Tomcat乱码界面
-&lt;/h3&gt;&lt;h4 id=&#34;1-与其他服务的端口号冲突&#34;&gt;1. 与其他服务的端口号冲突
+&lt;h3 id=&#34;tomcat乱码&#34;&gt;Tomcat乱码
+&lt;/h3&gt;&lt;h4 id=&#34;符号乱码&#34;&gt;符号乱码
+&lt;/h4&gt;&lt;p&gt;在我配置过程中出现了符号类型的乱码，使用&lt;code&gt;SET JAVA_OPTS=-Duser.language=en -Duser.country=US&lt;/code&gt;将运行语言强制转换为英文可完美解决&lt;/p&gt;
+&lt;h4 id=&#34;与其他服务的端口号冲突&#34;&gt;与其他服务的端口号冲突
 &lt;/h4&gt;&lt;p&gt;tomcat端口号默认8080，如果和其他服务的端口号冲突，则可对端口号进行修改&lt;/p&gt;
 &lt;p&gt;在.\apache-tomcat-9.0.43\conf下打开server.xml文件，在文件的69行左右，将port=&amp;ldquo;8080&amp;quot;修改为指定的某一端口号，重新启动。&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;&amp;lt;Connector port=&amp;quot;8080&amp;quot; protocol=&amp;quot;HTTP/1.1&amp;quot;
            connectionTimeout=&amp;quot;20000&amp;quot;
            redirectPort=&amp;quot;8443&amp;quot; /&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;访问tomcat&#34;&gt;访问Tomcat
-&lt;/h2&gt;&lt;p&gt;先打开startup.bat，再打开浏览器，在地址栏中输入http://localhost:8080或localhost:8080回车，如果看到Tomcat自带的一个JSP页面，说明JDK和Tomcat已搭建成功。&lt;/p&gt;
+&lt;h4 id=&#34;访问tomcat&#34;&gt;访问Tomcat
+&lt;/h4&gt;&lt;p&gt;先打开startup.bat，再打开浏览器，在地址栏中输入http://localhost:8080或localhost:8080回车，如果看到Tomcat自带的一个JSP页面，说明JDK和Tomcat已搭建成功。&lt;/p&gt;
 &lt;p&gt;http://localhost:8080是完整形式，但大多数浏览器会自动添加前面的’http://’
 浏览器中访问Tomcat，此页面在webapps文件中，默认为ROOT文件夹&lt;/p&gt;
 &lt;h3 id=&#34;无法在浏览器中访问tomcat&#34;&gt;无法在浏览器中访问Tomcat
@@ -728,8 +730,8 @@ shutdown.bat关闭窗口。&lt;/p&gt;
 &lt;p&gt;检查端口号是否正确&lt;/p&gt;
 &lt;p&gt;更换浏览器重新访问&lt;/p&gt;
 &lt;p&gt;检查环境变量是否正确&lt;/p&gt;
-&lt;h3 id=&#34;常见状态码&#34;&gt;常见状态码
-&lt;/h3&gt;&lt;p&gt;200：一切正常&lt;/p&gt;
+&lt;h2 id=&#34;常见状态码&#34;&gt;常见状态码
+&lt;/h2&gt;&lt;p&gt;200：一切正常&lt;/p&gt;
 &lt;p&gt;300/301：页面重定向 （跳转）&lt;/p&gt;
 &lt;p&gt;404：资源不存在&lt;/p&gt;
 &lt;p&gt;403：权限不足 （如果访问a目录，但是a目录设置 不可见）&lt;/p&gt;
