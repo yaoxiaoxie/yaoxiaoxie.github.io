@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>端口 on yaoxieの自留地</title>
+        <link>https://yaoxiaoxie.github.io/categories/%E7%AB%AF%E5%8F%A3/</link>
+        <description>Recent content in 端口 on yaoxieの自留地</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>yaoxieの孤岛</copyright>
+        <lastBuildDate>Wed, 04 Sep 2024 13:25:00 +0800</lastBuildDate><atom:link href="https://yaoxiaoxie.github.io/categories/%E7%AB%AF%E5%8F%A3/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Windows_查看端口被占用情况、结束进程</title>
+        <link>https://yaoxiaoxie.github.io/p/%E7%AB%AF%E5%8F%A3/</link>
+        <pubDate>Wed, 04 Sep 2024 13:25:00 +0800</pubDate>
+        
+        <guid>https://yaoxiaoxie.github.io/p/%E7%AB%AF%E5%8F%A3/</guid>
+        <description>&lt;img src="https://yaoxiaoxie.github.io/img/face1.jpg" alt="Featured image of post Windows_查看端口被占用情况、结束进程" /&gt;&lt;h2 id=&#34;查看所有端口占用情况&#34;&gt;查看所有端口占用情况：
+&lt;/h2&gt;&lt;p&gt;win+R，调出cmd窗口：&lt;/p&gt;
+&lt;h3 id=&#34;查看所有端口占用情况-1&#34;&gt;查看所有端口占用情况：
+&lt;/h3&gt;&lt;p&gt;&lt;code&gt;netstat -ano&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;查看指定端口占用情况端口引号有没有都可以此处以5040为例&#34;&gt;查看指定端口占用情况（端口引号有没有都可以，此处以5040为例）：
+&lt;/h2&gt;&lt;p&gt;&lt;code&gt;netstat -aon|findstr 5040&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;or&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;netstat -aon|findstr &amp;quot;5040&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;记住最后一列数字PID，此处为5340。&lt;/p&gt;
+&lt;h2 id=&#34;根据pid查看相应的进程或程序&#34;&gt;根据PID查看相应的进程或程序：
+&lt;/h2&gt;&lt;p&gt;（1）、命令行查看：&lt;/p&gt;
+&lt;p&gt;tasklist|findstr 5340&lt;/p&gt;
+&lt;p&gt;查看到该PID对应的程序为svchost.exe&lt;/p&gt;
+&lt;p&gt;（2）、任务管理器查看：&lt;/p&gt;
+&lt;p&gt;快捷键Ctrl+Alt+Delete，打开任务管理器，可查看PID对应的进程：&lt;/p&gt;
+&lt;p&gt;如果没有PID列：&lt;/p&gt;
+&lt;p&gt;右键名称、状态标题行，选择PID：&lt;/p&gt;
+&lt;p&gt;则PID列就出来了，可根据PID找到相应的进程：&lt;/p&gt;
+&lt;h2 id=&#34;结束相应进程&#34;&gt;结束相应进程：
+&lt;/h2&gt;&lt;p&gt;（1）、命令行：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;taskkill /f /t /im 进程名&lt;/code&gt;
+承上如：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;taskkill /f /t /im svchost.exe&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;（2）、任务管理器中结束进程：&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
