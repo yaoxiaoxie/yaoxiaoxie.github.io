@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="1.辗转反侧\r1.1 相见\r最开始了解到一个个人博客，大概是看到了某个人的作品，当时惊叹于这种对当时的我来说是一种巨大打击的作品，我接触互联网还是10年左右，当时各种各样的东西在网络上方兴未已。要我说，当时的互联网，还是一个人人都可以得到他人近乎无私帮助的时代。 1.2 历程\r好了，既然了解了，那就开干吧，但是当时还没有这种意识，当我真正有一个成熟的想法时，这已经是十年之后了。 1.3 准备\r最开始，我还相信互联网依旧是可以随便找到自己所需要的东西的时代，当我再次满怀期待的开始着手进行，我这才发现，这互联网，已经不再是记忆中那般摸样了。 2.开始\r2.1 类型之分\r市面上常规的博客大致分为静态与动态两个大类，其中动态依托于云服务器运行，这样再搭配宝塔面板等生成工具可以非常方便的完成个人博客的搭建，这可以说是近乎完美的，但是这种方法每年都需要向运营商支付高昂的费用。因此，这段然不在我的考虑范围之内，我选择了搭建静态博客，这可以为我省下大量的费用，近乎可以说是零成本的，但缺点就是，这个环节中出现某些问题，往往是致命的。 2.2 做\r既然是自己的梦想，那就不要耽搁了，于是我开始在网上查阅各种资料来进行准备，最终选择了hexo框架来进行搭建，但我在最开始就遇到了困难，bash、node.js这两个工具让我焦头烂耳，是的，在最初安装时工具的各方面调试就让我难以招架，甚至工作一度因为此种原因而搁置*** 如今，当我已经完成之后，回首望去，自己对当时的问题感到十分不解，细细想来，当时应该是环境变量配置出现问题，当时各种教程给的方法众说纷纭，自己对未知的恐惧一度让种子死亡在泥土里。 2.3 末\r当然，现在看来，自己是走了很多捷径才能够完成，其中许多机理，我在书写这篇文章时依旧不是太明白，不过，这些问题还是被克服了，总之结果是美好的。 3.😊❤️\r在这个过程中，我虽然遇到了一些错误的指引，不过最终还是可以找到正确的方案，在此期间，相当量的教程给予了我很大的帮助，或许，那种乐于分享的火焰依然有人传承下去。我很感谢互联网的存在，这让我看到了广阔的天地（虽然我大多数时间都没干正事），我想大多数如我般的穷人，他们可以一生都会处于一种跟着短视频之类废料行舟的状态，我认为人如果能把自己的空闲时间挪用一小部分在学习上，虽不可谈会有多大的建树，但这一定是对自己及家庭乃至整个社会都有益的事。 在最后，我要再次感谢那些留些路标的人，他们为我的沙漠行舟提供了巨大的助力，我将会在接下来的日子里将我遇到的困难和解决方法一一书写以供后来者参考，在此，再次感谢那些为我提供帮助的人，因为有你们，这火焰才能越燃越旺。">
-<title>这一路の经过~</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="IDEA乱码问题（亲测有效） 强行配置UTF-8\r1.ctrl+alt+s进入设置，改变全局编码 UTF-8 2.配置Tomcat VM options值为：-Dfile.encoding=UTF-8 3.在tomcat启动配置 JAVA_OPTS =-Dfile.encoding=UTF-8 4.进入help的虚拟机参数配置（VM OPTIONS）配置-Dfile.encoding=UTF-8 5.进入IDEA安装根目录 编辑idea.exe.vmoptions与idea64.exe.vmoptions，都加上-Dfile.encoding=UTF-8 6.在你本机的tomcat目录下 在conf中找到logging.properties 更改配置如下图。如果有该配置 则不添加 7.检查右下角控制台编码是否为UTF-8 ，如果不是， 则更改。 重启IDEA 在运行 控制台乱码问题就解决啦 嘿嘿. 配置JDK的javac命令输出英文信息\r方法一\r在配置IntelliJ IDEA等IDE后，虽然IDE操作界面的语言是英文的，但是由于电脑的环境语言是中文的，所以在IDE操作JDK的java或javac命令，JDK还是按照电脑的环境语言配置而输出中文的提示信息、报错信息等。 我们更希望JDK的输出信息是英文版的，因为这样避免了英译中潜在的歧义，同时我们也可以通过英文的输出信息在Google查询到更详细和权威的解决方案。 通过百度，可以查询到类似的解决方案，例如这篇文章《IntelliJ IDEA 编译输出改为英文 运行信息改为英文》分别介绍了Windows环境变量配置、IDEA编译器参数配置、VM配置文件参数配置。 由于Windows环境变量配置的方法只适用于Windows电脑，因此其有效性暂不做评论。但是博主亲自测试上述文章中IDEA编译器参数配置的方案是没有生效的，即JDK的输出信息是中文内容。 因此博主又去查询了其他的配置方法，发现这篇文章*《How to set intellij compile error output language to English?》*中提供的方案是有效的，同时也是上篇文章中的最后一个方案，即VM配置文件参数配置方案。 VM配置文件参数配置方案 我们首先打开IntelliJ IDEA这款软件，然后在其标题栏中找到并点击Help标签，接着点击该标签中的子项Edit Custom VM Options： 接着我们便进入了idea.vmoptions配置文件的编辑界面，我们只需在该文件的最后一行加入一个选项参数-Duser.language=en即可： 编辑好上述的idea.vmoptions配置文件后，还有最后一步重要的操作，也就是重启IntelliJ IDEA，因为只有重启后上述配置信息才会生效。注意重启IntelliJ IDEA不是关闭当前IntelliJ IDEA的项目窗口，而是杀死IntelliJ IDEA的进程，最方便的操作就是对正在运行的IntelliJ IDEA点击鼠标右键，再点击关闭或退出选项即可(无论Windows或Mac)： 重启IntelliJ IDEA后，我们再通过编译运行任意会产生编译信息的项目，发现现在的JDK的输出信息是英文内容了： 方法二\r一。增加环境变量 JAVA_TOOL_OPTIONS ，值为 -Duser.language=en">
+<title>JDK强制英文运行</title>
 
-<link rel='canonical' href='https://yaoxiaoxie.github.io/p/%E5%BF%83%E5%BE%97/'>
+<link rel='canonical' href='https://yaoxiaoxie.github.io/p/jdk/'>
 
-<link rel="stylesheet" href="/scss/style.min.e8c7fca7d1c9294aa7a4f3426c225ee26540f7d94e39be0b5a4a5c8a49ca5a25.css"><meta property='og:title' content="这一路の经过~">
-<meta property='og:description' content="1.辗转反侧\r1.1 相见\r最开始了解到一个个人博客，大概是看到了某个人的作品，当时惊叹于这种对当时的我来说是一种巨大打击的作品，我接触互联网还是10年左右，当时各种各样的东西在网络上方兴未已。要我说，当时的互联网，还是一个人人都可以得到他人近乎无私帮助的时代。 1.2 历程\r好了，既然了解了，那就开干吧，但是当时还没有这种意识，当我真正有一个成熟的想法时，这已经是十年之后了。 1.3 准备\r最开始，我还相信互联网依旧是可以随便找到自己所需要的东西的时代，当我再次满怀期待的开始着手进行，我这才发现，这互联网，已经不再是记忆中那般摸样了。 2.开始\r2.1 类型之分\r市面上常规的博客大致分为静态与动态两个大类，其中动态依托于云服务器运行，这样再搭配宝塔面板等生成工具可以非常方便的完成个人博客的搭建，这可以说是近乎完美的，但是这种方法每年都需要向运营商支付高昂的费用。因此，这段然不在我的考虑范围之内，我选择了搭建静态博客，这可以为我省下大量的费用，近乎可以说是零成本的，但缺点就是，这个环节中出现某些问题，往往是致命的。 2.2 做\r既然是自己的梦想，那就不要耽搁了，于是我开始在网上查阅各种资料来进行准备，最终选择了hexo框架来进行搭建，但我在最开始就遇到了困难，bash、node.js这两个工具让我焦头烂耳，是的，在最初安装时工具的各方面调试就让我难以招架，甚至工作一度因为此种原因而搁置*** 如今，当我已经完成之后，回首望去，自己对当时的问题感到十分不解，细细想来，当时应该是环境变量配置出现问题，当时各种教程给的方法众说纷纭，自己对未知的恐惧一度让种子死亡在泥土里。 2.3 末\r当然，现在看来，自己是走了很多捷径才能够完成，其中许多机理，我在书写这篇文章时依旧不是太明白，不过，这些问题还是被克服了，总之结果是美好的。 3.😊❤️\r在这个过程中，我虽然遇到了一些错误的指引，不过最终还是可以找到正确的方案，在此期间，相当量的教程给予了我很大的帮助，或许，那种乐于分享的火焰依然有人传承下去。我很感谢互联网的存在，这让我看到了广阔的天地（虽然我大多数时间都没干正事），我想大多数如我般的穷人，他们可以一生都会处于一种跟着短视频之类废料行舟的状态，我认为人如果能把自己的空闲时间挪用一小部分在学习上，虽不可谈会有多大的建树，但这一定是对自己及家庭乃至整个社会都有益的事。 在最后，我要再次感谢那些留些路标的人，他们为我的沙漠行舟提供了巨大的助力，我将会在接下来的日子里将我遇到的困难和解决方法一一书写以供后来者参考，在此，再次感谢那些为我提供帮助的人，因为有你们，这火焰才能越燃越旺。">
-<meta property='og:url' content='https://yaoxiaoxie.github.io/p/%E5%BF%83%E5%BE%97/'>
+<link rel="stylesheet" href="/scss/style.min.e8c7fca7d1c9294aa7a4f3426c225ee26540f7d94e39be0b5a4a5c8a49ca5a25.css"><meta property='og:title' content="JDK强制英文运行">
+<meta property='og:description' content="IDEA乱码问题（亲测有效） 强行配置UTF-8\r1.ctrl+alt+s进入设置，改变全局编码 UTF-8 2.配置Tomcat VM options值为：-Dfile.encoding=UTF-8 3.在tomcat启动配置 JAVA_OPTS =-Dfile.encoding=UTF-8 4.进入help的虚拟机参数配置（VM OPTIONS）配置-Dfile.encoding=UTF-8 5.进入IDEA安装根目录 编辑idea.exe.vmoptions与idea64.exe.vmoptions，都加上-Dfile.encoding=UTF-8 6.在你本机的tomcat目录下 在conf中找到logging.properties 更改配置如下图。如果有该配置 则不添加 7.检查右下角控制台编码是否为UTF-8 ，如果不是， 则更改。 重启IDEA 在运行 控制台乱码问题就解决啦 嘿嘿. 配置JDK的javac命令输出英文信息\r方法一\r在配置IntelliJ IDEA等IDE后，虽然IDE操作界面的语言是英文的，但是由于电脑的环境语言是中文的，所以在IDE操作JDK的java或javac命令，JDK还是按照电脑的环境语言配置而输出中文的提示信息、报错信息等。 我们更希望JDK的输出信息是英文版的，因为这样避免了英译中潜在的歧义，同时我们也可以通过英文的输出信息在Google查询到更详细和权威的解决方案。 通过百度，可以查询到类似的解决方案，例如这篇文章《IntelliJ IDEA 编译输出改为英文 运行信息改为英文》分别介绍了Windows环境变量配置、IDEA编译器参数配置、VM配置文件参数配置。 由于Windows环境变量配置的方法只适用于Windows电脑，因此其有效性暂不做评论。但是博主亲自测试上述文章中IDEA编译器参数配置的方案是没有生效的，即JDK的输出信息是中文内容。 因此博主又去查询了其他的配置方法，发现这篇文章*《How to set intellij compile error output language to English?》*中提供的方案是有效的，同时也是上篇文章中的最后一个方案，即VM配置文件参数配置方案。 VM配置文件参数配置方案 我们首先打开IntelliJ IDEA这款软件，然后在其标题栏中找到并点击Help标签，接着点击该标签中的子项Edit Custom VM Options： 接着我们便进入了idea.vmoptions配置文件的编辑界面，我们只需在该文件的最后一行加入一个选项参数-Duser.language=en即可： 编辑好上述的idea.vmoptions配置文件后，还有最后一步重要的操作，也就是重启IntelliJ IDEA，因为只有重启后上述配置信息才会生效。注意重启IntelliJ IDEA不是关闭当前IntelliJ IDEA的项目窗口，而是杀死IntelliJ IDEA的进程，最方便的操作就是对正在运行的IntelliJ IDEA点击鼠标右键，再点击关闭或退出选项即可(无论Windows或Mac)： 重启IntelliJ IDEA后，我们再通过编译运行任意会产生编译信息的项目，发现现在的JDK的输出信息是英文内容了： 方法二\r一。增加环境变量 JAVA_TOOL_OPTIONS ，值为 -Duser.language=en">
+<meta property='og:url' content='https://yaoxiaoxie.github.io/p/jdk/'>
 <meta property='og:site_name' content='yaoxieの自留地'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2023-08-31T06:00:00&#43;08:00'/><meta property='article:modified_time' content='2023-08-31T06:00:00&#43;08:00'/><meta property='og:image' content='https://yaoxiaoxie.github.io/img/face1.jpg' />
-<meta name="twitter:title" content="这一路の经过~">
-<meta name="twitter:description" content="1.辗转反侧\r1.1 相见\r最开始了解到一个个人博客，大概是看到了某个人的作品，当时惊叹于这种对当时的我来说是一种巨大打击的作品，我接触互联网还是10年左右，当时各种各样的东西在网络上方兴未已。要我说，当时的互联网，还是一个人人都可以得到他人近乎无私帮助的时代。 1.2 历程\r好了，既然了解了，那就开干吧，但是当时还没有这种意识，当我真正有一个成熟的想法时，这已经是十年之后了。 1.3 准备\r最开始，我还相信互联网依旧是可以随便找到自己所需要的东西的时代，当我再次满怀期待的开始着手进行，我这才发现，这互联网，已经不再是记忆中那般摸样了。 2.开始\r2.1 类型之分\r市面上常规的博客大致分为静态与动态两个大类，其中动态依托于云服务器运行，这样再搭配宝塔面板等生成工具可以非常方便的完成个人博客的搭建，这可以说是近乎完美的，但是这种方法每年都需要向运营商支付高昂的费用。因此，这段然不在我的考虑范围之内，我选择了搭建静态博客，这可以为我省下大量的费用，近乎可以说是零成本的，但缺点就是，这个环节中出现某些问题，往往是致命的。 2.2 做\r既然是自己的梦想，那就不要耽搁了，于是我开始在网上查阅各种资料来进行准备，最终选择了hexo框架来进行搭建，但我在最开始就遇到了困难，bash、node.js这两个工具让我焦头烂耳，是的，在最初安装时工具的各方面调试就让我难以招架，甚至工作一度因为此种原因而搁置*** 如今，当我已经完成之后，回首望去，自己对当时的问题感到十分不解，细细想来，当时应该是环境变量配置出现问题，当时各种教程给的方法众说纷纭，自己对未知的恐惧一度让种子死亡在泥土里。 2.3 末\r当然，现在看来，自己是走了很多捷径才能够完成，其中许多机理，我在书写这篇文章时依旧不是太明白，不过，这些问题还是被克服了，总之结果是美好的。 3.😊❤️\r在这个过程中，我虽然遇到了一些错误的指引，不过最终还是可以找到正确的方案，在此期间，相当量的教程给予了我很大的帮助，或许，那种乐于分享的火焰依然有人传承下去。我很感谢互联网的存在，这让我看到了广阔的天地（虽然我大多数时间都没干正事），我想大多数如我般的穷人，他们可以一生都会处于一种跟着短视频之类废料行舟的状态，我认为人如果能把自己的空闲时间挪用一小部分在学习上，虽不可谈会有多大的建树，但这一定是对自己及家庭乃至整个社会都有益的事。 在最后，我要再次感谢那些留些路标的人，他们为我的沙漠行舟提供了巨大的助力，我将会在接下来的日子里将我遇到的困难和解决方法一一书写以供后来者参考，在此，再次感谢那些为我提供帮助的人，因为有你们，这火焰才能越燃越旺。"><meta name="twitter:card" content="summary_large_image">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-09-09T20:50:53&#43;08:00'/><meta property='article:modified_time' content='2024-09-09T20:50:53&#43;08:00'/><meta property='og:image' content='https://yaoxiaoxie.github.io/img/face1.jpg' />
+<meta name="twitter:title" content="JDK强制英文运行">
+<meta name="twitter:description" content="IDEA乱码问题（亲测有效） 强行配置UTF-8\r1.ctrl+alt+s进入设置，改变全局编码 UTF-8 2.配置Tomcat VM options值为：-Dfile.encoding=UTF-8 3.在tomcat启动配置 JAVA_OPTS =-Dfile.encoding=UTF-8 4.进入help的虚拟机参数配置（VM OPTIONS）配置-Dfile.encoding=UTF-8 5.进入IDEA安装根目录 编辑idea.exe.vmoptions与idea64.exe.vmoptions，都加上-Dfile.encoding=UTF-8 6.在你本机的tomcat目录下 在conf中找到logging.properties 更改配置如下图。如果有该配置 则不添加 7.检查右下角控制台编码是否为UTF-8 ，如果不是， 则更改。 重启IDEA 在运行 控制台乱码问题就解决啦 嘿嘿. 配置JDK的javac命令输出英文信息\r方法一\r在配置IntelliJ IDEA等IDE后，虽然IDE操作界面的语言是英文的，但是由于电脑的环境语言是中文的，所以在IDE操作JDK的java或javac命令，JDK还是按照电脑的环境语言配置而输出中文的提示信息、报错信息等。 我们更希望JDK的输出信息是英文版的，因为这样避免了英译中潜在的歧义，同时我们也可以通过英文的输出信息在Google查询到更详细和权威的解决方案。 通过百度，可以查询到类似的解决方案，例如这篇文章《IntelliJ IDEA 编译输出改为英文 运行信息改为英文》分别介绍了Windows环境变量配置、IDEA编译器参数配置、VM配置文件参数配置。 由于Windows环境变量配置的方法只适用于Windows电脑，因此其有效性暂不做评论。但是博主亲自测试上述文章中IDEA编译器参数配置的方案是没有生效的，即JDK的输出信息是中文内容。 因此博主又去查询了其他的配置方法，发现这篇文章*《How to set intellij compile error output language to English?》*中提供的方案是有效的，同时也是上篇文章中的最后一个方案，即VM配置文件参数配置方案。 VM配置文件参数配置方案 我们首先打开IntelliJ IDEA这款软件，然后在其标题栏中找到并点击Help标签，接着点击该标签中的子项Edit Custom VM Options： 接着我们便进入了idea.vmoptions配置文件的编辑界面，我们只需在该文件的最后一行加入一个选项参数-Duser.language=en即可： 编辑好上述的idea.vmoptions配置文件后，还有最后一步重要的操作，也就是重启IntelliJ IDEA，因为只有重启后上述配置信息才会生效。注意重启IntelliJ IDEA不是关闭当前IntelliJ IDEA的项目窗口，而是杀死IntelliJ IDEA的进程，最方便的操作就是对正在运行的IntelliJ IDEA点击鼠标右键，再点击关闭或退出选项即可(无论Windows或Mac)： 重启IntelliJ IDEA后，我们再通过编译运行任意会产生编译信息的项目，发现现在的JDK的输出信息是英文内容了： 方法二\r一。增加环境变量 JAVA_TOOL_OPTIONS ，值为 -Duser.language=en"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://yaoxiaoxie.github.io/img/face1.jpg' />
   
 
@@ -225,15 +225,13 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#11-相见">1.1 相见</a></li>
-    <li><a href="#12-历程">1.2 历程</a></li>
-    <li><a href="#13-准备">1.3 准备</a></li>
-  </ol>
-
-  <ol>
-    <li><a href="#21-类型之分">2.1 类型之分</a></li>
-    <li><a href="#22-做">2.2 做</a></li>
-    <li><a href="#23-末">2.3 末</a></li>
+    <li><a href="#idea乱码问题亲测有效-强行配置utf-8">IDEA乱码问题（亲测有效） 强行配置UTF-8</a></li>
+    <li><a href="#配置jdk的javac命令输出英文信息">配置JDK的javac命令输出英文信息</a>
+      <ol>
+        <li><a href="#方法一">方法一</a></li>
+        <li><a href="#方法二">方法二</a></li>
+      </ol>
+    </li>
   </ol>
 </nav>
         </div>
@@ -248,9 +246,9 @@
     <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
-            <a href="/p/%E5%BF%83%E5%BE%97/">
+            <a href="/p/jdk/">
                 
-                    <img src="/img/face1.jpg" loading="lazy" alt="Featured image of post 这一路の经过~" />
+                    <img src="/img/face1.jpg" loading="lazy" alt="Featured image of post JDK强制英文运行" />
                 
             </a>
         </div>
@@ -260,8 +258,8 @@
     
     <header class="article-category">
         
-            <a href="/categories/%E5%BF%83%E5%BE%97/" >
-                心得
+            <a href="/categories/tomcat/" >
+                Tomcat
             </a>
         
     </header>
@@ -269,7 +267,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/%E5%BF%83%E5%BE%97/">这一路の经过~</a>
+            <a href="/p/jdk/">JDK强制英文运行</a>
         </h2>
     
         
@@ -291,7 +289,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Aug 31, 2023</time>
+                <time class="article-time--published">Sep 09, 2024</time>
             </div>
         
 
@@ -321,24 +319,30 @@
     <section class="article-content">
     
     
-    <h1 id="1辗转反侧">1.辗转反侧
-</h1><h2 id="11-相见">1.1 相见
-</h2><p>最开始了解到一个个人博客，大概是看到了某个人的作品，当时惊叹于这种对当时的我来说是一种巨大打击的作品，我接触互联网还是10年左右，当时各种各样的东西在网络上方兴未已。要我说，当时的互联网，还是一个人人都可以得到他人近乎无私帮助的时代。</p>
-<h2 id="12-历程">1.2 历程
-</h2><p>好了，既然了解了，那就开干吧，但是当时还没有这种意识，当我真正有一个成熟的想法时，这已经是十年之后了。</p>
-<h2 id="13-准备">1.3 准备
-</h2><p>最开始，我还相信互联网依旧是可以随便找到自己所需要的东西的时代，当我再次满怀期待的开始着手进行，我这才发现，这互联网，已经不再是记忆中那般摸样了。</p>
-<h1 id="2开始">2.开始
-</h1><h2 id="21-类型之分">2.1 类型之分
-</h2><p>市面上常规的博客大致分为静态与动态两个大类，其中动态依托于云服务器运行，这样再搭配宝塔面板等生成工具可以非常方便的完成个人博客的搭建，这可以说是近乎完美的，但是这种方法每年都需要向运营商支付高昂的费用。因此，这段然不在我的考虑范围之内，我选择了搭建静态博客，这可以为我省下大量的费用，近乎可以说是零成本的，但缺点就是，这个环节中出现某些问题，往往是致命的。</p>
-<h2 id="22-做">2.2 做
-</h2><p>既然是自己的梦想，那就不要耽搁了，于是我开始在网上查阅各种资料来进行准备，最终选择了hexo框架来进行搭建，但我在最开始就遇到了困难，bash、node.js这两个工具让我焦头烂耳，是的，在最初安装时工具的各方面调试就让我难以招架，甚至工作一度因为此种原因而搁置***
-如今，当我已经完成之后，回首望去，自己对当时的问题感到十分不解，细细想来，当时应该是环境变量配置出现问题，当时各种教程给的方法众说纷纭，自己对未知的恐惧一度让种子死亡在泥土里。</p></p>
-<h2 id="23-末">2.3 末
-</h2><p>当然，现在看来，自己是走了很多捷径才能够完成，其中许多机理，我在书写这篇文章时依旧不是太明白，不过，这些问题还是被克服了，总之结果是美好的。</p>
-<h1 id="3">3.😊❤️
-</h1><p>在这个过程中，我虽然遇到了一些错误的指引，不过最终还是可以找到正确的方案，在此期间，相当量的教程给予了我很大的帮助，或许，那种乐于分享的火焰依然有人传承下去。我很感谢互联网的存在，这让我看到了广阔的天地（虽然我大多数时间都没干正事），我想大多数如我般的穷人，他们可以一生都会处于一种跟着短视频之类废料行舟的状态，我认为人如果能把自己的空闲时间挪用一小部分在学习上，虽不可谈会有多大的建树，但这一定是对自己及家庭乃至整个社会都有益的事。<br />
-在最后，我要再次感谢那些留些路标的人，他们为我的沙漠行舟提供了巨大的助力，我将会在接下来的日子里将我遇到的困难和解决方法一一书写以供后来者参考，在此，再次感谢那些为我提供帮助的人，因为有你们，这火焰才能越燃越旺。</p>
+    <h2 id="idea乱码问题亲测有效-强行配置utf-8">IDEA乱码问题（亲测有效） 强行配置UTF-8
+</h2><p>1.ctrl+alt+s进入设置，改变全局编码 UTF-8</p>
+<p>2.配置Tomcat VM options值为：-Dfile.encoding=UTF-8</p>
+<p>3.在tomcat启动配置 JAVA_OPTS =-Dfile.encoding=UTF-8</p>
+<p>4.进入help的虚拟机参数配置（VM OPTIONS）配置-Dfile.encoding=UTF-8</p>
+<p>5.进入IDEA安装根目录 编辑idea.exe.vmoptions与idea64.exe.vmoptions，都加上-Dfile.encoding=UTF-8</p>
+<p>6.在你本机的tomcat目录下 在conf中找到logging.properties 更改配置如下图。如果有该配置 则不添加</p>
+<p>7.检查右下角控制台编码是否为UTF-8 ，如果不是， 则更改。</p>
+<p>重启IDEA 在运行 控制台乱码问题就解决啦 嘿嘿.</p>
+<h2 id="配置jdk的javac命令输出英文信息">配置JDK的javac命令输出英文信息
+</h2><h3 id="方法一">方法一
+</h3><p>在配置IntelliJ IDEA等IDE后，虽然IDE操作界面的语言是英文的，但是由于电脑的环境语言是中文的，所以在IDE操作JDK的java或javac命令，JDK还是按照电脑的环境语言配置而输出中文的提示信息、报错信息等。</p>
+<p>我们更希望JDK的输出信息是英文版的，因为这样避免了英译中潜在的歧义，同时我们也可以通过英文的输出信息在Google查询到更详细和权威的解决方案。</p>
+<p>通过百度，可以查询到类似的解决方案，例如这篇文章《IntelliJ IDEA 编译输出改为英文 运行信息改为英文》分别介绍了Windows环境变量配置、IDEA编译器参数配置、VM配置文件参数配置。</p>
+<p>由于Windows环境变量配置的方法只适用于Windows电脑，因此其有效性暂不做评论。但是博主亲自测试上述文章中IDEA编译器参数配置的方案是没有生效的，即JDK的输出信息是中文内容。</p>
+<p>因此博主又去查询了其他的配置方法，发现这篇文章*<a class="link" href="https://stackoverflow.com/questions/46021966/how-to-set-intellij-compile-error-output-language-to-english"  target="_blank" rel="noopener"
+    >《How to set intellij compile error output language to English?》</a>*中提供的方案是有效的，同时也是上篇文章中的最后一个方案，即VM配置文件参数配置方案。</p>
+<p>VM配置文件参数配置方案
+我们首先打开IntelliJ IDEA这款软件，然后在其标题栏中找到并点击Help标签，接着点击该标签中的子项Edit Custom VM Options：</p>
+<p>接着我们便进入了idea.vmoptions配置文件的编辑界面，我们只需在该文件的最后一行加入一个选项参数-Duser.language=en即可：</p>
+<p>编辑好上述的idea.vmoptions配置文件后，还有最后一步重要的操作，也就是重启IntelliJ IDEA，因为只有重启后上述配置信息才会生效。注意重启IntelliJ IDEA不是关闭当前IntelliJ IDEA的项目窗口，而是杀死IntelliJ IDEA的进程，最方便的操作就是对正在运行的IntelliJ IDEA点击鼠标右键，再点击关闭或退出选项即可(无论Windows或Mac)：</p>
+<p>重启IntelliJ IDEA后，我们再通过编译运行任意会产生编译信息的项目，发现现在的JDK的输出信息是英文内容了：</p>
+<h3 id="方法二">方法二
+</h3><p>一。增加环境变量 JAVA_TOOL_OPTIONS ，值为 -Duser.language=en</p>
 
 </section>
 
@@ -391,6 +395,34 @@
     
 
     
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/tomcat/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="/img/face1.jpg" loading="lazy" data-key="Tomcat" data-hash="/img/face1.jpg"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Tomcat安装与问题解决</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
 
      
     
