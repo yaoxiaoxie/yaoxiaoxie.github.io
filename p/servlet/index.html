@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="servlet三种方法的实现\r项目结构概览\r通常，Java Web 项目的结构会类似于如下的目录： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 your-webapp/ │ ├── src/ (Java源代码) │ └── com/ │ └── example/ │ └── HelloWorldServlet.java │ ├── webapp/ (Web应用的根目录，所有静态文件和配置文件放在这里) │ ├── WEB-INF/ (存放配置文件及不对外暴露的内容) │ │ ├── web.xml (Servlet配置文件) │ │ └── classes/ (编译后的.class文件) │ └── index.html (可以访问的首页) │ └── lib/ (项目依赖的jar包) 主要文件夹的功能说明：\rsrc/：存放你的源代码文件（Java文件）。 webapp/：这是 Web 应用的根目录，包含所有可以公开访问的资源，比如 HTML、CSS、JavaScript 文件等。 WEB-INF/：这是一个特殊的目录，存放 web 应用的配置文件和服务器无法直接访问的资源。 WEB-INF/web.xml：部署描述符文件，用来配置 Servlet、过滤器等组件的映射关系（当不使用注解时）。">
+<title>Servlet接口</title>
+
+<link rel='canonical' href='https://yaoxiaoxie.github.io/p/servlet/'>
+
+<link rel="stylesheet" href="/scss/style.min.e8c7fca7d1c9294aa7a4f3426c225ee26540f7d94e39be0b5a4a5c8a49ca5a25.css"><meta property='og:title' content="Servlet接口">
+<meta property='og:description' content="servlet三种方法的实现\r项目结构概览\r通常，Java Web 项目的结构会类似于如下的目录： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 your-webapp/ │ ├── src/ (Java源代码) │ └── com/ │ └── example/ │ └── HelloWorldServlet.java │ ├── webapp/ (Web应用的根目录，所有静态文件和配置文件放在这里) │ ├── WEB-INF/ (存放配置文件及不对外暴露的内容) │ │ ├── web.xml (Servlet配置文件) │ │ └── classes/ (编译后的.class文件) │ └── index.html (可以访问的首页) │ └── lib/ (项目依赖的jar包) 主要文件夹的功能说明：\rsrc/：存放你的源代码文件（Java文件）。 webapp/：这是 Web 应用的根目录，包含所有可以公开访问的资源，比如 HTML、CSS、JavaScript 文件等。 WEB-INF/：这是一个特殊的目录，存放 web 应用的配置文件和服务器无法直接访问的资源。 WEB-INF/web.xml：部署描述符文件，用来配置 Servlet、过滤器等组件的映射关系（当不使用注解时）。">
+<meta property='og:url' content='https://yaoxiaoxie.github.io/p/servlet/'>
+<meta property='og:site_name' content='yaoxieの自留地'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-09-09T23:30:12&#43;08:00'/><meta property='article:modified_time' content='2024-09-09T23:30:12&#43;08:00'/><meta property='og:image' content='https://yaoxiaoxie.github.io/img/face1.jpg' />
+<meta name="twitter:title" content="Servlet接口">
+<meta name="twitter:description" content="servlet三种方法的实现\r项目结构概览\r通常，Java Web 项目的结构会类似于如下的目录： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 your-webapp/ │ ├── src/ (Java源代码) │ └── com/ │ └── example/ │ └── HelloWorldServlet.java │ ├── webapp/ (Web应用的根目录，所有静态文件和配置文件放在这里) │ ├── WEB-INF/ (存放配置文件及不对外暴露的内容) │ │ ├── web.xml (Servlet配置文件) │ │ └── classes/ (编译后的.class文件) │ └── index.html (可以访问的首页) │ └── lib/ (项目依赖的jar包) 主要文件夹的功能说明：\rsrc/：存放你的源代码文件（Java文件）。 webapp/：这是 Web 应用的根目录，包含所有可以公开访问的资源，比如 HTML、CSS、JavaScript 文件等。 WEB-INF/：这是一个特殊的目录，存放 web 应用的配置文件和服务器无法直接访问的资源。 WEB-INF/web.xml：部署描述符文件，用来配置 Servlet、过滤器等组件的映射关系（当不使用注解时）。"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://yaoxiaoxie.github.io/img/face1.jpg' />
+  
+
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            localStorage.setItem(colorSchemeKey, "light");
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatars/shasha_hua08fdcfd9ab01acc26f6e87a2c1cfd5a_105342_300x0_resize_box_1.gif" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">yaoxieの自留地</a></h1>
+            <h2 class="site-description">浮生茫茫.</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/yaoxiaoxie'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#项目结构概览">项目结构概览</a></li>
+    <li><a href="#主要文件夹的功能说明">主要文件夹的功能说明：</a></li>
+    <li><a href="#文件放置位置说明">文件放置位置说明</a>
+      <ol>
+        <li><a href="#java-源代码servlet的位置">Java 源代码（Servlet）的位置</a></li>
+        <li><a href="#编译后的-class-文件">编译后的 .class 文件</a></li>
+        <li><a href="#webxml-文件">web.xml 文件</a></li>
+        <li><a href="#html-页面">HTML 页面</a></li>
+      </ol>
+    </li>
+    <li><a href="#文件的组织结构实例">文件的组织结构实例</a></li>
+    <li><a href="#运行步骤">运行步骤</a></li>
+    <li><a href="#总结">总结</a></li>
+    <li><a href="#servlet三种方法的实现-1">servlet三种方法的实现。</a></li>
+    <li><a href="#项目结构和文件配置">项目结构和文件配置</a></li>
+    <li><a href="#编译与部署">编译与部署</a></li>
+    <li><a href="#测试与验证">测试与验证</a></li>
+    <li><a href="#问题">问题</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/servlet/">
+                
+                    <img src="/img/face1.jpg" loading="lazy" alt="Featured image of post Servlet接口" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/servlet/">Servlet接口</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Sep 09, 2024</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 5 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="servlet三种方法的实现">servlet三种方法的实现
+</h1><h2 id="项目结构概览">项目结构概览
+</h2><p>通常，Java Web 项目的结构会类似于如下的目录：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">your-webapp/
+</span></span><span class="line"><span class="cl">│
+</span></span><span class="line"><span class="cl">├── src/                (Java源代码)
+</span></span><span class="line"><span class="cl">│   └── com/
+</span></span><span class="line"><span class="cl">│       └── example/
+</span></span><span class="line"><span class="cl">│           └── HelloWorldServlet.java
+</span></span><span class="line"><span class="cl">│
+</span></span><span class="line"><span class="cl">├── webapp/             (Web应用的根目录，所有静态文件和配置文件放在这里)
+</span></span><span class="line"><span class="cl">│   ├── WEB-INF/        (存放配置文件及不对外暴露的内容)
+</span></span><span class="line"><span class="cl">│   │   ├── web.xml     (Servlet配置文件)
+</span></span><span class="line"><span class="cl">│   │   └── classes/    (编译后的.class文件)
+</span></span><span class="line"><span class="cl">│   └── index.html      (可以访问的首页)
+</span></span><span class="line"><span class="cl">│
+</span></span><span class="line"><span class="cl">└── lib/                (项目依赖的jar包)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="主要文件夹的功能说明">主要文件夹的功能说明：
+</h2><p>src/：存放你的源代码文件（Java文件）。</p>
+<p>webapp/：这是 Web 应用的根目录，包含所有可以公开访问的资源，比如 HTML、CSS、JavaScript 文件等。</p>
+<p>WEB-INF/：这是一个特殊的目录，存放 web 应用的配置文件和服务器无法直接访问的资源。</p>
+<p>WEB-INF/web.xml：部署描述符文件，用来配置 Servlet、过滤器等组件的映射关系（当不使用注解时）。</p>
+<p>WEB-INF/classes/：存放编译后的 .class 文件。你开发的 Java 代码经过编译后会放在这个文件夹里。</p>
+<p>WEB-INF/lib/：存放依赖的 .jar 包。</p>
+<h2 id="文件放置位置说明">文件放置位置说明
+</h2><h3 id="java-源代码servlet的位置">Java 源代码（Servlet）的位置
+</h3><p>源代码 (HelloWorldServlet.java) 应该放在 src 目录下的包结构中，例如：</p>
+<p>src/com/example/HelloWorldServlet.java
+这遵循标准的 Java 包管理机制，方便代码管理和构建。</p>
+<h3 id="编译后的-class-文件">编译后的 .class 文件
+</h3><p>编译后的 Servlet 类 (HelloWorldServlet.class) 应该被放在 WEB-INF/classes/ 目录下，对应的包路径下。编译时，你的构建工具（如 Maven、Gradle，或 IDE）会将源代码编译后的 .class 文件自动放在这里。例如：</p>
+<p>WEB-INF/classes/com/example/HelloWorldServlet.class
+这保证了 Servlet 能被服务器识别和加载，但外部用户无法直接访问 .class 文件。</p>
+<h3 id="webxml-文件">web.xml 文件
+</h3><p>如果你没有使用注解来配置 Servlet（如 @WebServlet），你需要手动配置 WEB-INF/web.xml 文件来映射 Servlet。例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;web-app&gt;
+</span></span><span class="line"><span class="cl">    &lt;servlet&gt;
+</span></span><span class="line"><span class="cl">        &lt;servlet-name&gt;HelloWorldServlet&lt;/servlet-name&gt;
+</span></span><span class="line"><span class="cl">        &lt;servlet-class&gt;com.example.HelloWorldServlet&lt;/servlet-class&gt;
+</span></span><span class="line"><span class="cl">    &lt;/servlet&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;servlet-mapping&gt;
+</span></span><span class="line"><span class="cl">        &lt;servlet-name&gt;HelloWorldServlet&lt;/servlet-name&gt;
+</span></span><span class="line"><span class="cl">        &lt;url-pattern&gt;/hello&lt;/url-pattern&gt;
+</span></span><span class="line"><span class="cl">    &lt;/servlet-mapping&gt;
+</span></span><span class="line"><span class="cl">&lt;/web-app&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这样配置后，当用户访问 http://localhost:8080/your-webapp/hello，会触发 HelloWorldServlet。</p>
+<h3 id="html-页面">HTML 页面
+</h3><p>如果有静态 HTML 文件（如 index.html），你可以直接将它们放在 webapp 根目录中，比如：</p>
+<p>webapp/index.html
+这可以让你在访问 http://localhost:8080/your-webapp/ 时直接看到这个页面。</p>
+<h2 id="文件的组织结构实例">文件的组织结构实例
+</h2><p>假设你的 HelloWorldServlet 实现位于 com.example 包中，那么完整的项目结构会像这样：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">your-webapp/
+</span></span><span class="line"><span class="cl">│
+</span></span><span class="line"><span class="cl">├── src/
+</span></span><span class="line"><span class="cl">│   └── com/
+</span></span><span class="line"><span class="cl">│       └── example/
+</span></span><span class="line"><span class="cl">│           └── HelloWorldServlet.java  (Servlet源码)
+</span></span><span class="line"><span class="cl">│
+</span></span><span class="line"><span class="cl">├── webapp/
+</span></span><span class="line"><span class="cl">│   ├── WEB-INF/
+</span></span><span class="line"><span class="cl">│   │   ├── web.xml                    (Servlet配置)
+</span></span><span class="line"><span class="cl">│   │   └── classes/
+</span></span><span class="line"><span class="cl">│   │       └── com/
+</span></span><span class="line"><span class="cl">│   │           └── example/
+</span></span><span class="line"><span class="cl">│   │               └── HelloWorldServlet.class (Servlet编译后的类文件)
+</span></span><span class="line"><span class="cl">│   └── index.html                     (可以直接访问的首页)
+</span></span><span class="line"><span class="cl">│
+</span></span><span class="line"><span class="cl">└── lib/                                (项目依赖的jar包)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="运行步骤">运行步骤
+</h2><p>编译Java代码：</p>
+<p>将 src/com/example/HelloWorldServlet.java 编译并输出到 WEB-INF/classes/ 目录中。可以使用构建工具如 Maven 或者手动通过 javac 命令来编译：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">javac -d webapp/WEB-INF/classes src/com/example/HelloWorldServlet.java
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>启动服务器：</p>
+<p>启动 Web 容器（如 Apache Tomcat），并将整个 <code>your-webapp/</code> 目录作为 Web 应用部署。
+访问 Servlet：</p>
+<p>使用浏览器访问<code> http://localhost:8080/your-webapp/hello</code>，你应该能够看到<code>Hello, World!</code>的响应。</p>
+<h2 id="总结">总结
+</h2><p>源代码应该放在 src 目录中。
+编译后的 .class 文件需要放在 WEB-INF/classes 中的正确包结构下。
+静态资源如 HTML 文件直接放在 webapp 根目录中，供浏览器访问。
+web.xml 文件配置 Servlet 的映射关系，放在 WEB-INF 目录下。
+这样做符合 Java Web 项目标准，并且能够让 Tomcat 或其他 Servlet 容器正确运行你的 Servlet。</p>
+<h2 id="servlet三种方法的实现-1">servlet三种方法的实现。
+</h2><ol>
+<li>项目结构规划
+按照典型的 Java Web 应用结构，项目的目录应该如下：</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">your-webapp/
+</span></span><span class="line"><span class="cl">│
+</span></span><span class="line"><span class="cl">├── src/                (Java源代码)
+</span></span><span class="line"><span class="cl">│   └── com/
+</span></span><span class="line"><span class="cl">│       └── example/
+</span></span><span class="line"><span class="cl">│           ├── HelloWorldServlet.java    (继承HttpServlet实现)
+</span></span><span class="line"><span class="cl">│           ├── AnnotationServlet.java    (注解@WebServlet实现)
+</span></span><span class="line"><span class="cl">│           └── GenericServletExample.java (继承GenericServlet实现)
+</span></span><span class="line"><span class="cl">│
+</span></span><span class="line"><span class="cl">├── webapp/
+</span></span><span class="line"><span class="cl">│   ├── WEB-INF/
+</span></span><span class="line"><span class="cl">│   │   ├── web.xml                       (配置Servlet映射)
+</span></span><span class="line"><span class="cl">│   │   └── classes/                      (编译后的.class文件)
+</span></span><span class="line"><span class="cl">│   └── index.html                        (可以直接访问的首页)
+</span></span><span class="line"><span class="cl">│
+</span></span><span class="line"><span class="cl">└── lib/                                   (项目依赖的jar包)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol>
+<li>Servlet 实现的三种方法</li>
+</ol>
+<p>方法 1: 继承 <code>HttpServlet</code> 类</p>
+<p>步骤：继承 <code>HttpServlet</code>，重写 <code>doGet()</code> 或 <code>doPost() </code>方法来处理 HTTP 请求。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">example</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">import</span> <span class="n">java</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">IOException</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">import</span> <span class="n">javax</span><span class="o">.</span><span class="n">servlet</span><span class="o">.</span><span class="n">ServletException</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">import</span> <span class="n">javax</span><span class="o">.</span><span class="n">servlet</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">HttpServlet</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">import</span> <span class="n">javax</span><span class="o">.</span><span class="n">servlet</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">HttpServletRequest</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">import</span> <span class="n">javax</span><span class="o">.</span><span class="n">servlet</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">HttpServletResponse</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">import</span> <span class="n">java</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">PrintWriter</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">public</span> <span class="k">class</span> <span class="n">HelloWorldServlet</span> <span class="k">extends</span> <span class="n">HttpServlet</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">protected</span> <span class="n">void</span> <span class="n">doGet</span><span class="p">(</span><span class="n">HttpServletRequest</span> <span class="n">request</span><span class="p">,</span> <span class="n">HttpServletResponse</span> <span class="n">response</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">            <span class="n">throws</span> <span class="n">ServletException</span><span class="p">,</span> <span class="n">IOException</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">response</span><span class="o">.</span><span class="n">setContentType</span><span class="p">(</span><span class="s2">&#34;text/html&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">PrintWriter</span> <span class="n">out</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">getWriter</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&#34;&lt;h1&gt;Hello, World from HttpServlet!&lt;/h1&gt;&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>配置 web.xml（用于映射 URL 到 Servlet）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;web-app&gt;
+</span></span><span class="line"><span class="cl">    &lt;servlet&gt;
+</span></span><span class="line"><span class="cl">        &lt;servlet-name&gt;HelloWorldServlet&lt;/servlet-name&gt;
+</span></span><span class="line"><span class="cl">        &lt;servlet-class&gt;com.example.HelloWorldServlet&lt;/servlet-class&gt;
+</span></span><span class="line"><span class="cl">    &lt;/servlet&gt;
+</span></span><span class="line"><span class="cl">    &lt;servlet-mapping&gt;
+</span></span><span class="line"><span class="cl">        &lt;servlet-name&gt;HelloWorldServlet&lt;/servlet-name&gt;
+</span></span><span class="line"><span class="cl">        &lt;url-pattern&gt;/hello&lt;/url-pattern&gt;
+</span></span><span class="line"><span class="cl">    &lt;/servlet-mapping&gt;
+</span></span><span class="line"><span class="cl">&lt;/web-app&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>方法 2: 使用注解<code> @WebServlet</code>
+步骤：直接通过 <code>@WebServlet </code>注解来配置 Servlet，而不需要修改 <code>web.xml</code> 文件。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">example</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">import</span> <span class="n">javax</span><span class="o">.</span><span class="n">servlet</span><span class="o">.</span><span class="n">annotation</span><span class="o">.</span><span class="n">WebServlet</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">import</span> <span class="n">javax</span><span class="o">.</span><span class="n">servlet</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">HttpServlet</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">import</span> <span class="n">javax</span><span class="o">.</span><span class="n">servlet</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">HttpServletRequest</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">import</span> <span class="n">javax</span><span class="o">.</span><span class="n">servlet</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">HttpServletResponse</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">import</span> <span class="n">java</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">IOException</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">import</span> <span class="n">java</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">PrintWriter</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">@</span><span class="n">WebServlet</span><span class="p">(</span><span class="s2">&#34;/annotation&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">public</span> <span class="k">class</span> <span class="n">AnnotationServlet</span> <span class="k">extends</span> <span class="n">HttpServlet</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">protected</span> <span class="n">void</span> <span class="n">doGet</span><span class="p">(</span><span class="n">HttpServletRequest</span> <span class="n">request</span><span class="p">,</span> <span class="n">HttpServletResponse</span> <span class="n">response</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">            <span class="n">throws</span> <span class="n">IOException</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">response</span><span class="o">.</span><span class="n">setContentType</span><span class="p">(</span><span class="s2">&#34;text/html&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">PrintWriter</span> <span class="n">out</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">getWriter</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&#34;&lt;h1&gt;Hello, World from AnnotationServlet!&lt;/h1&gt;&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>注解配置：使用 @WebServlet 注解可以省去 web.xml 配置。只需编译后在 Tomcat 上部署即可访问 /annotation。</p>
+<p>方法 3: 继承<code> GenericServlet</code>
+步骤：继承 <code>GenericServlet</code>，重写 <code>service() </code>方法，处理所有请求类型。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">package</span> <span class="n">com</span><span class="o">.</span><span class="n">example</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">import</span> <span class="n">java</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">IOException</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">import</span> <span class="n">java</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">PrintWriter</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">import</span> <span class="n">javax</span><span class="o">.</span><span class="n">servlet</span><span class="o">.*</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">public</span> <span class="k">class</span> <span class="n">GenericServletExample</span> <span class="k">extends</span> <span class="n">GenericServlet</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="err">@</span><span class="n">Override</span>
+</span></span><span class="line"><span class="cl">    <span class="n">public</span> <span class="n">void</span> <span class="n">service</span><span class="p">(</span><span class="n">ServletRequest</span> <span class="n">request</span><span class="p">,</span> <span class="n">ServletResponse</span> <span class="n">response</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">            <span class="n">throws</span> <span class="n">ServletException</span><span class="p">,</span> <span class="n">IOException</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">response</span><span class="o">.</span><span class="n">setContentType</span><span class="p">(</span><span class="s2">&#34;text/html&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">PrintWriter</span> <span class="n">out</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">getWriter</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&#34;&lt;h1&gt;Hello, World from GenericServlet!&lt;/h1&gt;&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>配置 web.xml：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;servlet&gt;
+</span></span><span class="line"><span class="cl">    &lt;servlet-name&gt;GenericServletExample&lt;/servlet-name&gt;
+</span></span><span class="line"><span class="cl">    &lt;servlet-class&gt;com.example.GenericServletExample&lt;/servlet-class&gt;
+</span></span><span class="line"><span class="cl">&lt;/servlet&gt;
+</span></span><span class="line"><span class="cl">&lt;servlet-mapping&gt;
+</span></span><span class="line"><span class="cl">    &lt;servlet-name&gt;GenericServletExample&lt;/servlet-name&gt;
+</span></span><span class="line"><span class="cl">    &lt;url-pattern&gt;/generic&lt;/url-pattern&gt;
+</span></span><span class="line"><span class="cl">&lt;/servlet-mapping&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="项目结构和文件配置">项目结构和文件配置
+</h2><p>源代码目录 (src/)：存放 Servlet 的源代码文件。</p>
+<ul>
+<li>HelloWorldServlet.java、AnnotationServlet.java、GenericServletExample.java 放在 src/com/example/ 目录下。</li>
+</ul>
+<p>webapp/WEB-INF/web.xml：</p>
+<ul>
+<li>web.xml 中配置 HelloWorldServlet 和 GenericServletExample 的映射。</li>
+<li>AnnotationServlet 不需要 web.xml 配置。</li>
+</ul>
+<p>HTML 文件 (index.html)：</p>
+<ul>
+<li>可以在 webapp/ 目录中添加一个简单的 index.html 文件作为测试入口页面。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;!DOCTYPE html&gt;
+</span></span><span class="line"><span class="cl">&lt;html&gt;
+</span></span><span class="line"><span class="cl">&lt;head&gt;
+</span></span><span class="line"><span class="cl">    &lt;title&gt;Servlet Test&lt;/title&gt;
+</span></span><span class="line"><span class="cl">&lt;/head&gt;
+</span></span><span class="line"><span class="cl">&lt;body&gt;
+</span></span><span class="line"><span class="cl">    &lt;h1&gt;Welcome to the Servlet Test&lt;/h1&gt;
+</span></span><span class="line"><span class="cl">    &lt;ul&gt;
+</span></span><span class="line"><span class="cl">        &lt;li&gt;&lt;a href=&#34;hello&#34;&gt;HelloWorldServlet (HttpServlet)&lt;/a&gt;&lt;/li&gt;
+</span></span><span class="line"><span class="cl">        &lt;li&gt;&lt;a href=&#34;annotation&#34;&gt;AnnotationServlet (@WebServlet)&lt;/a&gt;&lt;/li&gt;
+</span></span><span class="line"><span class="cl">        &lt;li&gt;&lt;a href=&#34;generic&#34;&gt;GenericServletExample (GenericServlet)&lt;/a&gt;&lt;/li&gt;
+</span></span><span class="line"><span class="cl">    &lt;/ul&gt;
+</span></span><span class="line"><span class="cl">&lt;/body&gt;
+</span></span><span class="line"><span class="cl">&lt;/html&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="编译与部署">编译与部署
+</h2><p>编译步骤：
+手动编译 Java 源文件：</p>
+<p>在项目根目录中，使用 javac 编译源代码，并将生成的 .class 文件放入 WEB-INF/classes 对应的目录结构中。例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">javac -d webapp/WEB-INF/classes src/com/example/HelloWorldServlet.java src/com/example/AnnotationServlet.java src/com/example/GenericServletExample.java
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>目录结果检查：</p>
+<p>编译后的 .class 文件应位于 webapp/WEB-INF/classes/com/example/ 目录下，结构如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">your-webapp/
+</span></span><span class="line"><span class="cl">├── webapp/
+</span></span><span class="line"><span class="cl">│   ├── WEB-INF/
+</span></span><span class="line"><span class="cl">│   │   ├── web.xml
+</span></span><span class="line"><span class="cl">│   │   └── classes/
+</span></span><span class="line"><span class="cl">│   │       └── com/
+</span></span><span class="line"><span class="cl">│   │           └── example/
+</span></span><span class="line"><span class="cl">│   │               ├── HelloWorldServlet.class
+</span></span><span class="line"><span class="cl">│   │               ├── AnnotationServlet.class
+</span></span><span class="line"><span class="cl">│   │               └── GenericServletExample.class
+</span></span><span class="line"><span class="cl">│   └── index.html
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>部署步骤：</p>
+<p>将项目部署到 Tomcat：</p>
+<ul>
+<li>将整个 your-webapp 目录打包为 .war 文件，或者直接将 webapp/ 目录拷贝到 Tomcat 的 webapps 文件夹下。</li>
+</ul>
+<p>启动 Tomcat：</p>
+<ul>
+<li>启动 Tomcat 服务器，项目会自动部署。</li>
+</ul>
+<p>访问 Servlet：</p>
+<ul>
+<li>通过浏览器访问不同的 URL 来测试不同的 Servlet：</li>
+<li>http://localhost:8080/your-webapp/hello (访问 HelloWorldServlet)</li>
+<li>http://localhost:8080/your-webapp/annotation (访问 AnnotationServlet)</li>
+<li>http://localhost:8080/your-webapp/generic (访问 GenericServletExample)</li>
+</ul>
+<h2 id="测试与验证">测试与验证
+</h2><p>通过访问不同的 URL，验证每个 Servlet 是否能够正常处理请求，并返回相应的响应。
+检查浏览器中是否显示：</p>
+<p>&ldquo;Hello, World from HttpServlet!&quot;（方法1）</p>
+<p>&ldquo;Hello, World from AnnotationServlet!&quot;（方法2）</p>
+<p>&ldquo;Hello, World from GenericServlet!&quot;（方法3）</p>
+<h2 id="问题">问题
+</h2><p>运行时出现问题</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">PS</span> <span class="n">C</span><span class="p">:</span>\<span class="n">app</span>\<span class="n">cod_tool</span>\<span class="n">program_tool</span>\<span class="n">jet</span>\<span class="n">idea_fil</span>\<span class="n">demo909010</span><span class="o">&gt;</span> <span class="n">javac</span> <span class="o">-</span><span class="n">d</span> <span class="n">webapp</span><span class="o">/</span><span class="n">WEB</span><span class="o">-</span><span class="bp">INF</span><span class="o">/</span><span class="n">classes</span> <span class="n">src</span><span class="o">/</span><span class="n">main</span><span class="o">/</span><span class="n">java</span><span class="o">/</span><span class="n">root</span><span class="o">.</span><span class="n">demo909010</span><span class="o">/</span><span class="n">HttpServletcn</span><span class="o">.</span><span class="n">java</span>              
+</span></span><span class="line"><span class="cl"><span class="n">Picked</span> <span class="n">up</span> <span class="n">JAVA_TOOL_OPTIONS</span><span class="p">:</span> <span class="o">-</span><span class="n">Duser</span><span class="o">.</span><span class="n">language</span><span class="o">=</span><span class="n">en</span>
+</span></span><span class="line"><span class="cl"><span class="n">error</span><span class="p">:</span> <span class="n">file</span> <span class="ow">not</span> <span class="n">found</span><span class="p">:</span> <span class="n">src</span>\<span class="n">main</span>\<span class="n">java</span>\<span class="n">root</span><span class="o">.</span><span class="n">demo909010</span>\<span class="n">HttpServletcn</span><span class="o">.</span><span class="n">java</span>
+</span></span><span class="line"><span class="cl"><span class="n">Usage</span><span class="p">:</span> <span class="n">javac</span> <span class="o">&lt;</span><span class="n">options</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">source</span> <span class="n">files</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="n">use</span> <span class="o">--</span><span class="n">help</span> <span class="k">for</span> <span class="n">a</span> <span class="n">list</span> <span class="n">of</span> <span class="n">possible</span> <span class="n">options</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>从给出的错误信息来看，Java编译器javac无法找到指定的源文件src\main\java\root.demo909010\HttpServletcn.java。</p>
+<p>文件路径错误：提供的文件路径可能不正确或者文件名有误。</p>
+<p>文件不存在：指定的Java源文件可能并不在src\main\java\root.demo909010\目录下。</p>
+<p>大小写敏感：文件系统是大小写敏感的，所以你需要确保文件路径和文件名的大小写完全匹配。</p>
+<p>当前工作目录错误：可能当前的工作目录并不是命令行中显示的C:\app\cod_tool\program_tool\jet\idea_fil\demo909010&gt;。</p>
+<p>在初次修改之后</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">PS</span> <span class="n">C</span><span class="p">:</span>\<span class="n">app</span>\<span class="n">cod_tool</span>\<span class="n">program_tool</span>\<span class="n">jet</span>\<span class="n">idea_fil</span>\<span class="n">demo909010</span><span class="o">&gt;</span> <span class="n">javac</span> <span class="o">-</span><span class="n">d</span> <span class="n">webapp</span>\<span class="n">WEB</span><span class="o">-</span><span class="bp">INF</span>\<span class="n">classes</span> <span class="n">src</span>\<span class="n">main</span>\<span class="n">java</span>\<span class="n">root</span>\<span class="n">demo909010</span>\<span class="n">HttpServletcn</span><span class="o">.</span><span class="n">java</span> 
+</span></span><span class="line"><span class="cl"><span class="n">Picked</span> <span class="n">up</span> <span class="n">JAVA_TOOL_OPTIONS</span><span class="p">:</span> <span class="o">-</span><span class="n">Duser</span><span class="o">.</span><span class="n">language</span><span class="o">=</span><span class="n">en</span>
+</span></span><span class="line"><span class="cl"><span class="n">src</span>\<span class="n">main</span>\<span class="n">java</span>\<span class="n">root</span>\<span class="n">demo909010</span>\<span class="n">HttpServletcn</span><span class="o">.</span><span class="n">java</span><span class="p">:</span><span class="mi">4</span><span class="p">:</span> <span class="n">error</span><span class="p">:</span> <span class="n">package</span> <span class="n">javax</span><span class="o">.</span><span class="n">servlet</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">exist</span>
+</span></span><span class="line"><span class="cl"><span class="n">import</span> <span class="n">javax</span><span class="o">.</span><span class="n">servlet</span><span class="o">.</span><span class="n">ServletException</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                    <span class="o">^</span>
+</span></span><span class="line"><span class="cl"><span class="n">src</span>\<span class="n">main</span>\<span class="n">java</span>\<span class="n">root</span>\<span class="n">demo909010</span>\<span class="n">HttpServletcn</span><span class="o">.</span><span class="n">java</span><span class="p">:</span><span class="mi">5</span><span class="p">:</span> <span class="n">error</span><span class="p">:</span> <span class="n">package</span> <span class="n">javax</span><span class="o">.</span><span class="n">servlet</span><span class="o">.</span><span class="n">http</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">exist</span>
+</span></span><span class="line"><span class="cl"><span class="n">import</span> <span class="n">javax</span><span class="o">.</span><span class="n">servlet</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">HttpServlet</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                         <span class="o">^</span>
+</span></span><span class="line"><span class="cl"><span class="n">src</span>\<span class="n">main</span>\<span class="n">java</span>\<span class="n">root</span>\<span class="n">demo909010</span>\<span class="n">HttpServletcn</span><span class="o">.</span><span class="n">java</span><span class="p">:</span><span class="mi">6</span><span class="p">:</span> <span class="n">error</span><span class="p">:</span> <span class="n">package</span> <span class="n">javax</span><span class="o">.</span><span class="n">servlet</span><span class="o">.</span><span class="n">http</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">exist</span>
+</span></span><span class="line"><span class="cl"><span class="n">import</span> <span class="n">javax</span><span class="o">.</span><span class="n">servlet</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">HttpServletRequest</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                         <span class="o">^</span>
+</span></span><span class="line"><span class="cl"><span class="n">src</span>\<span class="n">main</span>\<span class="n">java</span>\<span class="n">root</span>\<span class="n">demo909010</span>\<span class="n">HttpServletcn</span><span class="o">.</span><span class="n">java</span><span class="p">:</span><span class="mi">7</span><span class="p">:</span> <span class="n">error</span><span class="p">:</span> <span class="n">package</span> <span class="n">javax</span><span class="o">.</span><span class="n">servlet</span><span class="o">.</span><span class="n">http</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">exist</span>
+</span></span><span class="line"><span class="cl"><span class="n">import</span> <span class="n">javax</span><span class="o">.</span><span class="n">servlet</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">HttpServletResponse</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                         <span class="o">^</span>
+</span></span><span class="line"><span class="cl"><span class="n">src</span>\<span class="n">main</span>\<span class="n">java</span>\<span class="n">root</span>\<span class="n">demo909010</span>\<span class="n">HttpServletcn</span><span class="o">.</span><span class="n">java</span><span class="p">:</span><span class="mi">11</span><span class="p">:</span> <span class="n">error</span><span class="p">:</span> <span class="n">cannot</span> <span class="n">find</span> <span class="n">symbol</span>
+</span></span><span class="line"><span class="cl"><span class="n">public</span> <span class="k">class</span> <span class="n">HttpServletcn</span> <span class="k">extends</span> <span class="n">HttpServlet</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                                   <span class="o">^</span>
+</span></span><span class="line"><span class="cl">  <span class="n">symbol</span><span class="p">:</span> <span class="k">class</span> <span class="n">HttpServlet</span>
+</span></span><span class="line"><span class="cl"><span class="n">src</span>\<span class="n">main</span>\<span class="n">java</span>\<span class="n">root</span>\<span class="n">demo909010</span>\<span class="n">HttpServletcn</span><span class="o">.</span><span class="n">java</span><span class="p">:</span><span class="mi">12</span><span class="p">:</span> <span class="n">error</span><span class="p">:</span> <span class="n">cannot</span> <span class="n">find</span> <span class="n">symbol</span>
+</span></span><span class="line"><span class="cl">    <span class="n">protected</span> <span class="n">void</span> <span class="n">doGet</span><span class="p">(</span><span class="n">HttpServletRequest</span> <span class="n">request</span><span class="p">,</span> <span class="n">HttpServletResponse</span> <span class="n">response</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                         <span class="o">^</span>
+</span></span><span class="line"><span class="cl">  <span class="n">symbol</span><span class="p">:</span>   <span class="k">class</span> <span class="n">HttpServletRequest</span>
+</span></span><span class="line"><span class="cl">  <span class="n">location</span><span class="p">:</span> <span class="k">class</span> <span class="n">HttpServletcn</span>
+</span></span><span class="line"><span class="cl"><span class="n">src</span>\<span class="n">main</span>\<span class="n">java</span>\<span class="n">root</span>\<span class="n">demo909010</span>\<span class="n">HttpServletcn</span><span class="o">.</span><span class="n">java</span><span class="p">:</span><span class="mi">12</span><span class="p">:</span> <span class="n">error</span><span class="p">:</span> <span class="n">cannot</span> <span class="n">find</span> <span class="n">symbol</span>
+</span></span><span class="line"><span class="cl">    <span class="n">protected</span> <span class="n">void</span> <span class="n">doGet</span><span class="p">(</span><span class="n">HttpServletRequest</span> <span class="n">request</span><span class="p">,</span> <span class="n">HttpServletResponse</span> <span class="n">response</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                                                     <span class="o">^</span>
+</span></span><span class="line"><span class="cl">  <span class="n">symbol</span><span class="p">:</span>   <span class="k">class</span> <span class="n">HttpServletResponse</span>
+</span></span><span class="line"><span class="cl">  <span class="n">location</span><span class="p">:</span> <span class="k">class</span> <span class="n">HttpServletcn</span>
+</span></span><span class="line"><span class="cl"><span class="n">src</span>\<span class="n">main</span>\<span class="n">java</span>\<span class="n">root</span>\<span class="n">demo909010</span>\<span class="n">HttpServletcn</span><span class="o">.</span><span class="n">java</span><span class="p">:</span><span class="mi">13</span><span class="p">:</span> <span class="n">error</span><span class="p">:</span> <span class="n">cannot</span> <span class="n">find</span> <span class="n">symbol</span>
+</span></span><span class="line"><span class="cl">            <span class="n">throws</span> <span class="n">ServletException</span><span class="p">,</span> <span class="n">IOException</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                   <span class="o">^</span>
+</span></span><span class="line"><span class="cl">  <span class="n">symbol</span><span class="p">:</span>   <span class="k">class</span> <span class="n">ServletException</span>
+</span></span><span class="line"><span class="cl">  <span class="n">location</span><span class="p">:</span> <span class="k">class</span> <span class="n">HttpServletcn</span>
+</span></span><span class="line"><span class="cl"><span class="mi">8</span> <span class="n">errors</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>从错误信息来看，编译器无法找到javax.servlet和javax.servlet.http这两个包中的类。这通常意味着缺少Servlet API的依赖。</p>
+<p>缺少Servlet API依赖：你的项目中没有包含Servlet API的jar文件，或者编译器没有找到这个jar文件。</p>
+<p>类路径（Classpath）问题：即使你的项目中有Servlet API的jar文件，但是编译器没有将其包含在类路径中。</p>
+<p>我使用的idea会自动把servlet放在一个外部库里面</p>
+<p>在这种情况下，IDEA已经自动将Servlet API作为一个外部库添加到了项目中，那么在IDEA内部进行编译和运行时通常不会出现问题，因为IDEA会自动处理类路径（Classpath）。</p>
+<p>然而，如果在命令行手动编译Java文件，需要确保手动指定正确的类路径，以便编译器可以找到Servlet API和其他依赖项。</p>
+<p>以下是一些步骤，以确保在命令行编译时正确设置类路径：</p>
+<p>查找IDEA配置的类路径：</p>
+<p>打开IDEA，进入“File”菜单，选择“Project Structure”（快捷键通常是Ctrl+Alt+Shift+S）。</p>
+<p>在“Project Structure”窗口中，选择“Modules”。</p>
+<p>选择你的模块，然后查看“Dependencies”标签页。</p>
+<p>在这里，可以看到所有已添加的库，包括外部库。对于Servlet API，通常会看到它的路径和版本。</p>
+<p>手动设置类路径：</p>
+<p>在命令行中，使用-cp或-classpath选项来指定类路径。你需要包括Servlet API的jar文件路径，以及可能需要的其他库。</p>
+<p>如果不确定具体的路径，可以从IDEA的“Project Structure”中复制。</p>
+<p>例如，如果在IDEA中看到Servlet API的外部库路径是C:\Users\YourUsername.m2\repository\javax\servlet\javax.servlet-api\4.0.1\javax.servlet-api-4.0.1.jar，那么命令行编译命令应该类似于：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">javac -cp &#34;C:\Users\YourUsername\.m2\repository\javax\servlet\javax.servlet-api\4.0.1\javax.servlet-api-4.0.1.jar&#34;;webapp/WEB-INF/classes -d webapp/WEB-INF/classes src/main/java/root/demo909010/HttpServletcn.java
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>注意，在Windows中，类路径的元素之间是用分号;分隔的，而在Unix/Linux/macOS中是用冒号:分隔的。</p>
+<p>最终使用这个命令解决：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">javac</span> <span class="o">-</span><span class="n">cp</span> <span class="s2">&#34;C:</span><span class="se">\a</span><span class="s2">pp\cod_tool\web_tool</span><span class="se">\t</span><span class="s2">omcat</span><span class="se">\t</span><span class="s2">omcat9</span><span class="se">\t</span><span class="s2">omcat9\lib\servlet-api.jar&#34;</span> <span class="o">-</span><span class="n">d</span> <span class="n">src</span>\<span class="n">main</span>\<span class="n">webapp</span>\<span class="n">WEB</span><span class="o">-</span><span class="bp">INF</span>\<span class="n">classes</span> <span class="n">src</span>\<span class="n">main</span>\<span class="n">java</span>\<span class="n">root</span>\<span class="n">demo909010</span>\<span class="n">GenericServletcn</span><span class="o">.</span><span class="n">java</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2024 yaoxieの孤岛
+    </section>
+    
+    <section class="powerby">
+        
+            Good Morning, and in case I don't see you, good afternoon, good evening, and good night! <br/>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a  target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> 由 <a  target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

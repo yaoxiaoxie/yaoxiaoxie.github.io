@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="IDEA乱码问题（亲测有效） 强行配置UTF-8\r1.ctrl+alt+s进入设置，改变全局编码 UTF-8 2.配置Tomcat VM options值为：-Dfile.encoding=UTF-8 3.在tomcat启动配置 JAVA_OPTS =-Dfile.encoding=UTF-8 4.进入help的虚拟机参数配置（VM OPTIONS）配置-Dfile.encoding=UTF-8 5.进入IDEA安装根目录 编辑idea.exe.vmoptions与idea64.exe.vmoptions，都加上-Dfile.encoding=UTF-8 6.在你本机的tomcat目录下 在conf中找到logging.properties 更改配置如下图。如果有该配置 则不添加 7.检查右下角控制台编码是否为UTF-8 ，如果不是， 则更改。 重启IDEA 在运行 控制台乱码问题就解决啦 嘿嘿. 配置JDK的javac命令输出英文信息\r方法一\r在配置IntelliJ IDEA等IDE后，虽然IDE操作界面的语言是英文的，但是由于电脑的环境语言是中文的，所以在IDE操作JDK的java或javac命令，JDK还是按照电脑的环境语言配置而输出中文的提示信息、报错信息等。 我们更希望JDK的输出信息是英文版的，因为这样避免了英译中潜在的歧义，同时我们也可以通过英文的输出信息在Google查询到更详细和权威的解决方案。 通过百度，可以查询到类似的解决方案，例如这篇文章《IntelliJ IDEA 编译输出改为英文 运行信息改为英文》分别介绍了Windows环境变量配置、IDEA编译器参数配置、VM配置文件参数配置。 由于Windows环境变量配置的方法只适用于Windows电脑，因此其有效性暂不做评论。但是博主亲自测试上述文章中IDEA编译器参数配置的方案是没有生效的，即JDK的输出信息是中文内容。 因此博主又去查询了其他的配置方法，发现这篇文章*《How to set intellij compile error output language to English?》*中提供的方案是有效的，同时也是上篇文章中的最后一个方案，即VM配置文件参数配置方案。 VM配置文件参数配置方案 我们首先打开IntelliJ IDEA这款软件，然后在其标题栏中找到并点击Help标签，接着点击该标签中的子项Edit Custom VM Options： 接着我们便进入了idea.vmoptions配置文件的编辑界面，我们只需在该文件的最后一行加入一个选项参数-Duser.language=en即可： 编辑好上述的idea.vmoptions配置文件后，还有最后一步重要的操作，也就是重启IntelliJ IDEA，因为只有重启后上述配置信息才会生效。注意重启IntelliJ IDEA不是关闭当前IntelliJ IDEA的项目窗口，而是杀死IntelliJ IDEA的进程，最方便的操作就是对正在运行的IntelliJ IDEA点击鼠标右键，再点击关闭或退出选项即可(无论Windows或Mac)： 重启IntelliJ IDEA后，我们再通过编译运行任意会产生编译信息的项目，发现现在的JDK的输出信息是英文内容了： 方法二\r一。增加环境变量 JAVA_TOOL_OPTIONS ，值为 -Duser.language=en">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="IDEA乱码问题（亲测有效） 强行配置UTF-8\r1.ctrl+alt+s进入设置，改变全局编码 UTF-8 2.配置Tomcat VM options值为：-Dfile.encoding=UTF-8 3.在tomcat启动配置 JAVA_OPTS =-Dfile.encoding=UTF-8 4.进入help的虚拟机参数配置（VM OPTIONS）配置-Dfile.encoding=UTF-8 5.进入IDEA安装根目录 编辑idea.exe.vmoptions与idea64.exe.vmoptions，都加上-Dfile.encoding=UTF-8 6.在你本机的tomcat目录下 在conf中找到logging.properties 更改配置如下图。如果有该配置 则不添加 7.检查右下角控制台编码是否为UTF-8 ，如果不是， 则更改。 重启IDEA 在运行 控制台乱码问题就解决啦 嘿嘿. 配置JDK的javac命令输出英文信息\r方法一\r在配置IntelliJ IDEA等IDE后，虽然IDE操作界面的语言是英文的，但是由于电脑的环境语言是中文的，所以在IDE操作JDK的java或javac命令，JDK还是按照电脑的环境语言配置而输出中文的提示信息、报错信息等。 我们更希望JDK的输出信息是英文版的，因为这样避免了英译中潜在的歧义，同时我们也可以通过英文的输出信息在Google查询到更详细和权威的解决方案。 通过百度，可以查询到类似的解决方案，例如这篇文章《IntelliJ IDEA 编译输出改为英文 运行信息改为英文》分别介绍了Windows环境变量配置、IDEA编译器参数配置、VM配置文件参数配置。 由于Windows环境变量配置的方法只适用于Windows电脑，因此其有效性暂不做评论。但是博主亲自测试上述文章中IDEA编译器参数配置的方案是没有生效的，即JDK的输出信息是中文内容。 因此博主又去查询了其他的配置方法，发现这篇文章*《How to set intellij compile error output language to English?》*中提供的方案是有效的，同时也是上篇文章中的最后一个方案，即VM配置文件参数配置方案。 VM配置文件参数配置方案 我们首先打开IntelliJ IDEA这款软件，然后在其标题栏中找到并点击Help标签，接着点击该标签中的子项Edit Custom VM Options： 接着我们便进入了idea.vmoptions配置文件的编辑界面，我们只需在该文件的最后一行加入一个选项参数-Duser.language=en即可： 编辑好上述的idea.vmoptions配置文件后，还有最后一步重要的操作，也就是重启IntelliJ IDEA，因为只有重启后上述配置信息才会生效。注意重启IntelliJ IDEA不是关闭当前IntelliJ IDEA的项目窗口，而是杀死IntelliJ IDEA的进程，最方便的操作就是对正在运行的IntelliJ IDEA点击鼠标右键，再点击关闭或退出选项即可(无论Windows或Mac)： 重启IntelliJ IDEA后，我们再通过编译运行任意会产生编译信息的项目，发现现在的JDK的输出信息是英文内容了： 方法二\r增加环境变量 JAVA_TOOL_OPTIONS ，值为 -Duser.language=en">
 <title>JDK强制英文运行</title>
 
 <link rel='canonical' href='https://yaoxiaoxie.github.io/p/jdk/'>
 
 <link rel="stylesheet" href="/scss/style.min.e8c7fca7d1c9294aa7a4f3426c225ee26540f7d94e39be0b5a4a5c8a49ca5a25.css"><meta property='og:title' content="JDK强制英文运行">
-<meta property='og:description' content="IDEA乱码问题（亲测有效） 强行配置UTF-8\r1.ctrl+alt+s进入设置，改变全局编码 UTF-8 2.配置Tomcat VM options值为：-Dfile.encoding=UTF-8 3.在tomcat启动配置 JAVA_OPTS =-Dfile.encoding=UTF-8 4.进入help的虚拟机参数配置（VM OPTIONS）配置-Dfile.encoding=UTF-8 5.进入IDEA安装根目录 编辑idea.exe.vmoptions与idea64.exe.vmoptions，都加上-Dfile.encoding=UTF-8 6.在你本机的tomcat目录下 在conf中找到logging.properties 更改配置如下图。如果有该配置 则不添加 7.检查右下角控制台编码是否为UTF-8 ，如果不是， 则更改。 重启IDEA 在运行 控制台乱码问题就解决啦 嘿嘿. 配置JDK的javac命令输出英文信息\r方法一\r在配置IntelliJ IDEA等IDE后，虽然IDE操作界面的语言是英文的，但是由于电脑的环境语言是中文的，所以在IDE操作JDK的java或javac命令，JDK还是按照电脑的环境语言配置而输出中文的提示信息、报错信息等。 我们更希望JDK的输出信息是英文版的，因为这样避免了英译中潜在的歧义，同时我们也可以通过英文的输出信息在Google查询到更详细和权威的解决方案。 通过百度，可以查询到类似的解决方案，例如这篇文章《IntelliJ IDEA 编译输出改为英文 运行信息改为英文》分别介绍了Windows环境变量配置、IDEA编译器参数配置、VM配置文件参数配置。 由于Windows环境变量配置的方法只适用于Windows电脑，因此其有效性暂不做评论。但是博主亲自测试上述文章中IDEA编译器参数配置的方案是没有生效的，即JDK的输出信息是中文内容。 因此博主又去查询了其他的配置方法，发现这篇文章*《How to set intellij compile error output language to English?》*中提供的方案是有效的，同时也是上篇文章中的最后一个方案，即VM配置文件参数配置方案。 VM配置文件参数配置方案 我们首先打开IntelliJ IDEA这款软件，然后在其标题栏中找到并点击Help标签，接着点击该标签中的子项Edit Custom VM Options： 接着我们便进入了idea.vmoptions配置文件的编辑界面，我们只需在该文件的最后一行加入一个选项参数-Duser.language=en即可： 编辑好上述的idea.vmoptions配置文件后，还有最后一步重要的操作，也就是重启IntelliJ IDEA，因为只有重启后上述配置信息才会生效。注意重启IntelliJ IDEA不是关闭当前IntelliJ IDEA的项目窗口，而是杀死IntelliJ IDEA的进程，最方便的操作就是对正在运行的IntelliJ IDEA点击鼠标右键，再点击关闭或退出选项即可(无论Windows或Mac)： 重启IntelliJ IDEA后，我们再通过编译运行任意会产生编译信息的项目，发现现在的JDK的输出信息是英文内容了： 方法二\r一。增加环境变量 JAVA_TOOL_OPTIONS ，值为 -Duser.language=en">
+<meta property='og:description' content="IDEA乱码问题（亲测有效） 强行配置UTF-8\r1.ctrl+alt+s进入设置，改变全局编码 UTF-8 2.配置Tomcat VM options值为：-Dfile.encoding=UTF-8 3.在tomcat启动配置 JAVA_OPTS =-Dfile.encoding=UTF-8 4.进入help的虚拟机参数配置（VM OPTIONS）配置-Dfile.encoding=UTF-8 5.进入IDEA安装根目录 编辑idea.exe.vmoptions与idea64.exe.vmoptions，都加上-Dfile.encoding=UTF-8 6.在你本机的tomcat目录下 在conf中找到logging.properties 更改配置如下图。如果有该配置 则不添加 7.检查右下角控制台编码是否为UTF-8 ，如果不是， 则更改。 重启IDEA 在运行 控制台乱码问题就解决啦 嘿嘿. 配置JDK的javac命令输出英文信息\r方法一\r在配置IntelliJ IDEA等IDE后，虽然IDE操作界面的语言是英文的，但是由于电脑的环境语言是中文的，所以在IDE操作JDK的java或javac命令，JDK还是按照电脑的环境语言配置而输出中文的提示信息、报错信息等。 我们更希望JDK的输出信息是英文版的，因为这样避免了英译中潜在的歧义，同时我们也可以通过英文的输出信息在Google查询到更详细和权威的解决方案。 通过百度，可以查询到类似的解决方案，例如这篇文章《IntelliJ IDEA 编译输出改为英文 运行信息改为英文》分别介绍了Windows环境变量配置、IDEA编译器参数配置、VM配置文件参数配置。 由于Windows环境变量配置的方法只适用于Windows电脑，因此其有效性暂不做评论。但是博主亲自测试上述文章中IDEA编译器参数配置的方案是没有生效的，即JDK的输出信息是中文内容。 因此博主又去查询了其他的配置方法，发现这篇文章*《How to set intellij compile error output language to English?》*中提供的方案是有效的，同时也是上篇文章中的最后一个方案，即VM配置文件参数配置方案。 VM配置文件参数配置方案 我们首先打开IntelliJ IDEA这款软件，然后在其标题栏中找到并点击Help标签，接着点击该标签中的子项Edit Custom VM Options： 接着我们便进入了idea.vmoptions配置文件的编辑界面，我们只需在该文件的最后一行加入一个选项参数-Duser.language=en即可： 编辑好上述的idea.vmoptions配置文件后，还有最后一步重要的操作，也就是重启IntelliJ IDEA，因为只有重启后上述配置信息才会生效。注意重启IntelliJ IDEA不是关闭当前IntelliJ IDEA的项目窗口，而是杀死IntelliJ IDEA的进程，最方便的操作就是对正在运行的IntelliJ IDEA点击鼠标右键，再点击关闭或退出选项即可(无论Windows或Mac)： 重启IntelliJ IDEA后，我们再通过编译运行任意会产生编译信息的项目，发现现在的JDK的输出信息是英文内容了： 方法二\r增加环境变量 JAVA_TOOL_OPTIONS ，值为 -Duser.language=en">
 <meta property='og:url' content='https://yaoxiaoxie.github.io/p/jdk/'>
 <meta property='og:site_name' content='yaoxieの自留地'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-09-09T20:50:53&#43;08:00'/><meta property='article:modified_time' content='2024-09-09T20:50:53&#43;08:00'/><meta property='og:image' content='https://yaoxiaoxie.github.io/img/face1.jpg' />
 <meta name="twitter:title" content="JDK强制英文运行">
-<meta name="twitter:description" content="IDEA乱码问题（亲测有效） 强行配置UTF-8\r1.ctrl+alt+s进入设置，改变全局编码 UTF-8 2.配置Tomcat VM options值为：-Dfile.encoding=UTF-8 3.在tomcat启动配置 JAVA_OPTS =-Dfile.encoding=UTF-8 4.进入help的虚拟机参数配置（VM OPTIONS）配置-Dfile.encoding=UTF-8 5.进入IDEA安装根目录 编辑idea.exe.vmoptions与idea64.exe.vmoptions，都加上-Dfile.encoding=UTF-8 6.在你本机的tomcat目录下 在conf中找到logging.properties 更改配置如下图。如果有该配置 则不添加 7.检查右下角控制台编码是否为UTF-8 ，如果不是， 则更改。 重启IDEA 在运行 控制台乱码问题就解决啦 嘿嘿. 配置JDK的javac命令输出英文信息\r方法一\r在配置IntelliJ IDEA等IDE后，虽然IDE操作界面的语言是英文的，但是由于电脑的环境语言是中文的，所以在IDE操作JDK的java或javac命令，JDK还是按照电脑的环境语言配置而输出中文的提示信息、报错信息等。 我们更希望JDK的输出信息是英文版的，因为这样避免了英译中潜在的歧义，同时我们也可以通过英文的输出信息在Google查询到更详细和权威的解决方案。 通过百度，可以查询到类似的解决方案，例如这篇文章《IntelliJ IDEA 编译输出改为英文 运行信息改为英文》分别介绍了Windows环境变量配置、IDEA编译器参数配置、VM配置文件参数配置。 由于Windows环境变量配置的方法只适用于Windows电脑，因此其有效性暂不做评论。但是博主亲自测试上述文章中IDEA编译器参数配置的方案是没有生效的，即JDK的输出信息是中文内容。 因此博主又去查询了其他的配置方法，发现这篇文章*《How to set intellij compile error output language to English?》*中提供的方案是有效的，同时也是上篇文章中的最后一个方案，即VM配置文件参数配置方案。 VM配置文件参数配置方案 我们首先打开IntelliJ IDEA这款软件，然后在其标题栏中找到并点击Help标签，接着点击该标签中的子项Edit Custom VM Options： 接着我们便进入了idea.vmoptions配置文件的编辑界面，我们只需在该文件的最后一行加入一个选项参数-Duser.language=en即可： 编辑好上述的idea.vmoptions配置文件后，还有最后一步重要的操作，也就是重启IntelliJ IDEA，因为只有重启后上述配置信息才会生效。注意重启IntelliJ IDEA不是关闭当前IntelliJ IDEA的项目窗口，而是杀死IntelliJ IDEA的进程，最方便的操作就是对正在运行的IntelliJ IDEA点击鼠标右键，再点击关闭或退出选项即可(无论Windows或Mac)： 重启IntelliJ IDEA后，我们再通过编译运行任意会产生编译信息的项目，发现现在的JDK的输出信息是英文内容了： 方法二\r一。增加环境变量 JAVA_TOOL_OPTIONS ，值为 -Duser.language=en"><meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="IDEA乱码问题（亲测有效） 强行配置UTF-8\r1.ctrl+alt+s进入设置，改变全局编码 UTF-8 2.配置Tomcat VM options值为：-Dfile.encoding=UTF-8 3.在tomcat启动配置 JAVA_OPTS =-Dfile.encoding=UTF-8 4.进入help的虚拟机参数配置（VM OPTIONS）配置-Dfile.encoding=UTF-8 5.进入IDEA安装根目录 编辑idea.exe.vmoptions与idea64.exe.vmoptions，都加上-Dfile.encoding=UTF-8 6.在你本机的tomcat目录下 在conf中找到logging.properties 更改配置如下图。如果有该配置 则不添加 7.检查右下角控制台编码是否为UTF-8 ，如果不是， 则更改。 重启IDEA 在运行 控制台乱码问题就解决啦 嘿嘿. 配置JDK的javac命令输出英文信息\r方法一\r在配置IntelliJ IDEA等IDE后，虽然IDE操作界面的语言是英文的，但是由于电脑的环境语言是中文的，所以在IDE操作JDK的java或javac命令，JDK还是按照电脑的环境语言配置而输出中文的提示信息、报错信息等。 我们更希望JDK的输出信息是英文版的，因为这样避免了英译中潜在的歧义，同时我们也可以通过英文的输出信息在Google查询到更详细和权威的解决方案。 通过百度，可以查询到类似的解决方案，例如这篇文章《IntelliJ IDEA 编译输出改为英文 运行信息改为英文》分别介绍了Windows环境变量配置、IDEA编译器参数配置、VM配置文件参数配置。 由于Windows环境变量配置的方法只适用于Windows电脑，因此其有效性暂不做评论。但是博主亲自测试上述文章中IDEA编译器参数配置的方案是没有生效的，即JDK的输出信息是中文内容。 因此博主又去查询了其他的配置方法，发现这篇文章*《How to set intellij compile error output language to English?》*中提供的方案是有效的，同时也是上篇文章中的最后一个方案，即VM配置文件参数配置方案。 VM配置文件参数配置方案 我们首先打开IntelliJ IDEA这款软件，然后在其标题栏中找到并点击Help标签，接着点击该标签中的子项Edit Custom VM Options： 接着我们便进入了idea.vmoptions配置文件的编辑界面，我们只需在该文件的最后一行加入一个选项参数-Duser.language=en即可： 编辑好上述的idea.vmoptions配置文件后，还有最后一步重要的操作，也就是重启IntelliJ IDEA，因为只有重启后上述配置信息才会生效。注意重启IntelliJ IDEA不是关闭当前IntelliJ IDEA的项目窗口，而是杀死IntelliJ IDEA的进程，最方便的操作就是对正在运行的IntelliJ IDEA点击鼠标右键，再点击关闭或退出选项即可(无论Windows或Mac)： 重启IntelliJ IDEA后，我们再通过编译运行任意会产生编译信息的项目，发现现在的JDK的输出信息是英文内容了： 方法二\r增加环境变量 JAVA_TOOL_OPTIONS ，值为 -Duser.language=en"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://yaoxiaoxie.github.io/img/face1.jpg' />
   
 
@@ -256,14 +256,6 @@
 
     <div class="article-details">
     
-    <header class="article-category">
-        
-            <a href="/categories/tomcat/" >
-                Tomcat
-            </a>
-        
-    </header>
-    
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
@@ -342,7 +334,7 @@
 <p>编辑好上述的idea.vmoptions配置文件后，还有最后一步重要的操作，也就是重启IntelliJ IDEA，因为只有重启后上述配置信息才会生效。注意重启IntelliJ IDEA不是关闭当前IntelliJ IDEA的项目窗口，而是杀死IntelliJ IDEA的进程，最方便的操作就是对正在运行的IntelliJ IDEA点击鼠标右键，再点击关闭或退出选项即可(无论Windows或Mac)：</p>
 <p>重启IntelliJ IDEA后，我们再通过编译运行任意会产生编译信息的项目，发现现在的JDK的输出信息是英文内容了：</p>
 <h3 id="方法二">方法二
-</h3><p>一。增加环境变量 JAVA_TOOL_OPTIONS ，值为 -Duser.language=en</p>
+</h3><p>增加环境变量 JAVA_TOOL_OPTIONS ，值为 -Duser.language=en</p>
 
 </section>
 
@@ -395,34 +387,6 @@
     
 
     
-
-<aside class="related-content--wrapper">
-    <h2 class="section-title">相关文章</h2>
-    <div class="related-content">
-        <div class="flex article-list--tile">
-            
-                
-<article class="has-image">
-    <a href="/p/tomcat/">
-        
-        
-            <div class="article-image">
-                
-                    <img src="/img/face1.jpg" loading="lazy" data-key="Tomcat" data-hash="/img/face1.jpg"/>
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Tomcat安装与问题解决</h2>
-        </div>
-    </a>
-</article>
-
-            
-        </div>
-    </div>
-</aside>
 
      
     
