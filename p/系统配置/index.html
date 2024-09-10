@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="在Win10英文版系统下，如果中文软件显示为问号，可能是由于系统的字符编码设置不正确导致的。你可以尝试以下方法来解决这个问题： 更改系统区域和语言设置：打开控制面板，选择&quot;Clock and Region&quot;（时钟和区域）或者&quot;Region&quot;（地区），在&quot;Formats&quot;（格式）选项卡中，将格式设置为&quot;Chinese (Simplified, China)&quot;（中文（简体，中国）），然后点击应用或确定按钮保存更改。 安装中文语言包：打开设置应用，选择&quot;Time &amp; Language&quot;（时间和语言），然后选择&quot;Language&quot;（语言）选项卡。点击&quot;Add a language&quot;（添加语言），选择中文（简体）并安装相应的语言包。然后将中文语言设置为默认语言。 确认中文字符集：打开控制面板，选择&quot;Clock and Region&quot;（时钟和区域）或者&quot;Region&quot;（地区），在&quot;Administrative&quot;（高级）选项卡中，点击&quot;Change system locale&quot;（更改系统区域设置）按钮，选择中文（简体，中国）作为系统区域。 更新中文软件：如果你使用的中文软件是旧版本，可能存在与Win10兼容性问题。尝试更新软件到最新版本，并确保软件与Win10系统兼容。 如果以上方法仍然无法解决问题，可能需要考虑在系统上重新安装或修复中文语言包。另外，确保你的中文软件是正版，避免使用破解、盗版软件，以免出现兼容性问题。 解决 更改系统区域和语言设置:打开控制面板,选择&quot;Clock and Region&quot;(时钟和区域)或者&quot;Region&quot;(地区),在&quot;Formats&quot;(格式)选项卡中,将格式设置为&quot;Chinese (Simplified, China)&quot;(中文(简体,中国)),然后点击应用或确定按钮保存更改。 2. 安装中文语言包:打开设置应用,选择&quot;Time &amp; Language&quot;(时间和语言),然后选择&quot;Language&quot;(语言)选项卡。点击&quot;Add a language&quot;(添加语言),选择中文(简体)并安装相应的语言包。然后将中文语言设置为默认语言。 收起\ue736 很多人用英文操作系统，原因有很多，不管什么原因，都有可能碰到一个问题：软件的文字显示乱码，怎么办? 软件文字显示乱码的原因在于，在英文操作系统下，基于ASCII编码解释所有非Unicode的语言，这时如果不是英语，就会出现乱码。 解决方案： 我不确定从哪个版本的windows开始支持的，因为我从windows7才开始用英文版，windows7和8都是支持的。 设置方法： Control Panel\\Clock, Language, and Region中，打开Region-&gt;Administrative-&gt;Language for non-Unicode programs-&gt; Change System Locale..-&gt;选择Chinese (Simplified, China) 设置完成后需要重启生效。注意：迅雷这样的软件在安装前就要先设置好，否则软件名会是乱码。所以安装好英文windows最好先设置Locale. 同时产生乱码的原因是 因为 转换字符编码的时候，当前语言系统没有相应的字符编码代码页导致的。 解决方案： 先获取当前系统默认使用的字符编码代码页 编号，然后使用这个编号 进行 字符转码 即可。">
+<title>英文系统中文软件显示为问号</title>
+
+<link rel='canonical' href='https://yaoxiaoxie.github.io/p/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/'>
+
+<link rel="stylesheet" href="/scss/style.min.e8c7fca7d1c9294aa7a4f3426c225ee26540f7d94e39be0b5a4a5c8a49ca5a25.css"><meta property='og:title' content="英文系统中文软件显示为问号">
+<meta property='og:description' content="在Win10英文版系统下，如果中文软件显示为问号，可能是由于系统的字符编码设置不正确导致的。你可以尝试以下方法来解决这个问题： 更改系统区域和语言设置：打开控制面板，选择&quot;Clock and Region&quot;（时钟和区域）或者&quot;Region&quot;（地区），在&quot;Formats&quot;（格式）选项卡中，将格式设置为&quot;Chinese (Simplified, China)&quot;（中文（简体，中国）），然后点击应用或确定按钮保存更改。 安装中文语言包：打开设置应用，选择&quot;Time &amp; Language&quot;（时间和语言），然后选择&quot;Language&quot;（语言）选项卡。点击&quot;Add a language&quot;（添加语言），选择中文（简体）并安装相应的语言包。然后将中文语言设置为默认语言。 确认中文字符集：打开控制面板，选择&quot;Clock and Region&quot;（时钟和区域）或者&quot;Region&quot;（地区），在&quot;Administrative&quot;（高级）选项卡中，点击&quot;Change system locale&quot;（更改系统区域设置）按钮，选择中文（简体，中国）作为系统区域。 更新中文软件：如果你使用的中文软件是旧版本，可能存在与Win10兼容性问题。尝试更新软件到最新版本，并确保软件与Win10系统兼容。 如果以上方法仍然无法解决问题，可能需要考虑在系统上重新安装或修复中文语言包。另外，确保你的中文软件是正版，避免使用破解、盗版软件，以免出现兼容性问题。 解决 更改系统区域和语言设置:打开控制面板,选择&quot;Clock and Region&quot;(时钟和区域)或者&quot;Region&quot;(地区),在&quot;Formats&quot;(格式)选项卡中,将格式设置为&quot;Chinese (Simplified, China)&quot;(中文(简体,中国)),然后点击应用或确定按钮保存更改。 2. 安装中文语言包:打开设置应用,选择&quot;Time &amp; Language&quot;(时间和语言),然后选择&quot;Language&quot;(语言)选项卡。点击&quot;Add a language&quot;(添加语言),选择中文(简体)并安装相应的语言包。然后将中文语言设置为默认语言。 收起\ue736 很多人用英文操作系统，原因有很多，不管什么原因，都有可能碰到一个问题：软件的文字显示乱码，怎么办? 软件文字显示乱码的原因在于，在英文操作系统下，基于ASCII编码解释所有非Unicode的语言，这时如果不是英语，就会出现乱码。 解决方案： 我不确定从哪个版本的windows开始支持的，因为我从windows7才开始用英文版，windows7和8都是支持的。 设置方法： Control Panel\\Clock, Language, and Region中，打开Region-&gt;Administrative-&gt;Language for non-Unicode programs-&gt; Change System Locale..-&gt;选择Chinese (Simplified, China) 设置完成后需要重启生效。注意：迅雷这样的软件在安装前就要先设置好，否则软件名会是乱码。所以安装好英文windows最好先设置Locale. 同时产生乱码的原因是 因为 转换字符编码的时候，当前语言系统没有相应的字符编码代码页导致的。 解决方案： 先获取当前系统默认使用的字符编码代码页 编号，然后使用这个编号 进行 字符转码 即可。">
+<meta property='og:url' content='https://yaoxiaoxie.github.io/p/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/'>
+<meta property='og:site_name' content='yaoxieの自留地'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-09-10T23:41:54&#43;08:00'/><meta property='article:modified_time' content='2024-09-10T23:41:54&#43;08:00'/><meta property='og:image' content='https://yaoxiaoxie.github.io/img/face1.jpg' />
+<meta name="twitter:title" content="英文系统中文软件显示为问号">
+<meta name="twitter:description" content="在Win10英文版系统下，如果中文软件显示为问号，可能是由于系统的字符编码设置不正确导致的。你可以尝试以下方法来解决这个问题： 更改系统区域和语言设置：打开控制面板，选择&quot;Clock and Region&quot;（时钟和区域）或者&quot;Region&quot;（地区），在&quot;Formats&quot;（格式）选项卡中，将格式设置为&quot;Chinese (Simplified, China)&quot;（中文（简体，中国）），然后点击应用或确定按钮保存更改。 安装中文语言包：打开设置应用，选择&quot;Time &amp; Language&quot;（时间和语言），然后选择&quot;Language&quot;（语言）选项卡。点击&quot;Add a language&quot;（添加语言），选择中文（简体）并安装相应的语言包。然后将中文语言设置为默认语言。 确认中文字符集：打开控制面板，选择&quot;Clock and Region&quot;（时钟和区域）或者&quot;Region&quot;（地区），在&quot;Administrative&quot;（高级）选项卡中，点击&quot;Change system locale&quot;（更改系统区域设置）按钮，选择中文（简体，中国）作为系统区域。 更新中文软件：如果你使用的中文软件是旧版本，可能存在与Win10兼容性问题。尝试更新软件到最新版本，并确保软件与Win10系统兼容。 如果以上方法仍然无法解决问题，可能需要考虑在系统上重新安装或修复中文语言包。另外，确保你的中文软件是正版，避免使用破解、盗版软件，以免出现兼容性问题。 解决 更改系统区域和语言设置:打开控制面板,选择&quot;Clock and Region&quot;(时钟和区域)或者&quot;Region&quot;(地区),在&quot;Formats&quot;(格式)选项卡中,将格式设置为&quot;Chinese (Simplified, China)&quot;(中文(简体,中国)),然后点击应用或确定按钮保存更改。 2. 安装中文语言包:打开设置应用,选择&quot;Time &amp; Language&quot;(时间和语言),然后选择&quot;Language&quot;(语言)选项卡。点击&quot;Add a language&quot;(添加语言),选择中文(简体)并安装相应的语言包。然后将中文语言设置为默认语言。 收起\ue736 很多人用英文操作系统，原因有很多，不管什么原因，都有可能碰到一个问题：软件的文字显示乱码，怎么办? 软件文字显示乱码的原因在于，在英文操作系统下，基于ASCII编码解释所有非Unicode的语言，这时如果不是英语，就会出现乱码。 解决方案： 我不确定从哪个版本的windows开始支持的，因为我从windows7才开始用英文版，windows7和8都是支持的。 设置方法： Control Panel\\Clock, Language, and Region中，打开Region-&gt;Administrative-&gt;Language for non-Unicode programs-&gt; Change System Locale..-&gt;选择Chinese (Simplified, China) 设置完成后需要重启生效。注意：迅雷这样的软件在安装前就要先设置好，否则软件名会是乱码。所以安装好英文windows最好先设置Locale. 同时产生乱码的原因是 因为 转换字符编码的时候，当前语言系统没有相应的字符编码代码页导致的。 解决方案： 先获取当前系统默认使用的字符编码代码页 编号，然后使用这个编号 进行 字符转码 即可。"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://yaoxiaoxie.github.io/img/face1.jpg' />
+  
+
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            localStorage.setItem(colorSchemeKey, "light");
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatars/shasha_hua08fdcfd9ab01acc26f6e87a2c1cfd5a_105342_300x0_resize_box_1.gif" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">yaoxieの自留地</a></h1>
+            <h2 class="site-description">浮生茫茫.</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/yaoxiaoxie'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/">
+                
+                    <img src="/img/face1.jpg" loading="lazy" alt="Featured image of post 英文系统中文软件显示为问号" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/" >
+                系统配置
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/">英文系统中文软件显示为问号</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Sep 10, 2024</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 1 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>在Win10英文版系统下，如果中文软件显示为问号，可能是由于系统的字符编码设置不正确导致的。你可以尝试以下方法来解决这个问题：</p>
+<ol>
+<li>
+<p>更改系统区域和语言设置：打开控制面板，选择&quot;Clock and Region&quot;（时钟和区域）或者&quot;Region&quot;（地区），在&quot;Formats&quot;（格式）选项卡中，将格式设置为&quot;Chinese (Simplified, China)&quot;（中文（简体，中国）），然后点击应用或确定按钮保存更改。</p>
+</li>
+<li>
+<p>安装中文语言包：打开设置应用，选择&quot;Time &amp; Language&quot;（时间和语言），然后选择&quot;Language&quot;（语言）选项卡。点击&quot;Add a language&quot;（添加语言），选择中文（简体）并安装相应的语言包。然后将中文语言设置为默认语言。</p>
+</li>
+<li>
+<p>确认中文字符集：打开控制面板，选择&quot;Clock and Region&quot;（时钟和区域）或者&quot;Region&quot;（地区），在&quot;Administrative&quot;（高级）选项卡中，点击&quot;Change system locale&quot;（更改系统区域设置）按钮，选择中文（简体，中国）作为系统区域。</p>
+</li>
+<li>
+<p>更新中文软件：如果你使用的中文软件是旧版本，可能存在与Win10兼容性问题。尝试更新软件到最新版本，并确保软件与Win10系统兼容。</p>
+</li>
+</ol>
+<p>如果以上方法仍然无法解决问题，可能需要考虑在系统上重新安装或修复中文语言包。另外，确保你的中文软件是正版，避免使用破解、盗版软件，以免出现兼容性问题。</p>
+<p>解决</p>
+<ol>
+<li></li>
+</ol>
+<p>更改系统区域和语言设置:打开控制面板,选择&quot;Clock and Region&quot;(时钟和区域)或者&quot;Region&quot;(地区),在&quot;Formats&quot;(格式)选项卡中,将格式设置为&quot;Chinese (Simplified, China)&quot;(中文(简体,中国)),然后点击应用或确定按钮保存更改。
+2.</p>
+<p>安装中文语言包:打开设置应用,选择&quot;Time &amp; Language&quot;(时间和语言),然后选择&quot;Language&quot;(语言)选项卡。点击&quot;Add a language&quot;(添加语言),选择中文(简体)并安装相应的语言包。然后将中文语言设置为默认语言。
+收起</p>
+<p>很多人用英文操作系统，原因有很多，不管什么原因，都有可能碰到一个问题：软件的文字显示乱码，怎么办?</p>
+<p>软件文字显示乱码的原因在于，在英文操作系统下，基于ASCII编码解释所有非Unicode的语言，这时如果不是英语，就会出现乱码。</p>
+<p>解决方案：</p>
+<p>我不确定从哪个版本的windows开始支持的，因为我从windows7才开始用英文版，windows7和8都是支持的。</p>
+<p>设置方法：</p>
+<p>Control Panel\Clock, Language, and Region中，打开Region-&gt;Administrative-&gt;Language for non-Unicode programs-&gt; Change System Locale..-&gt;选择Chinese (Simplified, China)</p>
+<p>设置完成后需要重启生效。注意：迅雷这样的软件在安装前就要先设置好，否则软件名会是乱码。所以安装好英文windows最好先设置Locale.</p>
+<p>同时产生乱码的原因是  因为 转换字符编码的时候，当前语言系统没有相应的字符编码代码页导致的。</p>
+<p>解决方案：  先获取当前系统默认使用的字符编码代码页 编号，然后使用这个编号 进行 字符转码 即可。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2024 yaoxieの孤岛
+    </section>
+    
+    <section class="powerby">
+        
+            Good Morning, and in case I don't see you, good afternoon, good evening, and good night! <br/>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a  target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> 由 <a  target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

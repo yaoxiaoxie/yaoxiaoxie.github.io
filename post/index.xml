@@ -7,7 +7,48 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>yaoxieの孤岛</copyright>
-        <lastBuildDate>Mon, 09 Sep 2024 23:30:12 +0800</lastBuildDate><atom:link href="https://yaoxiaoxie.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 10 Sep 2024 23:41:54 +0800</lastBuildDate><atom:link href="https://yaoxiaoxie.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>英文系统中文软件显示为问号</title>
+        <link>https://yaoxiaoxie.github.io/p/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/</link>
+        <pubDate>Tue, 10 Sep 2024 23:41:54 +0800</pubDate>
+        
+        <guid>https://yaoxiaoxie.github.io/p/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/</guid>
+        <description>&lt;img src="https://yaoxiaoxie.github.io/img/face1.jpg" alt="Featured image of post 英文系统中文软件显示为问号" /&gt;&lt;p&gt;在Win10英文版系统下，如果中文软件显示为问号，可能是由于系统的字符编码设置不正确导致的。你可以尝试以下方法来解决这个问题：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;更改系统区域和语言设置：打开控制面板，选择&amp;quot;Clock and Region&amp;quot;（时钟和区域）或者&amp;quot;Region&amp;quot;（地区），在&amp;quot;Formats&amp;quot;（格式）选项卡中，将格式设置为&amp;quot;Chinese (Simplified, China)&amp;quot;（中文（简体，中国）），然后点击应用或确定按钮保存更改。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;安装中文语言包：打开设置应用，选择&amp;quot;Time &amp;amp; Language&amp;quot;（时间和语言），然后选择&amp;quot;Language&amp;quot;（语言）选项卡。点击&amp;quot;Add a language&amp;quot;（添加语言），选择中文（简体）并安装相应的语言包。然后将中文语言设置为默认语言。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;确认中文字符集：打开控制面板，选择&amp;quot;Clock and Region&amp;quot;（时钟和区域）或者&amp;quot;Region&amp;quot;（地区），在&amp;quot;Administrative&amp;quot;（高级）选项卡中，点击&amp;quot;Change system locale&amp;quot;（更改系统区域设置）按钮，选择中文（简体，中国）作为系统区域。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;更新中文软件：如果你使用的中文软件是旧版本，可能存在与Win10兼容性问题。尝试更新软件到最新版本，并确保软件与Win10系统兼容。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;如果以上方法仍然无法解决问题，可能需要考虑在系统上重新安装或修复中文语言包。另外，确保你的中文软件是正版，避免使用破解、盗版软件，以免出现兼容性问题。&lt;/p&gt;
+&lt;p&gt;解决&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;更改系统区域和语言设置:打开控制面板,选择&amp;quot;Clock and Region&amp;quot;(时钟和区域)或者&amp;quot;Region&amp;quot;(地区),在&amp;quot;Formats&amp;quot;(格式)选项卡中,将格式设置为&amp;quot;Chinese (Simplified, China)&amp;quot;(中文(简体,中国)),然后点击应用或确定按钮保存更改。
+2.&lt;/p&gt;
+&lt;p&gt;安装中文语言包:打开设置应用,选择&amp;quot;Time &amp;amp; Language&amp;quot;(时间和语言),然后选择&amp;quot;Language&amp;quot;(语言)选项卡。点击&amp;quot;Add a language&amp;quot;(添加语言),选择中文(简体)并安装相应的语言包。然后将中文语言设置为默认语言。
+收起&lt;/p&gt;
+&lt;p&gt;很多人用英文操作系统，原因有很多，不管什么原因，都有可能碰到一个问题：软件的文字显示乱码，怎么办?&lt;/p&gt;
+&lt;p&gt;软件文字显示乱码的原因在于，在英文操作系统下，基于ASCII编码解释所有非Unicode的语言，这时如果不是英语，就会出现乱码。&lt;/p&gt;
+&lt;p&gt;解决方案：&lt;/p&gt;
+&lt;p&gt;我不确定从哪个版本的windows开始支持的，因为我从windows7才开始用英文版，windows7和8都是支持的。&lt;/p&gt;
+&lt;p&gt;设置方法：&lt;/p&gt;
+&lt;p&gt;Control Panel\Clock, Language, and Region中，打开Region-&amp;gt;Administrative-&amp;gt;Language for non-Unicode programs-&amp;gt; Change System Locale..-&amp;gt;选择Chinese (Simplified, China)&lt;/p&gt;
+&lt;p&gt;设置完成后需要重启生效。注意：迅雷这样的软件在安装前就要先设置好，否则软件名会是乱码。所以安装好英文windows最好先设置Locale.&lt;/p&gt;
+&lt;p&gt;同时产生乱码的原因是  因为 转换字符编码的时候，当前语言系统没有相应的字符编码代码页导致的。&lt;/p&gt;
+&lt;p&gt;解决方案：  先获取当前系统默认使用的字符编码代码页 编号，然后使用这个编号 进行 字符转码 即可。&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Servlet接口</title>
         <link>https://yaoxiaoxie.github.io/p/servlet/</link>
         <pubDate>Mon, 09 Sep 2024 23:30:12 +0800</pubDate>
