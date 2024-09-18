@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>端口 on yaoxieの自留地</title>
-        <link>https://yaoxiaoxie.github.io/categories/%E7%AB%AF%E5%8F%A3/</link>
+        <link>http://localhost:1313/categories/%E7%AB%AF%E5%8F%A3/</link>
         <description>Recent content in 端口 on yaoxieの自留地</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>yaoxieの孤岛</copyright>
-        <lastBuildDate>Wed, 04 Sep 2024 13:25:00 +0800</lastBuildDate><atom:link href="https://yaoxiaoxie.github.io/categories/%E7%AB%AF%E5%8F%A3/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 04 Sep 2024 13:25:00 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/%E7%AB%AF%E5%8F%A3/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Windows_查看端口被占用情况、结束进程</title>
-        <link>https://yaoxiaoxie.github.io/p/%E7%AB%AF%E5%8F%A3/</link>
+        <link>http://localhost:1313/p/%E7%AB%AF%E5%8F%A3/</link>
         <pubDate>Wed, 04 Sep 2024 13:25:00 +0800</pubDate>
         
-        <guid>https://yaoxiaoxie.github.io/p/%E7%AB%AF%E5%8F%A3/</guid>
-        <description>&lt;img src="https://yaoxiaoxie.github.io/img/face1.jpg" alt="Featured image of post Windows_查看端口被占用情况、结束进程" /&gt;&lt;h2 id=&#34;查看所有端口占用情况&#34;&gt;查看所有端口占用情况：
+        <guid>http://localhost:1313/p/%E7%AB%AF%E5%8F%A3/</guid>
+        <description>&lt;img src="http://localhost:1313/img/face1.jpg" alt="Featured image of post Windows_查看端口被占用情况、结束进程" /&gt;&lt;h2 id=&#34;查看所有端口占用情况&#34;&gt;查看所有端口占用情况：
 &lt;/h2&gt;&lt;p&gt;win+R，调出cmd窗口：&lt;/p&gt;
 &lt;h3 id=&#34;查看所有端口占用情况-1&#34;&gt;查看所有端口占用情况：
 &lt;/h3&gt;&lt;p&gt;&lt;code&gt;netstat -ano&lt;/code&gt;&lt;/p&gt;

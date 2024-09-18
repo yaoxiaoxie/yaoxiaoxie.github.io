@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><meta charset='utf-8'>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="多线程与多进程\r一, 什么是进程, 什么是线程?\r\u200b\t进程: 运行中的程序. 每次我们执行一个程序, 咱们的操作系统对自动的为这个程序准备一些必要的资源(例如, 分配内存, 创建一个能够执行的线程. ) \u200b\t线程: 程序内, 可以直接被CPU调度的执行过程. 是操作系统能够进行运算调度的最小单位. 它被包含在进程之中, 是进程中的实际运作单位. \u200b\t进程与线程之间的关系: \u200b\t进程是资源单位(公司). 线程是执行单位(员工). 就好比是一家公司. 一家公司的资源就是桌椅板凳, 电脑饮水机这些资源, 但是, 我们如果说一家公司正在运转着, 运行着. 那里面必须要有能为这家公司工作的人. 程序里面也一样, 进程就是为了程序运行而需要的各种资源. 但是程序想要运行, 就必须由线程来被CPU调度执行. \u200b\t运行的每一个程序默认都会有一个线程. 哪怕是只有helloworld级别的程序. 想要执行. 也会有一个线程产生. 如何提高一家公司的产能效率 二, 多线程\r\u200b\t顾名思义, 多线程就是让程序产生多个线程一起去执行. 还拿公司举例子. 一家公司里如果只有一个员工, 工作效率肯定不会高到哪里去. 怎么提高效率? 多招点儿人就OK了. 1. 直接用Thread创建线程\r我们先看看单线程的效果 1 2 3 4 5 6 7 8 9 def func(): for i in range(1000): print(&#34;func&#34;, i) if __name__ == &#39;__main__&#39;: func() for i in range(1000): print(&#34;main&#34;, i) 再看多线程">
 <title>多线程与多进程</title>
 
-<link rel='canonical' href='https://yaoxiaoxie.github.io/p/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B/'>
+<link rel='canonical' href='http://localhost:1313/p/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B/'>
 
 <link rel="stylesheet" href="/scss/style.min.e8c7fca7d1c9294aa7a4f3426c225ee26540f7d94e39be0b5a4a5c8a49ca5a25.css"><meta property='og:title' content="多线程与多进程">
 <meta property='og:description' content="多线程与多进程\r一, 什么是进程, 什么是线程?\r\u200b\t进程: 运行中的程序. 每次我们执行一个程序, 咱们的操作系统对自动的为这个程序准备一些必要的资源(例如, 分配内存, 创建一个能够执行的线程. ) \u200b\t线程: 程序内, 可以直接被CPU调度的执行过程. 是操作系统能够进行运算调度的最小单位. 它被包含在进程之中, 是进程中的实际运作单位. \u200b\t进程与线程之间的关系: \u200b\t进程是资源单位(公司). 线程是执行单位(员工). 就好比是一家公司. 一家公司的资源就是桌椅板凳, 电脑饮水机这些资源, 但是, 我们如果说一家公司正在运转着, 运行着. 那里面必须要有能为这家公司工作的人. 程序里面也一样, 进程就是为了程序运行而需要的各种资源. 但是程序想要运行, 就必须由线程来被CPU调度执行. \u200b\t运行的每一个程序默认都会有一个线程. 哪怕是只有helloworld级别的程序. 想要执行. 也会有一个线程产生. 如何提高一家公司的产能效率 二, 多线程\r\u200b\t顾名思义, 多线程就是让程序产生多个线程一起去执行. 还拿公司举例子. 一家公司里如果只有一个员工, 工作效率肯定不会高到哪里去. 怎么提高效率? 多招点儿人就OK了. 1. 直接用Thread创建线程\r我们先看看单线程的效果 1 2 3 4 5 6 7 8 9 def func(): for i in range(1000): print(&#34;func&#34;, i) if __name__ == &#39;__main__&#39;: func() for i in range(1000): print(&#34;main&#34;, i) 再看多线程">
-<meta property='og:url' content='https://yaoxiaoxie.github.io/p/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B/'>
+<meta property='og:url' content='http://localhost:1313/p/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B/'>
 <meta property='og:site_name' content='yaoxieの自留地'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-08-28T14:22:47&#43;08:00'/><meta property='article:modified_time' content='2024-08-28T14:22:47&#43;08:00'/><meta property='og:image' content='https://yaoxiaoxie.github.io/img/face1.jpg' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-08-28T14:22:47&#43;08:00'/><meta property='article:modified_time' content='2024-08-28T14:22:47&#43;08:00'/><meta property='og:image' content='http://localhost:1313/img/face1.jpg' />
 <meta name="twitter:title" content="多线程与多进程">
 <meta name="twitter:description" content="多线程与多进程\r一, 什么是进程, 什么是线程?\r\u200b\t进程: 运行中的程序. 每次我们执行一个程序, 咱们的操作系统对自动的为这个程序准备一些必要的资源(例如, 分配内存, 创建一个能够执行的线程. ) \u200b\t线程: 程序内, 可以直接被CPU调度的执行过程. 是操作系统能够进行运算调度的最小单位. 它被包含在进程之中, 是进程中的实际运作单位. \u200b\t进程与线程之间的关系: \u200b\t进程是资源单位(公司). 线程是执行单位(员工). 就好比是一家公司. 一家公司的资源就是桌椅板凳, 电脑饮水机这些资源, 但是, 我们如果说一家公司正在运转着, 运行着. 那里面必须要有能为这家公司工作的人. 程序里面也一样, 进程就是为了程序运行而需要的各种资源. 但是程序想要运行, 就必须由线程来被CPU调度执行. \u200b\t运行的每一个程序默认都会有一个线程. 哪怕是只有helloworld级别的程序. 想要执行. 也会有一个线程产生. 如何提高一家公司的产能效率 二, 多线程\r\u200b\t顾名思义, 多线程就是让程序产生多个线程一起去执行. 还拿公司举例子. 一家公司里如果只有一个员工, 工作效率肯定不会高到哪里去. 怎么提高效率? 多招点儿人就OK了. 1. 直接用Thread创建线程\r我们先看看单线程的效果 1 2 3 4 5 6 7 8 9 def func(): for i in range(1000): print(&#34;func&#34;, i) if __name__ == &#39;__main__&#39;: func() for i in range(1000): print(&#34;main&#34;, i) 再看多线程"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://yaoxiaoxie.github.io/img/face1.jpg' />
+    <meta name="twitter:image" content='http://localhost:1313/img/face1.jpg' />
   
 
 
@@ -90,6 +90,20 @@
 
 
 
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='mailto:yaoooxie@126.com'
+                        target="_blank"
+                        title="QQ"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-qq"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9.748a14.716 14.716 0 0 0 11.995 -.052c.275 -9.236 -11.104 -11.256 -11.995 .052z" /><path d="M18 10c.984 2.762 1.949 4.765 2 7.153c.014 .688 -.664 1.346 -1.184 .303c-.346 -.696 -.952 -1.181 -1.816 -1.456" /><path d="M17 16c.031 1.831 .147 3.102 -1 4" /><path d="M8 20c-1.099 -.87 -.914 -2.24 -1 -4" /><path d="M6 10c-.783 2.338 -1.742 4.12 -1.968 6.43c-.217 2.227 .716 1.644 1.16 .917c.296 -.487 .898 -.934 1.808 -1.347" /><path d="M15.898 13l-.476 -2" /><path d="M8 20l-1.5 1c-.5 .5 -.5 1 .5 1h10c1 0 1 -.5 .5 -1l-1.5 -1" /><path d="M13.75 7m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M10.25 7m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /></svg>
                         
                     </a>
                 </li>

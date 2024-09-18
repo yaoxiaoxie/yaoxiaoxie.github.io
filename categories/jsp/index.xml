@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>JSP on yaoxieの自留地</title>
-        <link>https://yaoxiaoxie.github.io/categories/jsp/</link>
+        <link>http://localhost:1313/categories/jsp/</link>
         <description>Recent content in JSP on yaoxieの自留地</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>yaoxieの孤岛</copyright>
-        <lastBuildDate>Sun, 01 Sep 2024 23:37:54 +0800</lastBuildDate><atom:link href="https://yaoxiaoxie.github.io/categories/jsp/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 01 Sep 2024 23:37:54 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/jsp/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>JSP 简单入门与 IDEA 开发环境配置</title>
-        <link>https://yaoxiaoxie.github.io/p/jsp/</link>
+        <link>http://localhost:1313/p/jsp/</link>
         <pubDate>Sun, 01 Sep 2024 23:37:54 +0800</pubDate>
         
-        <guid>https://yaoxiaoxie.github.io/p/jsp/</guid>
-        <description>&lt;img src="https://yaoxiaoxie.github.io/img/face1.jpg" alt="Featured image of post JSP 简单入门与 IDEA 开发环境配置" /&gt;&lt;p&gt;&lt;code&gt;JSP 简单入门与 IDEA 开发环境配置&lt;/code&gt;&lt;/p&gt;
+        <guid>http://localhost:1313/p/jsp/</guid>
+        <description>&lt;img src="http://localhost:1313/img/face1.jpg" alt="Featured image of post JSP 简单入门与 IDEA 开发环境配置" /&gt;&lt;p&gt;&lt;code&gt;JSP 简单入门与 IDEA 开发环境配置&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;在学 Java 连接数据库时老师提到过 JSP，刚好这个学期有 JSP 的课程，现做一些基础以及环境配置的介绍。&lt;/p&gt;
 &lt;h2 id=&#34;什么是-jsp&#34;&gt;什么是 JSP？
 &lt;/h2&gt;&lt;ul&gt;
@@ -184,7 +184,7 @@
 &lt;/ul&gt;
 &lt;p&gt;运行之后修改了代码，怎么才能重新看到修改后的网页呢？&lt;/p&gt;
 &lt;p&gt;无需终止 Tomcat 重新运行，只需在左下这个位置点击 Deploy，然后刷新网页就可以啦&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://yaoxiaoxie.github.io/img/JSP%e7%ae%80%e5%8d%95%e5%85%a5%e9%97%a8%e4%b8%8eIDEA%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83%e9%85%8d%e7%bd%ae/20210917213934.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/JSP%e7%ae%80%e5%8d%95%e5%85%a5%e9%97%a8%e4%b8%8eIDEA%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83%e9%85%8d%e7%bd%ae/20210917213934.png&#34;
 	
 	
 	
@@ -613,7 +613,7 @@
 &lt;/div&gt;&lt;h2 id=&#34;一个额外的问题&#34;&gt;一个额外的问题
 &lt;/h2&gt;&lt;p&gt;如果不能对jsp文件进行test，三角形标符不能使用，&lt;/p&gt;
 &lt;p&gt;使用要配置&lt;code&gt;Tomcat&lt;/code&gt;服务器，如图点击进去
-&lt;img src=&#34;https://yaoxiaoxie.github.io/img/JSP%e7%ae%80%e5%8d%95%e5%85%a5%e9%97%a8%e4%b8%8eIDEA%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83%e9%85%8d%e7%bd%ae/2.png&#34;
+&lt;img src=&#34;http://localhost:1313/img/JSP%e7%ae%80%e5%8d%95%e5%85%a5%e9%97%a8%e4%b8%8eIDEA%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83%e9%85%8d%e7%bd%ae/2.png&#34;
 	
 	
 	
@@ -624,7 +624,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;点加号 +，找到Tomcat Server目录下的local 点击
-&lt;img src=&#34;https://yaoxiaoxie.github.io/img/JSP%e7%ae%80%e5%8d%95%e5%85%a5%e9%97%a8%e4%b8%8eIDEA%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83%e9%85%8d%e7%bd%ae/3.png&#34;
+&lt;img src=&#34;http://localhost:1313/img/JSP%e7%ae%80%e5%8d%95%e5%85%a5%e9%97%a8%e4%b8%8eIDEA%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83%e9%85%8d%e7%bd%ae/3.png&#34;
 	
 	
 	
@@ -635,7 +635,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;在 Desployment 中点加号+ ，就可以添加选择项目了&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://yaoxiaoxie.github.io/img/JSP%e7%ae%80%e5%8d%95%e5%85%a5%e9%97%a8%e4%b8%8eIDEA%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83%e9%85%8d%e7%bd%ae/4.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/JSP%e7%ae%80%e5%8d%95%e5%85%a5%e9%97%a8%e4%b8%8eIDEA%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83%e9%85%8d%e7%bd%ae/4.png&#34;
 	
 	
 	
@@ -645,7 +645,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://yaoxiaoxie.github.io/img/JSP%e7%ae%80%e5%8d%95%e5%85%a5%e9%97%a8%e4%b8%8eIDEA%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83%e9%85%8d%e7%bd%ae/5.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/JSP%e7%ae%80%e5%8d%95%e5%85%a5%e9%97%a8%e4%b8%8eIDEA%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83%e9%85%8d%e7%bd%ae/5.png&#34;
 	
 	
 	
@@ -656,7 +656,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;点击ok就配置成功了，这样就可以test了&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://yaoxiaoxie.github.io/img/JSP%e7%ae%80%e5%8d%95%e5%85%a5%e9%97%a8%e4%b8%8eIDEA%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83%e9%85%8d%e7%bd%ae/6.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/JSP%e7%ae%80%e5%8d%95%e5%85%a5%e9%97%a8%e4%b8%8eIDEA%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83%e9%85%8d%e7%bd%ae/6.png&#34;
 	
 	
 	

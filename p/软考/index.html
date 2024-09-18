@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><meta charset='utf-8'>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="计算机组成与体系结构\r1内容提要\r课程内容提要\r数据的表示 计算机结构 Flynn分类法 CISC与RISC 流水线技术 存储系统 总线系统 可靠性 校验码 2数据的表示\r2.1 进制转换\r2.1.1 R进制转十进制\rR进制转十进制使用按权展开法，其具体操作方式为：将R进制数的每一位数值用Rk形式表示，即幂的底数是R，指数为k，k与该位和小数点之间的距离有关。当该位位于小数点左边，k值是该位和小数点之间数码的个数，而当该位位于小数点右边，k值是负值，其绝对值是该位和小数点之间数码的个数加1。 例如二进制10100.01＝1x24＋1x22＋1x2-2 例如七进制60 01＝6x72＋0x71＋4x70＋0x7-1 2.1.2十进制转R进制\r十进制转R进制使用短除法。例如将94转换为二进制数。 得到结果为1011110 余 2 94 0 2 47 1 2 23 1 2 11 1 2 5 1 2 2 0 2 1 2.1.3其他进制转换\r二进制转八进制，从右到左，每三位是和是一个八进制的值 二进制转十六进制，从右到左，每四位是和是一个十六进制的值 其中A=10 B=11 C=12 D=13 E=14 F=15 二进制转八进制与十六进制数。 10 001 110 2 1 6 1000 1100 8 E 2.2 原码、反码、补码、移码、浮点运算\r正数的原码、反码、补码相同 负数 原码：首位是1">
 <title>计算机组成与体系结构</title>
 
-<link rel='canonical' href='https://yaoxiaoxie.github.io/p/%E8%BD%AF%E8%80%83/'>
+<link rel='canonical' href='http://localhost:1313/p/%E8%BD%AF%E8%80%83/'>
 
 <link rel="stylesheet" href="/scss/style.min.e8c7fca7d1c9294aa7a4f3426c225ee26540f7d94e39be0b5a4a5c8a49ca5a25.css"><meta property='og:title' content="计算机组成与体系结构">
 <meta property='og:description' content="计算机组成与体系结构\r1内容提要\r课程内容提要\r数据的表示 计算机结构 Flynn分类法 CISC与RISC 流水线技术 存储系统 总线系统 可靠性 校验码 2数据的表示\r2.1 进制转换\r2.1.1 R进制转十进制\rR进制转十进制使用按权展开法，其具体操作方式为：将R进制数的每一位数值用Rk形式表示，即幂的底数是R，指数为k，k与该位和小数点之间的距离有关。当该位位于小数点左边，k值是该位和小数点之间数码的个数，而当该位位于小数点右边，k值是负值，其绝对值是该位和小数点之间数码的个数加1。 例如二进制10100.01＝1x24＋1x22＋1x2-2 例如七进制60 01＝6x72＋0x71＋4x70＋0x7-1 2.1.2十进制转R进制\r十进制转R进制使用短除法。例如将94转换为二进制数。 得到结果为1011110 余 2 94 0 2 47 1 2 23 1 2 11 1 2 5 1 2 2 0 2 1 2.1.3其他进制转换\r二进制转八进制，从右到左，每三位是和是一个八进制的值 二进制转十六进制，从右到左，每四位是和是一个十六进制的值 其中A=10 B=11 C=12 D=13 E=14 F=15 二进制转八进制与十六进制数。 10 001 110 2 1 6 1000 1100 8 E 2.2 原码、反码、补码、移码、浮点运算\r正数的原码、反码、补码相同 负数 原码：首位是1">
-<meta property='og:url' content='https://yaoxiaoxie.github.io/p/%E8%BD%AF%E8%80%83/'>
+<meta property='og:url' content='http://localhost:1313/p/%E8%BD%AF%E8%80%83/'>
 <meta property='og:site_name' content='yaoxieの自留地'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-09-07T20:31:39&#43;08:00'/><meta property='article:modified_time' content='2024-09-07T20:31:39&#43;08:00'/><meta property='og:image' content='https://yaoxiaoxie.github.io/img/face1.jpg' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-09-07T20:31:39&#43;08:00'/><meta property='article:modified_time' content='2024-09-07T20:31:39&#43;08:00'/><meta property='og:image' content='http://localhost:1313/img/face1.jpg' />
 <meta name="twitter:title" content="计算机组成与体系结构">
 <meta name="twitter:description" content="计算机组成与体系结构\r1内容提要\r课程内容提要\r数据的表示 计算机结构 Flynn分类法 CISC与RISC 流水线技术 存储系统 总线系统 可靠性 校验码 2数据的表示\r2.1 进制转换\r2.1.1 R进制转十进制\rR进制转十进制使用按权展开法，其具体操作方式为：将R进制数的每一位数值用Rk形式表示，即幂的底数是R，指数为k，k与该位和小数点之间的距离有关。当该位位于小数点左边，k值是该位和小数点之间数码的个数，而当该位位于小数点右边，k值是负值，其绝对值是该位和小数点之间数码的个数加1。 例如二进制10100.01＝1x24＋1x22＋1x2-2 例如七进制60 01＝6x72＋0x71＋4x70＋0x7-1 2.1.2十进制转R进制\r十进制转R进制使用短除法。例如将94转换为二进制数。 得到结果为1011110 余 2 94 0 2 47 1 2 23 1 2 11 1 2 5 1 2 2 0 2 1 2.1.3其他进制转换\r二进制转八进制，从右到左，每三位是和是一个八进制的值 二进制转十六进制，从右到左，每四位是和是一个十六进制的值 其中A=10 B=11 C=12 D=13 E=14 F=15 二进制转八进制与十六进制数。 10 001 110 2 1 6 1000 1100 8 E 2.2 原码、反码、补码、移码、浮点运算\r正数的原码、反码、补码相同 负数 原码：首位是1"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://yaoxiaoxie.github.io/img/face1.jpg' />
+    <meta name="twitter:image" content='http://localhost:1313/img/face1.jpg' />
   
 
 
@@ -90,6 +90,20 @@
 
 
 
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='mailto:yaoooxie@126.com'
+                        target="_blank"
+                        title="QQ"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-qq"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9.748a14.716 14.716 0 0 0 11.995 -.052c.275 -9.236 -11.104 -11.256 -11.995 .052z" /><path d="M18 10c.984 2.762 1.949 4.765 2 7.153c.014 .688 -.664 1.346 -1.184 .303c-.346 -.696 -.952 -1.181 -1.816 -1.456" /><path d="M17 16c.031 1.831 .147 3.102 -1 4" /><path d="M8 20c-1.099 -.87 -.914 -2.24 -1 -4" /><path d="M6 10c-.783 2.338 -1.742 4.12 -1.968 6.43c-.217 2.227 .716 1.644 1.16 .917c.296 -.487 .898 -.934 1.808 -1.347" /><path d="M15.898 13l-.476 -2" /><path d="M8 20l-1.5 1c-.5 .5 -.5 1 .5 1h10c1 0 1 -.5 .5 -1l-1.5 -1" /><path d="M13.75 7m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M10.25 7m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /></svg>
                         
                     </a>
                 </li>

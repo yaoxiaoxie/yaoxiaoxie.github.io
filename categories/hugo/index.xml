@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Hugo on yaoxieの自留地</title>
-        <link>https://yaoxiaoxie.github.io/categories/hugo/</link>
+        <link>http://localhost:1313/categories/hugo/</link>
         <description>Recent content in Hugo on yaoxieの自留地</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>yaoxieの孤岛</copyright>
-        <lastBuildDate>Sun, 21 Jul 2024 09:01:59 +0800</lastBuildDate><atom:link href="https://yaoxiaoxie.github.io/categories/hugo/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 21 Jul 2024 09:01:59 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/hugo/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>博客插入图片</title>
-        <link>https://yaoxiaoxie.github.io/p/%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</link>
+        <link>http://localhost:1313/p/%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</link>
         <pubDate>Sun, 21 Jul 2024 09:01:59 +0800</pubDate>
         
-        <guid>https://yaoxiaoxie.github.io/p/%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</guid>
-        <description>&lt;img src="https://yaoxiaoxie.github.io/img/face1.jpg" alt="Featured image of post 博客插入图片" /&gt;&lt;h1 id=&#34;前言&#34;&gt;前言
+        <guid>http://localhost:1313/p/%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</guid>
+        <description>&lt;img src="http://localhost:1313/img/face1.jpg" alt="Featured image of post 博客插入图片" /&gt;&lt;h1 id=&#34;前言&#34;&gt;前言
 &lt;/h1&gt;&lt;p&gt;&lt;strong&gt;在Hugo上写文章的时候，肯定会遇到要插入图片的情况。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;在&lt;mark&gt;content/post&lt;/mark&gt;目录下的markdown文件里引用图片，让网站能正常显示图片。&lt;/p&gt;
 &lt;p&gt;这里我们其实有2种选择：&lt;/p&gt;
@@ -38,11 +38,11 @@
         </item>
         <item>
         <title>博客搭建过程</title>
-        <link>https://yaoxiaoxie.github.io/p/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/</link>
+        <link>http://localhost:1313/p/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/</link>
         <pubDate>Sat, 20 Jul 2024 22:57:40 +0800</pubDate>
         
-        <guid>https://yaoxiaoxie.github.io/p/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/</guid>
-        <description>&lt;img src="https://yaoxiaoxie.github.io/img/face1.jpg" alt="Featured image of post 博客搭建过程" /&gt;&lt;h1 id=&#34;前言&#34;&gt;前言
+        <guid>http://localhost:1313/p/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/</guid>
+        <description>&lt;img src="http://localhost:1313/img/face1.jpg" alt="Featured image of post 博客搭建过程" /&gt;&lt;h1 id=&#34;前言&#34;&gt;前言
 &lt;/h1&gt;&lt;p&gt;本篇博文主要记录本 Hugo 博客从 0 到 1 的简要步骤，但其适用于其他大多数 hugo 博客的搭建流程，仅仅区别于主题的不同。&lt;/p&gt;
 &lt;h1 id=&#34;具体流程&#34;&gt;具体流程
 &lt;/h1&gt;&lt;h2 id=&#34;准备hugo文件&#34;&gt;准备Hugo文件

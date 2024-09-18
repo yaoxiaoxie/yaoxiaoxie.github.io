@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>系统配置 on yaoxieの自留地</title>
-        <link>https://yaoxiaoxie.github.io/categories/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/</link>
+        <link>http://localhost:1313/categories/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/</link>
         <description>Recent content in 系统配置 on yaoxieの自留地</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>yaoxieの孤岛</copyright>
-        <lastBuildDate>Tue, 10 Sep 2024 23:41:54 +0800</lastBuildDate><atom:link href="https://yaoxiaoxie.github.io/categories/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 10 Sep 2024 23:41:54 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>英文系统中文软件显示为问号</title>
-        <link>https://yaoxiaoxie.github.io/p/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/</link>
+        <link>http://localhost:1313/p/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/</link>
         <pubDate>Tue, 10 Sep 2024 23:41:54 +0800</pubDate>
         
-        <guid>https://yaoxiaoxie.github.io/p/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/</guid>
-        <description>&lt;img src="https://yaoxiaoxie.github.io/img/face1.jpg" alt="Featured image of post 英文系统中文软件显示为问号" /&gt;&lt;p&gt;在Win10英文版系统下，如果中文软件显示为问号，可能是由于系统的字符编码设置不正确导致的。你可以尝试以下方法来解决这个问题：&lt;/p&gt;
+        <guid>http://localhost:1313/p/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/</guid>
+        <description>&lt;img src="http://localhost:1313/img/face1.jpg" alt="Featured image of post 英文系统中文软件显示为问号" /&gt;&lt;p&gt;在Win10英文版系统下，如果中文软件显示为问号，可能是由于系统的字符编码设置不正确导致的。你可以尝试以下方法来解决这个问题：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;更改系统区域和语言设置：打开控制面板，选择&amp;quot;Clock and Region&amp;quot;（时钟和区域）或者&amp;quot;Region&amp;quot;（地区），在&amp;quot;Formats&amp;quot;（格式）选项卡中，将格式设置为&amp;quot;Chinese (Simplified, China)&amp;quot;（中文（简体，中国）），然后点击应用或确定按钮保存更改。&lt;/p&gt;
