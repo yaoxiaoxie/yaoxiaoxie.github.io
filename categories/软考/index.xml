@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>软考 on yaoxieの自留地</title>
-        <link>http://localhost:1313/categories/%E8%BD%AF%E8%80%83/</link>
+        <link>https://yaoxiaoxie.github.io/categories/%E8%BD%AF%E8%80%83/</link>
         <description>Recent content in 软考 on yaoxieの自留地</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>yaoxieの孤岛</copyright>
-        <lastBuildDate>Sat, 07 Sep 2024 20:31:39 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/%E8%BD%AF%E8%80%83/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 07 Sep 2024 20:31:39 +0800</lastBuildDate><atom:link href="https://yaoxiaoxie.github.io/categories/%E8%BD%AF%E8%80%83/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>计算机组成与体系结构</title>
-        <link>http://localhost:1313/p/%E8%BD%AF%E8%80%83/</link>
+        <link>https://yaoxiaoxie.github.io/p/%E8%BD%AF%E8%80%83/</link>
         <pubDate>Sat, 07 Sep 2024 20:31:39 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/%E8%BD%AF%E8%80%83/</guid>
-        <description>&lt;img src="http://localhost:1313/img/face1.jpg" alt="Featured image of post 计算机组成与体系结构" /&gt;&lt;h2 id=&#34;计算机组成与体系结构&#34;&gt;计算机组成与体系结构
+        <guid>https://yaoxiaoxie.github.io/p/%E8%BD%AF%E8%80%83/</guid>
+        <description>&lt;img src="https://yaoxiaoxie.github.io/img/face1.jpg" alt="Featured image of post 计算机组成与体系结构" /&gt;&lt;h2 id=&#34;计算机组成与体系结构&#34;&gt;计算机组成与体系结构
 &lt;/h2&gt;&lt;h3 id=&#34;1内容提要&#34;&gt;1内容提要
 &lt;/h3&gt;&lt;h4 id=&#34;课程内容提要&#34;&gt;课程内容提要
 &lt;/h4&gt;&lt;p&gt;数据的表示&lt;/p&gt;
