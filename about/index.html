@@ -292,7 +292,21 @@
     <section class="article-content">
     
     
-    <center>
+    <!-- <p id="hitokoto" style="padding: 0 5% 0 5%">人总是贪婪的，就像最开始，我也只是想知道你的名字。</p>
+			<p id="from" align="right">《你的名字》</p>
+			<script>
+			  fetch('https://v1.hitokoto.cn/?c=a&c=b&c=c&c=d')
+			    .then(response => response.json())
+			    .then(data => {
+			      const hitokoto = document.getElementById('hitokoto')
+			      hitokoto.innerText = data.hitokoto
+			      const from = document.getElementById('from')
+			      from.innerText = "《" + data.from + "》"
+			    })
+			    .catch(console.error)
+			</script> -->
+<!-- <img src="/img/avatar.jpg" alt="1" style="display: block; margin: auto; border-radius: 100px;"> -->
+<center>
 用撼动一座岩石的力量<br />
 生长<br />
 春雨和冰霜同样<br />
@@ -317,6 +331,31 @@
 </center>
 <p>联系我</p>
 <p>Email: <a href="mailto:yaoooxie@126.com" target="_blank" rel="nofollow"> yaoooxie@126.com </a></p>
+<!-- <p id="hitokoto" style="padding: 0 5% 0 5%; text-align: right;">人总是贪婪的，就像最开始，我也只是想知道你的名字。</p>
+      <p id="from" style="text-align: right;">《你的名字》</p>
+      <script>
+			  fetch('https://v1.hitokoto.cn/?c=a&c=b&c=c&c=d')
+			    .then(response => response.json())
+			    .then(data => {
+			      const hitokoto = document.getElementById('hitokoto')
+			      hitokoto.innerText = data.hitokoto
+			      const from = document.getElementById('from')
+			      from.innerText = "《" + data.from + "》"
+			    })
+			    .catch(console.error)
+			</script> -->
+<p id="hitokoto" style="padding: 0 5% 0 5%; text-align: right;">
+  <a id="hitokoto">嘤嘤嘤</a>
+</p>
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto')
+      hitokoto.innerText = data.hitokoto
+    })
+    .catch(console.error)
+</script>
 </section>
 
 
