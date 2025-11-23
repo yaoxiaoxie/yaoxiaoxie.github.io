@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Posts on yaoxieの自留地</title>
-        <link>https://yaoxiaoxie.github.io/post/</link>
-        <description>Recent content in Posts on yaoxieの自留地</description>
+        <title>Posts on 白益旖の自留地</title>
+        <link>http://localhost:1313/post/</link>
+        <description>Recent content in Posts on 白益旖の自留地</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>yaoxieの孤岛</copyright>
-        <lastBuildDate>Tue, 17 Sep 2024 13:00:32 +0800</lastBuildDate><atom:link href="https://yaoxiaoxie.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>白益旖の孤岛</copyright>
+        <lastBuildDate>Thu, 17 Apr 2025 11:45:58 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>安装Cuda和PyTorch</title>
+        <link>http://localhost:1313/p/cuda/</link>
+        <pubDate>Thu, 17 Apr 2025 11:45:58 +0800</pubDate>
+        
+        <guid>http://localhost:1313/p/cuda/</guid>
+        <description>&lt;img src="http://localhost:1313/img/face1.jpg" alt="Featured image of post 安装Cuda和PyTorch" /&gt;</description>
+        </item>
+        <item>
         <title>英文系统中文软件显示为问号</title>
-        <link>https://yaoxiaoxie.github.io/p/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/</link>
+        <link>http://localhost:1313/p/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/</link>
         <pubDate>Tue, 10 Sep 2024 23:41:54 +0800</pubDate>
         
-        <guid>https://yaoxiaoxie.github.io/p/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/</guid>
-        <description>&lt;img src="https://yaoxiaoxie.github.io/img/face1.jpg" alt="Featured image of post 英文系统中文软件显示为问号" /&gt;&lt;p&gt;在Win10英文版系统下，如果中文软件显示为问号，可能是由于系统的字符编码设置不正确导致的。你可以尝试以下方法来解决这个问题：&lt;/p&gt;
+        <guid>http://localhost:1313/p/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/</guid>
+        <description>&lt;img src="http://localhost:1313/img/face1.jpg" alt="Featured image of post 英文系统中文软件显示为问号" /&gt;&lt;p&gt;在Win10英文版系统下，如果中文软件显示为问号，可能是由于系统的字符编码设置不正确导致的。你可以尝试以下方法来解决这个问题：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;更改系统区域和语言设置：打开控制面板，选择&amp;quot;Clock and Region&amp;quot;（时钟和区域）或者&amp;quot;Region&amp;quot;（地区），在&amp;quot;Formats&amp;quot;（格式）选项卡中，将格式设置为&amp;quot;Chinese (Simplified, China)&amp;quot;（中文（简体，中国）），然后点击应用或确定按钮保存更改。&lt;/p&gt;
@@ -50,11 +58,11 @@
         </item>
         <item>
         <title>Servlet接口</title>
-        <link>https://yaoxiaoxie.github.io/p/servlet/</link>
+        <link>http://localhost:1313/p/servlet/</link>
         <pubDate>Mon, 09 Sep 2024 23:30:12 +0800</pubDate>
         
-        <guid>https://yaoxiaoxie.github.io/p/servlet/</guid>
-        <description>&lt;img src="https://yaoxiaoxie.github.io/img/face1.jpg" alt="Featured image of post Servlet接口" /&gt;&lt;h1 id=&#34;servlet三种方法的实现&#34;&gt;servlet三种方法的实现
+        <guid>http://localhost:1313/p/servlet/</guid>
+        <description>&lt;img src="http://localhost:1313/img/face1.jpg" alt="Featured image of post Servlet接口" /&gt;&lt;h1 id=&#34;servlet三种方法的实现&#34;&gt;servlet三种方法的实现
 &lt;/h1&gt;&lt;h2 id=&#34;项目结构概览&#34;&gt;项目结构概览
 &lt;/h2&gt;&lt;p&gt;通常，Java Web 项目的结构会类似于如下的目录：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -674,11 +682,11 @@ web.xml 文件配置 Servlet 的映射关系，放在 WEB-INF 目录下。
         </item>
         <item>
         <title>JDK强制英文运行</title>
-        <link>https://yaoxiaoxie.github.io/p/jdk/</link>
+        <link>http://localhost:1313/p/jdk/</link>
         <pubDate>Mon, 09 Sep 2024 20:50:53 +0800</pubDate>
         
-        <guid>https://yaoxiaoxie.github.io/p/jdk/</guid>
-        <description>&lt;img src="https://yaoxiaoxie.github.io/img/face1.jpg" alt="Featured image of post JDK强制英文运行" /&gt;&lt;h2 id=&#34;idea乱码问题亲测有效-强行配置utf-8&#34;&gt;IDEA乱码问题（亲测有效） 强行配置UTF-8
+        <guid>http://localhost:1313/p/jdk/</guid>
+        <description>&lt;img src="http://localhost:1313/img/face1.jpg" alt="Featured image of post JDK强制英文运行" /&gt;&lt;h2 id=&#34;idea乱码问题亲测有效-强行配置utf-8&#34;&gt;IDEA乱码问题（亲测有效） 强行配置UTF-8
 &lt;/h2&gt;&lt;p&gt;1.ctrl+alt+s进入设置，改变全局编码 UTF-8&lt;/p&gt;
 &lt;p&gt;2.配置Tomcat VM options值为：-Dfile.encoding=UTF-8&lt;/p&gt;
 &lt;p&gt;3.在tomcat启动配置 JAVA_OPTS =-Dfile.encoding=UTF-8&lt;/p&gt;
@@ -706,11 +714,11 @@ web.xml 文件配置 Servlet 的映射关系，放在 WEB-INF 目录下。
         </item>
         <item>
         <title>计算机组成与体系结构</title>
-        <link>https://yaoxiaoxie.github.io/p/%E8%BD%AF%E8%80%83/</link>
+        <link>http://localhost:1313/p/%E8%BD%AF%E8%80%83/</link>
         <pubDate>Sat, 07 Sep 2024 20:31:39 +0800</pubDate>
         
-        <guid>https://yaoxiaoxie.github.io/p/%E8%BD%AF%E8%80%83/</guid>
-        <description>&lt;img src="https://yaoxiaoxie.github.io/img/face1.jpg" alt="Featured image of post 计算机组成与体系结构" /&gt;&lt;h2 id=&#34;计算机组成与体系结构&#34;&gt;计算机组成与体系结构
+        <guid>http://localhost:1313/p/%E8%BD%AF%E8%80%83/</guid>
+        <description>&lt;img src="http://localhost:1313/img/face1.jpg" alt="Featured image of post 计算机组成与体系结构" /&gt;&lt;h2 id=&#34;计算机组成与体系结构&#34;&gt;计算机组成与体系结构
 &lt;/h2&gt;&lt;h3 id=&#34;1内容提要&#34;&gt;1内容提要
 &lt;/h3&gt;&lt;h4 id=&#34;课程内容提要&#34;&gt;课程内容提要
 &lt;/h4&gt;&lt;p&gt;数据的表示&lt;/p&gt;
@@ -1309,11 +1317,11 @@ $r_{0}⊕I_{4}⊕I_{2}⊕I_{1}$=1⊕1⊕1⊕1=0.&lt;/p&gt;
         </item>
         <item>
         <title>Windows_查看端口被占用情况、结束进程</title>
-        <link>https://yaoxiaoxie.github.io/p/%E7%AB%AF%E5%8F%A3/</link>
+        <link>http://localhost:1313/p/%E7%AB%AF%E5%8F%A3/</link>
         <pubDate>Wed, 04 Sep 2024 13:25:00 +0800</pubDate>
         
-        <guid>https://yaoxiaoxie.github.io/p/%E7%AB%AF%E5%8F%A3/</guid>
-        <description>&lt;img src="https://yaoxiaoxie.github.io/img/face1.jpg" alt="Featured image of post Windows_查看端口被占用情况、结束进程" /&gt;&lt;h2 id=&#34;查看所有端口占用情况&#34;&gt;查看所有端口占用情况：
+        <guid>http://localhost:1313/p/%E7%AB%AF%E5%8F%A3/</guid>
+        <description>&lt;img src="http://localhost:1313/img/face1.jpg" alt="Featured image of post Windows_查看端口被占用情况、结束进程" /&gt;&lt;h2 id=&#34;查看所有端口占用情况&#34;&gt;查看所有端口占用情况：
 &lt;/h2&gt;&lt;p&gt;win+R，调出cmd窗口：&lt;/p&gt;
 &lt;h3 id=&#34;查看所有端口占用情况-1&#34;&gt;查看所有端口占用情况：
 &lt;/h3&gt;&lt;p&gt;&lt;code&gt;netstat -ano&lt;/code&gt;&lt;/p&gt;
@@ -1341,11 +1349,11 @@ $r_{0}⊕I_{4}⊕I_{2}⊕I_{1}$=1⊕1⊕1⊕1=0.&lt;/p&gt;
         </item>
         <item>
         <title>JSP 简单入门与 IDEA 开发环境配置</title>
-        <link>https://yaoxiaoxie.github.io/p/jsp/</link>
+        <link>http://localhost:1313/p/jsp/</link>
         <pubDate>Sun, 01 Sep 2024 23:37:54 +0800</pubDate>
         
-        <guid>https://yaoxiaoxie.github.io/p/jsp/</guid>
-        <description>&lt;img src="https://yaoxiaoxie.github.io/img/face1.jpg" alt="Featured image of post JSP 简单入门与 IDEA 开发环境配置" /&gt;&lt;p&gt;&lt;code&gt;JSP 简单入门与 IDEA 开发环境配置&lt;/code&gt;&lt;/p&gt;
+        <guid>http://localhost:1313/p/jsp/</guid>
+        <description>&lt;img src="http://localhost:1313/img/face1.jpg" alt="Featured image of post JSP 简单入门与 IDEA 开发环境配置" /&gt;&lt;p&gt;&lt;code&gt;JSP 简单入门与 IDEA 开发环境配置&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;在学 Java 连接数据库时老师提到过 JSP，刚好这个学期有 JSP 的课程，现做一些基础以及环境配置的介绍。&lt;/p&gt;
 &lt;h2 id=&#34;什么是-jsp&#34;&gt;什么是 JSP？
 &lt;/h2&gt;&lt;ul&gt;
@@ -1516,7 +1524,7 @@ $r_{0}⊕I_{4}⊕I_{2}⊕I_{1}$=1⊕1⊕1⊕1=0.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;运行之后修改了代码，怎么才能重新看到修改后的网页呢？&lt;/p&gt;
 &lt;p&gt;无需终止 Tomcat 重新运行，只需在左下这个位置点击 Deploy，然后刷新网页就可以啦&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://yaoxiaoxie.github.io/img/JSP%e7%ae%80%e5%8d%95%e5%85%a5%e9%97%a8%e4%b8%8eIDEA%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83%e9%85%8d%e7%bd%ae/20210917213934.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/JSP%e7%ae%80%e5%8d%95%e5%85%a5%e9%97%a8%e4%b8%8eIDEA%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83%e9%85%8d%e7%bd%ae/20210917213934.png&#34;
 	
 	
 	
@@ -1945,7 +1953,7 @@ $r_{0}⊕I_{4}⊕I_{2}⊕I_{1}$=1⊕1⊕1⊕1=0.&lt;/p&gt;
 &lt;/div&gt;&lt;h2 id=&#34;一个额外的问题&#34;&gt;一个额外的问题
 &lt;/h2&gt;&lt;p&gt;如果不能对jsp文件进行test，三角形标符不能使用，&lt;/p&gt;
 &lt;p&gt;使用要配置&lt;code&gt;Tomcat&lt;/code&gt;服务器，如图点击进去
-&lt;img src=&#34;https://yaoxiaoxie.github.io/img/JSP%e7%ae%80%e5%8d%95%e5%85%a5%e9%97%a8%e4%b8%8eIDEA%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83%e9%85%8d%e7%bd%ae/2.png&#34;
+&lt;img src=&#34;http://localhost:1313/img/JSP%e7%ae%80%e5%8d%95%e5%85%a5%e9%97%a8%e4%b8%8eIDEA%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83%e9%85%8d%e7%bd%ae/2.png&#34;
 	
 	
 	
@@ -1956,7 +1964,7 @@ $r_{0}⊕I_{4}⊕I_{2}⊕I_{1}$=1⊕1⊕1⊕1=0.&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;点加号 +，找到Tomcat Server目录下的local 点击
-&lt;img src=&#34;https://yaoxiaoxie.github.io/img/JSP%e7%ae%80%e5%8d%95%e5%85%a5%e9%97%a8%e4%b8%8eIDEA%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83%e9%85%8d%e7%bd%ae/3.png&#34;
+&lt;img src=&#34;http://localhost:1313/img/JSP%e7%ae%80%e5%8d%95%e5%85%a5%e9%97%a8%e4%b8%8eIDEA%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83%e9%85%8d%e7%bd%ae/3.png&#34;
 	
 	
 	
@@ -1967,7 +1975,7 @@ $r_{0}⊕I_{4}⊕I_{2}⊕I_{1}$=1⊕1⊕1⊕1=0.&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;在 Desployment 中点加号+ ，就可以添加选择项目了&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://yaoxiaoxie.github.io/img/JSP%e7%ae%80%e5%8d%95%e5%85%a5%e9%97%a8%e4%b8%8eIDEA%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83%e9%85%8d%e7%bd%ae/4.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/JSP%e7%ae%80%e5%8d%95%e5%85%a5%e9%97%a8%e4%b8%8eIDEA%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83%e9%85%8d%e7%bd%ae/4.png&#34;
 	
 	
 	
@@ -1977,7 +1985,7 @@ $r_{0}⊕I_{4}⊕I_{2}⊕I_{1}$=1⊕1⊕1⊕1=0.&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://yaoxiaoxie.github.io/img/JSP%e7%ae%80%e5%8d%95%e5%85%a5%e9%97%a8%e4%b8%8eIDEA%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83%e9%85%8d%e7%bd%ae/5.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/JSP%e7%ae%80%e5%8d%95%e5%85%a5%e9%97%a8%e4%b8%8eIDEA%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83%e9%85%8d%e7%bd%ae/5.png&#34;
 	
 	
 	
@@ -1988,7 +1996,7 @@ $r_{0}⊕I_{4}⊕I_{2}⊕I_{1}$=1⊕1⊕1⊕1=0.&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;点击ok就配置成功了，这样就可以test了&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://yaoxiaoxie.github.io/img/JSP%e7%ae%80%e5%8d%95%e5%85%a5%e9%97%a8%e4%b8%8eIDEA%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83%e9%85%8d%e7%bd%ae/6.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/JSP%e7%ae%80%e5%8d%95%e5%85%a5%e9%97%a8%e4%b8%8eIDEA%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83%e9%85%8d%e7%bd%ae/6.png&#34;
 	
 	
 	
@@ -2002,11 +2010,11 @@ $r_{0}⊕I_{4}⊕I_{2}⊕I_{1}$=1⊕1⊕1⊕1=0.&lt;/p&gt;
         </item>
         <item>
         <title>Tomcat安装与问题解决</title>
-        <link>https://yaoxiaoxie.github.io/p/tomcat/</link>
+        <link>http://localhost:1313/p/tomcat/</link>
         <pubDate>Sun, 01 Sep 2024 18:21:40 +0800</pubDate>
         
-        <guid>https://yaoxiaoxie.github.io/p/tomcat/</guid>
-        <description>&lt;img src="https://yaoxiaoxie.github.io/img/face1.jpg" alt="Featured image of post Tomcat安装与问题解决" /&gt;&lt;h2 id=&#34;tomcat安装及配置&#34;&gt;Tomcat安装及配置
+        <guid>http://localhost:1313/p/tomcat/</guid>
+        <description>&lt;img src="http://localhost:1313/img/face1.jpg" alt="Featured image of post Tomcat安装与问题解决" /&gt;&lt;h2 id=&#34;tomcat安装及配置&#34;&gt;Tomcat安装及配置
 &lt;/h2&gt;&lt;h3 id=&#34;安装&#34;&gt;安装
 &lt;/h3&gt;&lt;p&gt;网址：Tomcat官网&lt;/p&gt;
 &lt;p&gt;选择版本：点击左边Download下的which version，根据Supported Java Versions来选择合适的Tomcat版本&lt;/p&gt;
@@ -2085,11 +2093,11 @@ shutdown.bat关闭窗口。&lt;/p&gt;
         </item>
         <item>
         <title>多线程与多进程</title>
-        <link>https://yaoxiaoxie.github.io/p/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B/</link>
+        <link>http://localhost:1313/p/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B/</link>
         <pubDate>Wed, 28 Aug 2024 14:22:47 +0800</pubDate>
         
-        <guid>https://yaoxiaoxie.github.io/p/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B/</guid>
-        <description>&lt;img src="https://yaoxiaoxie.github.io/img/face1.jpg" alt="Featured image of post 多线程与多进程" /&gt;&lt;h1 id=&#34;多线程与多进程&#34;&gt;多线程与多进程
+        <guid>http://localhost:1313/p/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%A4%9A%E8%BF%9B%E7%A8%8B/</guid>
+        <description>&lt;img src="http://localhost:1313/img/face1.jpg" alt="Featured image of post 多线程与多进程" /&gt;&lt;h1 id=&#34;多线程与多进程&#34;&gt;多线程与多进程
 &lt;/h1&gt;&lt;h2 id=&#34;一-什么是进程-什么是线程&#34;&gt;一, 什么是进程, 什么是线程?
 &lt;/h2&gt;&lt;p&gt;​		进程: 运行中的程序. 每次我们执行一个程序, 咱们的操作系统对自动的为这个程序准备一些必要的资源(例如, 分配内存, 创建一个能够执行的线程. )&lt;/p&gt;
 &lt;p&gt;​		线程: 程序内, 可以直接被CPU调度的执行过程. 是操作系统能够进行运算调度的最小单位. 它被包含在进程之中, 是进程中的实际运作单位.&lt;/p&gt;
@@ -2514,11 +2522,11 @@ shutdown.bat关闭窗口。&lt;/p&gt;
         </item>
         <item>
         <title>正则表达式</title>
-        <link>https://yaoxiaoxie.github.io/p/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</link>
+        <link>http://localhost:1313/p/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</link>
         <pubDate>Mon, 26 Aug 2024 15:14:42 +0800</pubDate>
         
-        <guid>https://yaoxiaoxie.github.io/p/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</guid>
-        <description>&lt;img src="https://yaoxiaoxie.github.io/img/face1.jpg" alt="Featured image of post 正则表达式" /&gt;&lt;h2 id=&#34;re模块&#34;&gt;re模块
+        <guid>http://localhost:1313/p/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</guid>
+        <description>&lt;img src="http://localhost:1313/img/face1.jpg" alt="Featured image of post 正则表达式" /&gt;&lt;h2 id=&#34;re模块&#34;&gt;re模块
 &lt;/h2&gt;&lt;p&gt;在python程序中使用正则呢需要借助re模块&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -2653,11 +2661,11 @@ shutdown.bat关闭窗口。&lt;/p&gt;
         </item>
         <item>
         <title>愿你成才的路上铺满荆棘</title>
-        <link>https://yaoxiaoxie.github.io/p/%E6%94%B6%E9%9B%86/</link>
+        <link>http://localhost:1313/p/%E6%94%B6%E9%9B%86/</link>
         <pubDate>Mon, 19 Aug 2024 10:19:28 +0800</pubDate>
         
-        <guid>https://yaoxiaoxie.github.io/p/%E6%94%B6%E9%9B%86/</guid>
-        <description>&lt;img src="https://yaoxiaoxie.github.io/img/face1.jpg" alt="Featured image of post 愿你成才的路上铺满荆棘" /&gt;&lt;h1 id=&#34;原文&#34;&gt;原文
+        <guid>http://localhost:1313/p/%E6%94%B6%E9%9B%86/</guid>
+        <description>&lt;img src="http://localhost:1313/img/face1.jpg" alt="Featured image of post 愿你成才的路上铺满荆棘" /&gt;&lt;h1 id=&#34;原文&#34;&gt;原文
 &lt;/h1&gt;&lt;h2 id=&#34;约翰罗伯茨--现任美国首席大法官&#34;&gt;约翰·罗伯茨 ｜ 现任美国首席大法官
 &lt;/h2&gt;&lt;h3 id=&#34;约翰罗伯茨2005年9月由小布什总统提名参议院批准通过就任美国联邦最高法院的第17任首席大法官是美国两个世纪以来最年轻的首席大法官&#34;&gt;约翰·罗伯茨，2005年9月由小布什总统提名，参议院批准通过，就任美国联邦最高法院的第17任首席大法官，是美国两个世纪以来最年轻的首席大法官。
 &lt;/h3&gt;&lt;h4 id=&#34;人们唯有遭遇不公时才知道公正的价值约翰罗伯茨大法官在他儿子初中毕业典礼上的致辞引起美国社交平台上刷屏并讨论&#34;&gt;“人们唯有遭遇不公时，才知道公正的价值”，约翰·罗伯茨大法官，在他儿子初中毕业典礼上的致辞，引起美国社交平台上刷屏并讨论。
@@ -2740,11 +2748,11 @@ Thank you.&lt;/p&gt;
         </item>
         <item>
         <title>网投实习心得</title>
-        <link>https://yaoxiaoxie.github.io/p/offer/</link>
+        <link>http://localhost:1313/p/offer/</link>
         <pubDate>Thu, 01 Aug 2024 22:04:11 +0800</pubDate>
         
-        <guid>https://yaoxiaoxie.github.io/p/offer/</guid>
-        <description>&lt;img src="https://yaoxiaoxie.github.io/img/face1.jpg" alt="Featured image of post 网投实习心得" /&gt;&lt;h1 id=&#34;思考&#34;&gt;思考
+        <guid>http://localhost:1313/p/offer/</guid>
+        <description>&lt;img src="http://localhost:1313/img/face1.jpg" alt="Featured image of post 网投实习心得" /&gt;&lt;h1 id=&#34;思考&#34;&gt;思考
 &lt;/h1&gt;&lt;p&gt;最近几日尝试在网上寻找了一下实习岗位，怎么说呢，简历也是写的七零八落，总归是不让自己满意。&lt;br /&gt;
 但是看下来市场并不是完全无情的，我仍然是有机会的，自己先前的技术栈虽然是零零碎碎，但好坏是可以写出来一点东西，不至于完全虚度光阴。&lt;br /&gt;
 接下来打算完善前端的学习，掌握几种基本的框架，在我看来前端就是画框框，画框框嘛，这有什么难的😊&lt;br /&gt;
@@ -2755,11 +2763,11 @@ Thank you.&lt;/p&gt;
         </item>
         <item>
         <title>博客插入图片</title>
-        <link>https://yaoxiaoxie.github.io/p/%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</link>
+        <link>http://localhost:1313/p/%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</link>
         <pubDate>Sun, 21 Jul 2024 09:01:59 +0800</pubDate>
         
-        <guid>https://yaoxiaoxie.github.io/p/%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</guid>
-        <description>&lt;img src="https://yaoxiaoxie.github.io/img/face1.jpg" alt="Featured image of post 博客插入图片" /&gt;&lt;h1 id=&#34;前言&#34;&gt;前言
+        <guid>http://localhost:1313/p/%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87/</guid>
+        <description>&lt;img src="http://localhost:1313/img/face1.jpg" alt="Featured image of post 博客插入图片" /&gt;&lt;h1 id=&#34;前言&#34;&gt;前言
 &lt;/h1&gt;&lt;p&gt;&lt;strong&gt;在Hugo上写文章的时候，肯定会遇到要插入图片的情况。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;在&lt;mark&gt;content/post&lt;/mark&gt;目录下的markdown文件里引用图片，让网站能正常显示图片。&lt;/p&gt;
 &lt;p&gt;这里我们其实有2种选择：&lt;/p&gt;
@@ -2784,11 +2792,11 @@ Thank you.&lt;/p&gt;
         </item>
         <item>
         <title>博客搭建过程</title>
-        <link>https://yaoxiaoxie.github.io/p/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/</link>
+        <link>http://localhost:1313/p/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/</link>
         <pubDate>Sat, 20 Jul 2024 22:57:40 +0800</pubDate>
         
-        <guid>https://yaoxiaoxie.github.io/p/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/</guid>
-        <description>&lt;img src="https://yaoxiaoxie.github.io/img/face1.jpg" alt="Featured image of post 博客搭建过程" /&gt;&lt;h1 id=&#34;前言&#34;&gt;前言
+        <guid>http://localhost:1313/p/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/</guid>
+        <description>&lt;img src="http://localhost:1313/img/face1.jpg" alt="Featured image of post 博客搭建过程" /&gt;&lt;h1 id=&#34;前言&#34;&gt;前言
 &lt;/h1&gt;&lt;p&gt;本篇博文主要记录本 Hugo 博客从 0 到 1 的简要步骤，但其适用于其他大多数 hugo 博客的搭建流程，仅仅区别于主题的不同。&lt;/p&gt;
 &lt;h1 id=&#34;具体流程&#34;&gt;具体流程
 &lt;/h1&gt;&lt;h2 id=&#34;准备hugo文件&#34;&gt;准备Hugo文件
@@ -2916,11 +2924,11 @@ Thank you.&lt;/p&gt;
         </item>
         <item>
         <title>这一路の经过~</title>
-        <link>https://yaoxiaoxie.github.io/p/%E5%BF%83%E5%BE%97/</link>
+        <link>http://localhost:1313/p/%E5%BF%83%E5%BE%97/</link>
         <pubDate>Thu, 31 Aug 2023 06:00:00 +0800</pubDate>
         
-        <guid>https://yaoxiaoxie.github.io/p/%E5%BF%83%E5%BE%97/</guid>
-        <description>&lt;img src="https://yaoxiaoxie.github.io/img/face1.jpg" alt="Featured image of post 这一路の经过~" /&gt;&lt;h1 id=&#34;1辗转反侧&#34;&gt;1.辗转反侧
+        <guid>http://localhost:1313/p/%E5%BF%83%E5%BE%97/</guid>
+        <description>&lt;img src="http://localhost:1313/img/face1.jpg" alt="Featured image of post 这一路の经过~" /&gt;&lt;h1 id=&#34;1辗转反侧&#34;&gt;1.辗转反侧
 &lt;/h1&gt;&lt;h2 id=&#34;11-相见&#34;&gt;1.1 相见
 &lt;/h2&gt;&lt;p&gt;最开始了解到一个个人博客，大概是看到了某个人的作品，当时惊叹于这种对当时的我来说是一种巨大打击的作品，我接触互联网还是10年左右，当时各种各样的东西在网络上方兴未已。要我说，当时的互联网，还是一个人人都可以得到他人近乎无私帮助的时代。&lt;/p&gt;
 &lt;h2 id=&#34;12-历程&#34;&gt;1.2 历程

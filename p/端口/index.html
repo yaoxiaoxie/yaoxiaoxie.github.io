@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><meta charset='utf-8'>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="查看所有端口占用情况：\rwin+R，调出cmd窗口： 查看所有端口占用情况：\rnetstat -ano 查看指定端口占用情况（端口引号有没有都可以，此处以5040为例）：\rnetstat -aon|findstr 5040 or netstat -aon|findstr &quot;5040&quot; 记住最后一列数字PID，此处为5340。 根据PID查看相应的进程或程序：\r（1）、命令行查看： tasklist|findstr 5340 查看到该PID对应的程序为svchost.exe （2）、任务管理器查看： 快捷键Ctrl+Alt+Delete，打开任务管理器，可查看PID对应的进程： 如果没有PID列： 右键名称、状态标题行，选择PID： 则PID列就出来了，可根据PID找到相应的进程： 结束相应进程：\r（1）、命令行： taskkill /f /t /im 进程名 承上如： taskkill /f /t /im svchost.exe （2）、任务管理器中结束进程：">
 <title>Windows_查看端口被占用情况、结束进程</title>
 
-<link rel='canonical' href='https://yaoxiaoxie.github.io/p/%E7%AB%AF%E5%8F%A3/'>
+<link rel='canonical' href='http://localhost:1313/p/%E7%AB%AF%E5%8F%A3/'>
 
 <link rel="stylesheet" href="/scss/style.min.e8c7fca7d1c9294aa7a4f3426c225ee26540f7d94e39be0b5a4a5c8a49ca5a25.css"><meta property='og:title' content="Windows_查看端口被占用情况、结束进程">
 <meta property='og:description' content="查看所有端口占用情况：\rwin+R，调出cmd窗口： 查看所有端口占用情况：\rnetstat -ano 查看指定端口占用情况（端口引号有没有都可以，此处以5040为例）：\rnetstat -aon|findstr 5040 or netstat -aon|findstr &quot;5040&quot; 记住最后一列数字PID，此处为5340。 根据PID查看相应的进程或程序：\r（1）、命令行查看： tasklist|findstr 5340 查看到该PID对应的程序为svchost.exe （2）、任务管理器查看： 快捷键Ctrl+Alt+Delete，打开任务管理器，可查看PID对应的进程： 如果没有PID列： 右键名称、状态标题行，选择PID： 则PID列就出来了，可根据PID找到相应的进程： 结束相应进程：\r（1）、命令行： taskkill /f /t /im 进程名 承上如： taskkill /f /t /im svchost.exe （2）、任务管理器中结束进程：">
-<meta property='og:url' content='https://yaoxiaoxie.github.io/p/%E7%AB%AF%E5%8F%A3/'>
-<meta property='og:site_name' content='yaoxieの自留地'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-09-04T13:25:00&#43;08:00'/><meta property='article:modified_time' content='2024-09-04T13:25:00&#43;08:00'/><meta property='og:image' content='https://yaoxiaoxie.github.io/img/face1.jpg' />
+<meta property='og:url' content='http://localhost:1313/p/%E7%AB%AF%E5%8F%A3/'>
+<meta property='og:site_name' content='白益旖の自留地'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-09-04T13:25:00&#43;08:00'/><meta property='article:modified_time' content='2024-09-04T13:25:00&#43;08:00'/><meta property='og:image' content='http://localhost:1313/img/face1.jpg' />
 <meta name="twitter:title" content="Windows_查看端口被占用情况、结束进程">
 <meta name="twitter:description" content="查看所有端口占用情况：\rwin+R，调出cmd窗口： 查看所有端口占用情况：\rnetstat -ano 查看指定端口占用情况（端口引号有没有都可以，此处以5040为例）：\rnetstat -aon|findstr 5040 or netstat -aon|findstr &quot;5040&quot; 记住最后一列数字PID，此处为5340。 根据PID查看相应的进程或程序：\r（1）、命令行查看： tasklist|findstr 5340 查看到该PID对应的程序为svchost.exe （2）、任务管理器查看： 快捷键Ctrl+Alt+Delete，打开任务管理器，可查看PID对应的进程： 如果没有PID列： 右键名称、状态标题行，选择PID： 则PID列就出来了，可根据PID找到相应的进程： 结束相应进程：\r（1）、命令行： taskkill /f /t /im 进程名 承上如： taskkill /f /t /im svchost.exe （2）、任务管理器中结束进程："><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://yaoxiaoxie.github.io/img/face1.jpg' />
+    <meta name="twitter:image" content='http://localhost:1313/img/face1.jpg' />
   
 
 
@@ -69,14 +69,14 @@
         
         
         <div class="site-meta">
-            <h1 class="site-name"><a href="/">yaoxieの自留地</a></h1>
+            <h1 class="site-name"><a href="/">白益旖の自留地</a></h1>
             <h2 class="site-description">浮生茫茫.</h2>
         </div>
     </header><ol class="menu-social">
             
                 <li>
                     <a 
-                        href='https://github.com/yaoxiaoxie'
+                        href='https://github.com/byy811'
                         target="_blank"
                         title="GitHub"
                         rel="me"
@@ -422,7 +422,7 @@
         
             2020 - 
         
-        2024 yaoxieの孤岛
+        2025 白益旖の孤岛
     </section>
     
     <section class="powerby">
